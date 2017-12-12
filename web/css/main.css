@@ -27,7 +27,7 @@
      display: flex;
      font-size: 40px;
      font-weight: lighter;
-    
+
      font-family: "Kreon";
 }
 
@@ -36,13 +36,13 @@
     display: flex;
     margin-top: 0.8rem;
     margin: auto;
-     
+
   }
 
 .menu li {
    margin : 1rem 2rem 0rem 5rem;
   }
-  
+
  /* roll down menu */
 .dropdown {
     float: left;
@@ -51,14 +51,14 @@
 
 .dropdown .dropbtn {
     cursor: pointer;
-    font-size: 20px;    
+    font-size: 20px;
     font-family: "Padauk";
     border: none;
     outline: none;
     color: white;
-    
+
     margin-left: 4rem;
-    
+
     background-color: inherit;
 }
 
@@ -75,7 +75,7 @@
 .dropdown-content a {
     float: none;
     color: white;
-    
+
     text-decoration: none;
     display: block;
     text-align: left;
@@ -89,20 +89,20 @@
 
 form {
     margin-top: 1rem;
-   
+
 }
 
 form input {
     border-radius: 5rem;
     border : none;
     background-color: #0e3445;
-    
+
 }
 button {
     background-color: #13455C;
     border : none;
     color : white;
-    
+
 }
 
 /* sign in /log in link */
@@ -110,9 +110,9 @@ button {
     color: white;
     font-family: "Padauk";
     text-decoration: none;
-   
+
     font-size: 18px;
-    
+
 }
 
 .menu a:hover {
@@ -141,7 +141,7 @@ footer p {
 
 body {
   padding-top: 6rem;
-  
+
 }
 container {
  width : 100%;
@@ -150,13 +150,71 @@ container {
 
 .articles {
     width : 80%;
-   
-    margin: auto; 
+
+    margin: auto;
     background-color: black;
 }
 .col-3 {
    display : inline-grid;
    background-color: grey;
    margin-top: 1rem;
-  
+
+}
+*{
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+/******* Login/Signup Page *******/
+
+/* Signup Details */
+.signup{
+  position:absolute;
+  border: 1px solid red;
+  width: 350px;
+  padding: 15px;
+  margin-left: 400px;
+  box-shadow: 3px 7px 10px 1px #13455C;
+}
+
+.signup form,h3,.country,.date{
+  padding: 3px;
+}
+
+.country,.date,.signupbutton{
+  margin-left: 3px;
+}
+
+.signupbutton{
+  padding: 8px;
+}
+
+/* Login Details */
+.login{
+  border: 1px solid blue;
+  width: 350px;
+  padding: 15px;
+  margin-left: 1150px;
+  margin-top: 100px;
+  box-shadow: 3px 7px 10px 1px #13455C;
+}
+
+/* Green Line */
+.greenline{
+  position:absolute;
+  width: 1px;
+  height: 800px;
+  border: solid #13455C;
+  margin: auto 950px;
+}
+
+/******Posting Article Page*******/
+
+.article{
+  border: 1px solid orange;
+  width: 800px;
+  padding: 15px;
+  margin: auto;
+  margin-top: 200px;
+  box-shadow: 3px 7px 10px 1px #13455C;
 }
