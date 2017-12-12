@@ -136,3 +136,27 @@ footer p {
     text-align: center;
     margin-top: 0.5rem;
 }
+
+/* INDEX */
+
+body {
+  padding-top: 6rem;
+  
+}
+container {
+ width : 100%;
+ margin-top: 40px;
+}
+
+.articles {
+    width : 80%;
+   
+    margin: auto; 
+    background-color: black;
+}
+.col-3 {
+   display : inline-grid;
+   background-color: grey;
+   margin-top: 1rem;
+  
+}
