@@ -28,6 +28,11 @@ class UserModels {
      * @Column(name="usr_lastname", type="string", length=50, nullable=false)
      */
     private $lasttname;
+    
+    /**
+     * @Column(name="usr_birthday", type="string", nullable=false)
+     */
+    private $birthday;
 
     /**
      * @Column(name="usr_email", type="string", length=50, nullable=false)
@@ -111,9 +116,13 @@ class UserModels {
     function getLasttname() {
         return $this->lasttname;
     }
-
+    
     function getEmail() {
         return $this->email;
+    }
+
+    function getBirthday() {
+        return $this->birthday;
     }
 
     function getTelephone() {
@@ -175,6 +184,10 @@ class UserModels {
 
     function setLasttname($lasttname) {
         $this->lasttname = $lasttname;
+    }
+    
+    function setBirthday() {
+        $this->birthday = $birthday;
     }
 
     function setEmail($email) {
