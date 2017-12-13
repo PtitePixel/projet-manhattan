@@ -95,7 +95,7 @@ form {
     border-radius: 5rem;
     border : none;
     background-color: #0e3445;
-    
+    color: white;
 }
 button {
     background-color: #13455C;
@@ -162,6 +162,7 @@ container {
    margin-bottom: 10rem;
    z-index: -1;
    position: absolute;
+   font-family: "Padauk";
 }
 
 .btn{
