@@ -27,7 +27,7 @@
      display: flex;
      font-size: 40px;
      font-weight: lighter;
-    
+
      font-family: "Kreon";
 }
 
@@ -36,13 +36,13 @@
     display: flex;
     margin-top: 0.8rem;
     margin: auto;
-     
+
   }
 
 .menu li {
    margin : 1rem 2rem 0rem 5rem;
   }
-  
+
  /* roll down menu */
 .dropdown {
     float: left;
@@ -50,11 +50,12 @@
 
 .dropdown {
     cursor: pointer;
-    font-size: 20px;    
+    font-size: 20px;
     font-family: "Padauk";
     border: none;
     outline: none;
     color: white;
+    margin-left: 4rem;
     background-color: inherit;
 }
 
@@ -70,8 +71,9 @@
 .dropdown-content a {
     float: none;
     color: white;
+
     padding-left: 2rem;
-    padding-top: 0.5rem;
+
     text-decoration: none;
     display: block;
     text-align: left;
@@ -88,21 +90,23 @@
 
 form {
     margin-top: 1rem;
-   
+
 }
 
 #searchbar input {
     border-radius: 5rem;
     border : none;
     background-color: #0e3445;
+
     color: white;
+
 }
 button {
     background-color: #13455C;
     border : none;
     color : white;
     cursor: pointer;
-    
+
 }
 
 /* sign in /log in link */
@@ -110,9 +114,9 @@ button {
     color: white;
     font-family: "Padauk";
     text-decoration: none;
-   
+
     font-size: 18px;
-    
+
 }
 
 .menu a:hover {
@@ -130,7 +134,7 @@ button {
     position: fixed;
     bottom:0;
 
-    
+
 }
 
 #footer p {
@@ -143,15 +147,20 @@ button {
 /* INDEX */
 
 
+
 container {
- width : 100%;          
- 
+ width : 100%;
+
 }
 
 .row{
   width : 80%;
   margin-top: 1rem;
-  
+
+
+body {
+  padding-top: 6rem;
+
 
 }
 
@@ -165,6 +174,7 @@ container {
    font-family: "Padauk";
 }
 
+
 .btn{
     background-color: #13455C;
     color: white;
@@ -175,5 +185,75 @@ container {
 .btn:hover {
     color: white;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+=======
+.articles {
+    width : 80%;
+
+    margin: auto;
+    background-color: black;
+}
+.col-3 {
+   display : inline-grid;
+   background-color: grey;
+   margin-top: 1rem;
+
+}
+*{
+  box-sizing: border-box;
+  margin: 0px;
 }
 
+/******* Login/Signup Page *******/
+
+/* Signup Details */
+.signup{
+  position:absolute;
+  border: 1px solid red;
+  width: 350px;
+  padding: 15px;
+  margin-left: 400px;
+  box-shadow: 3px 7px 10px 1px #13455C;
+}
+
+.signup form,h3,.country,.date{
+  padding: 3px;
+}
+
+.country,.date,.signupbutton{
+  margin-left: 3px;
+}
+
+.signupbutton{
+  padding: 8px;
+}
+
+/* Login Details */
+.login{
+  border: 1px solid blue;
+  width: 350px;
+  padding: 15px;
+  margin-left: 1150px;
+  margin-top: 100px;
+  box-shadow: 3px 7px 10px 1px #13455C;
+}
+
+/* Green Line */
+.greenline{
+  position:absolute;
+  width: 1px;
+  height: 800px;
+  border: solid #13455C;
+  margin: auto 950px;
+}
+
+/******Posting Article Page*******/
+
+.article{
+  border: 1px solid orange;
+  width: 800px;
+  padding: 15px;
+  margin: auto;
+  margin-top: 200px;
+  box-shadow: 3px 7px 10px 1px #13455C;
+>>>>>>> master
+}
