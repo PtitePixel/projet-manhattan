@@ -148,15 +148,4 @@ container {
  margin-top: 40px;
 }
 
-.articles {
-    width : 80%;
-   
-    margin: auto; 
-    background-color: black;
-}
-.col-3 {
-   display : inline-grid;
-   background-color: grey;
-   margin-top: 1rem;
-  
-}
+
