@@ -33,7 +33,7 @@
      
      
         {% block content %}{% endblock %}
-      
+     
         
           
      
@@ -41,7 +41,9 @@
         
         
         
-       
+     {% include 'footer.html.twig' %}  
+     
+     
         <!-- CDN : jquery -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" ></script>
         <!-- CDN : script bootstrap -->
@@ -50,6 +52,6 @@
         <!-- CDN JQuery UI -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
         <script src="{{ asset('js/script.js') }}"></script> 
-     {% include 'footer.html.twig' %}       
+        
     </body>
 </html>

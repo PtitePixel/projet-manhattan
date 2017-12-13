@@ -50,19 +50,16 @@
  /* roll down menu */
 .dropdown {
     float: left;
-
 }
 
-.dropdown .dropbtn {
+.dropdown {
     cursor: pointer;
     font-size: 20px;
     font-family: "Padauk";
     border: none;
     outline: none;
     color: white;
-
     margin-left: 4rem;
-
     background-color: inherit;
 }
 
@@ -72,7 +69,6 @@
     background-color:  #13455C;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
     margin-left: 2rem;
 }
 
@@ -80,9 +76,14 @@
     float: none;
     color: white;
 
+    padding-left: 2rem;
+
     text-decoration: none;
     display: block;
     text-align: left;
+}
+.dropdown-content a:hover {
+  background-color: #0e3445;
 }
 
 .show {
@@ -96,16 +97,23 @@
 
 }*/
 
+
 form input {                    /* The source of Petrol Green Forms. To look at later. -Conor */
+}
+#searchbar input {
+
     border-radius: 5rem;
     /*border : none;*/
     background-color: white /*#0e3445*/;
+
+    color: white;
 
 }
 button {                        /* Added 'buttons' CSS further down. This might be obsolete now. -Conor */
     background-color: #13455C;
     border : none;
     color : white;
+    cursor: pointer;
 
 }
 
@@ -126,40 +134,56 @@ button {                        /* Added 'buttons' CSS further down. This might 
 
 /*FOOTER */
 
-footer {
+
+#footer {
     width : 100%;
     height : 2rem;
     background-color : #13455C;
-    bottom : 0;
-    position: absolute;
+    position: fixed;
+    bottom:0;
+
+
 }
 
-footer p {
+#footer p {
     color: white;
     font-family: "Padauk";
     text-align: center;
     margin-top: 0.5rem;
 }
 
+#footer p a {
+    color : white;
+    font-family: "Padauk";
+    text-decoration: none;
+}
+
 /* INDEX */
 
-container {
+
+.container {
  width : 100%;
- margin-top: 40px;
-}
-
-.articles {
-    width : 80%;
-
-    margin: auto;
-    background-color: black;
-}
-.col-3 {
-   display : inline-grid;
-   background-color: grey;
-   margin-top: 1rem;
 
 }
+
+.row{
+  width : 80%;
+  margin-top: 1rem;
+}
+
+body {
+  padding-top: 6rem;
+
+
+}
+
+.annonces {
+     font-family: "Padauk";
+     color:#13455C;
+     text-align: center;
+     margin-top: 1rem;
+}
+
 
                                         /******* Login/Signup Page *******/
 
@@ -185,13 +209,61 @@ container {
   padding-top: 3px;
   color: white;
 }
-
-.signup form,h3,.country,.date{
-  padding: 3px;
+.maincontent {
+   width: 80%;
+   margin-left: 25%;
+   margin-top: 2rem;
+   margin-bottom: 10rem;
+   z-index: -1;
+   position: absolute;
+   font-family: "Padauk";
 }
+
+
+.btn{
+    background-color: #13455C;
+    color: white;
+    text-decoration: none;
+    box-shadow: 1px 3px 4px rgba(0, 0, 0, .5);
+}
+
+.btn:hover {
+    color: white;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+}    
+
+
+
+/******* Login/Signup Page *******/
+
+/* Signup Details */
+.signup{
+  margin-left: 3rem;
+  border: 1px solid #13455C;
+  width: 30%;
+  box-shadow: 3px 7px 10px 1px #13455C;
+
+}
+
+#sign {
+    font-family: "Padauk";
+    font-size: 18px;
+}
+
+#inscription {
+  margin-left: 3rem;
+  font-family: "Padauk";
+  font-size : 20px; 
+}
+
 
 .signup input{
   border-radius: 3px;
+}
+
+
+#champ {
+   margin-left: 3rem;  
 }
 
 .country,.date,.signupbutton{
@@ -207,6 +279,7 @@ container {
 
 /* Login Details */
 .login{
+
   border: 1px solid lightgrey;
   width: 350px;
   padding: 20px;
@@ -238,11 +311,16 @@ container {
   padding-left: 15px;
   padding-top: 3px;
   color: white;
+
+  border: 1px solid #13455C;
+  width: 30%;
+  box-shadow: 3px 7px 10px 1px #13455C;
+
 }
 
 /* Green Line */
 .greenline{
-  position:absolute;
+ 
   width: 1px;
   height: 800px;
   border: solid #13455C;
@@ -263,6 +341,7 @@ container {
                                           /******Posting Article Page*******/
 
 .article{
+
   border: 1px solid lightgrey;
   width: 800px;
   padding: 20px;
@@ -298,4 +377,79 @@ container {
   border: none;
   color: white;
   margin-top:5px;
+
+  border: 1px solid #13455C;
+  width: 50%;
+  margin: auto;
+  margin-top: 2rem;
+  box-shadow: 3px 7px 10px 1px #13455C;
+
+}
+#titreAnnonce {
+   font-family: "Padauk"; 
+   font-size: 23px;
+   margin-left: 2rem;
+   margin-top: 0.5rem;
+}
+
+#article {
+   margin-left: 2rem; 
+}
+
+input {
+   border-radius: 5rem;
+}
+
+#cat {
+   margin-left: 2rem; 
+   margin-top: 0.5rem;
+}
+#post {
+    background-color: #13455C;
+    color: white;
+    text-align: center;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+/* CONTACT */
+
+.contactez {
+   font-family: "Padauk"; 
+   color: #13455C;
+   margin-left: 5rem;
+   margin-top: 2rem;
+       
+}
+.contact {
+ width:25%;
+ background-color: #13455C;
+ margin-left: 5rem;
+ margin-top: 2rem;
+ color : white;
+ font-family: "Padauk";
+ padding: 2rem;
+}
+
+.google {
+    width : 20rem;
+    height : 20rem;
+    background-color: #13455C;
+    margin: auto;
+    
+}
+
+/* MENTIONS LEGALES */
+
+.mentions {
+   width : 70%;
+   margin: auto;
+   text-align: center;
+   margin-top: 5rem;
+   font-family: "Padauk";
+}
+
+.titreMention {
+   font-family: "Padauk"; 
+   color: #13455C;
 }
