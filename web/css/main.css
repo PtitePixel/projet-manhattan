@@ -205,18 +205,26 @@ body {
 
 /* Signup Details */
 .signup{
-  position:absolute;
-  border: 1px solid red;
-  width: 350px;
-  padding: 15px;
-  margin-left: 400px;
+  margin-left: 3rem;
+  border: 1px solid #13455C;
+  width: 30%;
   box-shadow: 3px 7px 10px 1px #13455C;
 }
 
-.signup form,h3,.country,.date{
-  padding: 3px;
+#sign {
+    font-family: "Padauk";
+    font-size: 18px;
 }
 
+#inscription {
+  margin-left: 3rem;
+  font-family: "Padauk";
+  font-size : 20px; 
+}
+
+#champ {
+   margin-left: 3rem;  
+}
 .country,.date,.signupbutton{
   margin-left: 3px;
 }
@@ -227,17 +235,14 @@ body {
 
 /* Login Details */
 .login{
-  border: 1px solid blue;
-  width: 350px;
-  padding: 15px;
-  margin-left: 1150px;
-  margin-top: 100px;
+  border: 1px solid #13455C;
+  width: 30%;
   box-shadow: 3px 7px 10px 1px #13455C;
 }
 
 /* Green Line */
 .greenline{
-  position:absolute;
+ 
   width: 1px;
   height: 800px;
   border: solid #13455C;
@@ -247,20 +252,77 @@ body {
 /******Posting Article Page*******/
 
 .article{
-  border: 1px solid orange;
-  width: 800px;
-  padding: 15px;
+  border: 1px solid #13455C;
+  width: 50%;
   margin: auto;
-  margin-top: 200px;
+  margin-top: 2rem;
   box-shadow: 3px 7px 10px 1px #13455C;
 }
-
-
-/* CONTACT */
-
-.contact {
- background-color: red;
+#titreAnnonce {
+   font-family: "Padauk"; 
+   font-size: 23px;
+   margin-left: 2rem;
+   margin-top: 0.5rem;
 }
 
+#article {
+   margin-left: 2rem; 
+}
+
+input {
+   border-radius: 5rem;
+}
+
+#cat {
+   margin-left: 2rem; 
+   margin-top: 0.5rem;
+}
+#post {
+    background-color: #13455C;
+    color: white;
+    text-align: center;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+/* CONTACT */
+
+.contactez {
+   font-family: "Padauk"; 
+   color: #13455C;
+   margin-left: 5rem;
+   margin-top: 2rem;
+       
+}
+.contact {
+ width:25%;
+ background-color: #13455C;
+ margin-left: 5rem;
+ margin-top: 2rem;
+ color : white;
+ font-family: "Padauk";
+ padding: 2rem;
+}
+
+.google {
+    width : 20rem;
+    height : 20rem;
+    background-color: #13455C;
+    margin: auto;
+    
+}
 
 /* MENTIONS LEGALES */
+
+.mentions {
+   width : 70%;
+   margin: auto;
+   text-align: center;
+   margin-top: 5rem;
+   font-family: "Padauk";
+}
+
+.titreMention {
+   font-family: "Padauk"; 
+   color: #13455C;
+}
