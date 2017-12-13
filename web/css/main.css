@@ -144,6 +144,12 @@ button {
     margin-top: 0.5rem;
 }
 
+#footer p a {
+    color : white;
+    font-family: "Padauk";
+    text-decoration: none;
+}
+
 /* INDEX */
 
 
@@ -156,7 +162,7 @@ container {
 .row{
   width : 80%;
   margin-top: 1rem;
-
+}
 
 body {
   padding-top: 6rem;
@@ -164,10 +170,16 @@ body {
 
 }
 
+.annonces {
+     font-family: "Padauk";
+     color:#13455C;
+     text-align: center;
+     margin-top: 1rem;
+}
 .maincontent {
    width: 80%;
    margin-left: 25%;
-   margin-top: 10rem;
+   margin-top: 2rem;
    margin-bottom: 10rem;
    z-index: -1;
    position: absolute;
@@ -185,23 +197,9 @@ body {
 .btn:hover {
     color: white;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
-=======
-.articles {
-    width : 80%;
+}    
 
-    margin: auto;
-    background-color: black;
-}
-.col-3 {
-   display : inline-grid;
-   background-color: grey;
-   margin-top: 1rem;
 
-}
-*{
-  box-sizing: border-box;
-  margin: 0px;
-}
 
 /******* Login/Signup Page *******/
 
@@ -255,5 +253,14 @@ body {
   margin: auto;
   margin-top: 200px;
   box-shadow: 3px 7px 10px 1px #13455C;
->>>>>>> master
 }
+
+
+/* CONTACT */
+
+.contact {
+ background-color: red;
+}
+
+
+/* MENTIONS LEGALES */
