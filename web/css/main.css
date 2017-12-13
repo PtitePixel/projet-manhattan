@@ -1,3 +1,7 @@
+*{                                          /* Might clash */
+  box-sizing: border-box;
+  margin: 0px;
+}
 @font-face {
      font-family: "Kreon";
      src:url(../fonts/Kreon-Regular.ttf);
@@ -86,19 +90,19 @@
 }
 
 /* search button */
-
-form {
+                                /*Clashes -Conor*/
+/*form {
     margin-top: 1rem;
 
-}
+}*/
 
-form input {
+form input {                    /* The source of Petrol Green Forms. To look at later. -Conor */
     border-radius: 5rem;
-    border : none;
-    background-color: #0e3445;
+    /*border : none;*/
+    background-color: white /*#0e3445*/;
 
 }
-button {
+button {                        /* Added 'buttons' CSS further down. This might be obsolete now. -Conor */
     background-color: #13455C;
     border : none;
     color : white;
@@ -139,10 +143,6 @@ footer p {
 
 /* INDEX */
 
-body {
-  padding-top: 6rem;
-
-}
 container {
  width : 100%;
  margin-top: 40px;
@@ -160,25 +160,38 @@ container {
    margin-top: 1rem;
 
 }
-*{
-  box-sizing: border-box;
-  margin: 0px;
-}
 
-/******* Login/Signup Page *******/
+                                        /******* Login/Signup Page *******/
 
 /* Signup Details */
 .signup{
   position:absolute;
-  border: 1px solid red;
+  border: 1px solid lightgrey;
   width: 350px;
   padding: 15px;
   margin-left: 400px;
-  box-shadow: 3px 7px 10px 1px #13455C;
+  box-shadow: 3px 7px 10px 1px grey;
+  border-radius: 5px;
+}
+
+
+.inscri{
+  background-color: #1C8DC1;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-top: -15px;
+  border-radius:1px;
+  padding-left: 15px;
+  padding-top: 3px;
+  color: white;
 }
 
 .signup form,h3,.country,.date{
   padding: 3px;
+}
+
+.signup input{
+  border-radius: 3px;
 }
 
 .country,.date,.signupbutton{
@@ -187,16 +200,44 @@ container {
 
 .signupbutton{
   padding: 8px;
+  background-color: #13455C;
+  border: none;
+  color: white;
 }
 
 /* Login Details */
 .login{
-  border: 1px solid blue;
+  border: 1px solid lightgrey;
   width: 350px;
-  padding: 15px;
+  padding: 20px;
   margin-left: 1150px;
   margin-top: 100px;
-  box-shadow: 3px 7px 10px 1px #13455C;
+  box-shadow: 3px 7px 10px 1px grey;
+  border-radius: 5px;
+}
+
+.login h1,h3,h5,.mrmrs,.inscri{
+  font-family: "Padauk";
+}
+
+.login input{
+  border-radius: 3px;
+}
+
+.linkstyling{
+  color: black;
+  text-decoration: none;
+}
+
+.loginbgcolor{
+  background-color: #1C8DC1;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-top: -20px;
+  border-radius:1px;
+  padding-left: 15px;
+  padding-top: 3px;
+  color: white;
 }
 
 /* Green Line */
@@ -206,15 +247,55 @@ container {
   height: 800px;
   border: solid #13455C;
   margin: auto 950px;
+  border-radius: 3px;
 }
 
-/******Posting Article Page*******/
+/*Opacity*/
+
+/*.loginhover{
+  background-color:black;
+  opacity: 1.0;
+}*/
+
+
+
+
+                                          /******Posting Article Page*******/
 
 .article{
-  border: 1px solid orange;
+  border: 1px solid lightgrey;
   width: 800px;
-  padding: 15px;
+  padding: 20px;
   margin: auto;
   margin-top: 200px;
-  box-shadow: 3px 7px 10px 1px #13455C;
+  box-shadow: 3px 7px 10px 1px grey;
+  border-radius: 3px;
+}
+
+.article h1,h2,input{
+  font-family: "Padauk";
+}
+
+.article input{
+  border-radius: 3px;
+  font-size: 100%;
+}
+
+.articledetails{
+  background-color: #1C8DC1;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-top: -20px;
+  border-radius:1px;
+  padding-left: 15px;
+  padding-top: 3px;
+  color: white;
+}
+
+#buttons{
+  padding: 8px;
+  background-color: #13455C;
+  border: none;
+  color: white;
+  margin-top:5px;
 }

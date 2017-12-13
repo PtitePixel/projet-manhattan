@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,12 +11,7 @@
 <body>
   <!-- Sign up Details -->
   <section class="signup">
-    <h1>Inscrivez-vous</h1>
-    <h3>Civilité</h3>
-      <form>
-        M.<input type="radio" name="Title" value="Mr">
-        Mme.<input type="radio" name="Title" value="Mrs">
-      </form>
+    <h1 class="inscri">Inscrivez-vous</h1>
     <h3>Nom</h3>
       <form action="">
         <input type="text">
@@ -312,7 +308,15 @@
       <form action="">
         <input type="text">
       </form>
-    <input class="signupbutton" type="submit" value="S'inscrire">
+    <h3>Username</h3>
+      <form action="">
+        <input type="text">
+      </form>
+    <h3>Password</h3>
+      <form action="">
+        <input type="text">
+      </form>
+    <a href="user.html.twig"><input class="signupbutton" type="submit" value="S'inscrire"></a>
   </section>
 
   <div class="greenline">
@@ -320,14 +324,22 @@
   </div>
 
   <!-- Login -->
-  <section class="login">
-    <h1>Login</h1>
-    <h3>Nom d'Utilisateur</h3>
-    <input type="text" autofocus>
-    <h3>Mot de Passe</h3>
-    <input type="text">
-    <h5>Mot de Passe oublié? Cliquez-ici!</h5>
-    <input type="submit" value="Se Connecter">
+  <section id="login" class="login" style="opacity:1">
+    <div class="loginhover">
+      <h1 class="loginbgcolor">Login</h1>
+      <h3>Nom d'Utilisateur</h3>
+      <input class="padform" type="text" autofocus>
+      <h3>Mot de Passe</h3>
+      <input class="padform" type="text">
+      <h5><a class="linkstyling" href="http://trumpdonald.org/">Mot de Passe oublié? Cliquez-ici!</a></h5>       <!-- Placeholder! -->
+      <a href="user.html.twig"><input type="submit" id="buttons" value="Se Connecter"></a>
+    </div>
   </section>
+
+  <!-- Scripts -->
+  <script src="../web/js/jquery-3.2.1.min.js"></script>
+  <script src="../web/js/script.js"></script>
+
+
 </body>
 </html>
