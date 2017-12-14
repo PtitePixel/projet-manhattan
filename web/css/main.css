@@ -315,7 +315,6 @@ input {
    font-family: "Padauk"; 
    color: #13455C;
   text-align: center;
-       
 }
 .contact {
  width:50%;
@@ -328,8 +327,10 @@ input {
 
 }
 
-.col-sm-4 {
-     display: inline-grid;
+#map {
+    height: 350px;
+    width: 60%; 
+    margin: auto;
 }
 
 

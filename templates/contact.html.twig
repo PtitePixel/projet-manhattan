@@ -8,7 +8,7 @@
 <h1 class="contactez"> Nous Contacter </h1>
 
 <div class="contact">
-    <div class="col-sm-4">
+    
 
         <p>
             Adresse : <br>
@@ -24,17 +24,33 @@
             lux@bay.lu
         </p>  
 
-    </div>  
+    
 </div>
 <div class="contact">
 
-    <div class="col-sm-4">
+    <div id="map">
  
-        
-        GOOGLE MAP
+     
+     
     </div>    
-    
+</div>    
 
+<script>
+      function initMap() {
+        var uluru = {lat: 49.5024421, lng: 5.949233599999957};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC1dy8BzPUu7h2-YKjk2blzfchmUQx45Q&callback=initMap">
+</script>
 
 {% endblock %}
 
