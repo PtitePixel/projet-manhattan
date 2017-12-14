@@ -1,11 +1,11 @@
 <?php
 
-
-/**
- * Description of Role
- *
- * @author Luxbay
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
+
 namespace Models;
 
 /**
@@ -22,7 +22,7 @@ class Role
     private $id;
     
     /**
-     * @Column(name="label", type="string", length=50, nullable=false)
+     * @Column(name="label", type="string", length=12, nullable=false)
      */
     private $label;
     

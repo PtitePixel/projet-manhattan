@@ -5,14 +5,40 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Controller\UserController;
 
 //Request::setTrustedProxies(array('127.0.0.1'));
 
-$app->get('/', function () use ($app) {
-    return $app['twig']->render('index.html.twig', array());
+$app->match('/', 'Controller\UserController::registerAction')->bind('register');
+
+$app->get('/admin/users', sprintf('%s::getAllAction', UserController::class))->bind('get_all_users');
+$app->post('/admin/user', sprintf('%s::createUserAction', UserController::class))->bind('create_user');
+$app->delete('/admin/user/{id}', sprintf('%s::deleteAction', UserController::class))->bind('delete_user');
+
+$app->get('/admin', function () use ($app) {
+    
+    $user = null;
+    $token = $app['security.token_storage']->getToken();  // Get current authentication token 
+    
+    if ($token !== null) {
+        $user = $token->getUser();                        // Get user from token
+    }
+    
+    // user is instance of Symfony\Component\Security\Core\User\UserInterface
+    
+    return $app['twig']->render('index.html.twig', array('user' => $user));
 })
 ->bind('homepage')
 ;
+
+$app->get('/login', function(Request $request) use ($app){
+    return $app['twig']->render('login.html.twig', 
+        [
+            'error' => $app['security.last_error']($request),
+            'last_username' => $app['session']->get('_security.last_username')
+        ]
+    );
+})->bind('login');
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {
