@@ -15,18 +15,35 @@ $app->get('/', function () use ($app) {
 ->bind('homepage')
 ;
 
+//PAGE LOGIN
 $app->get('/login', function () use ($app) {
     return $app['twig']->render('login.html.twig', array());
 })
 ->bind('login')
 ;
 
+// PAGE COMPTE
+$app->get('/user', function () use ($app) {
+    return $app['twig']->render('user.html.twig', array());
+})
+->bind('user')
+;
+
+//PAGE ANNONCE
+$app->get('/article', function () use ($app) {
+    return $app['twig']->render('article.html.twig', array());
+})
+->bind('article')
+;
+
+//PAGE MENTION LEGALES
 $app->get('/mentionslegales', function () use ($app) {
     return $app['twig']->render('mentions.html.twig', array());
 })
 ->bind('mentions')
 ;
 
+//PAGE CONTACT
 $app->get('/contact', function () use ($app) {
     return $app['twig']->render('contact.html.twig', array());
 })

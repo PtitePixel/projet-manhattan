@@ -36,7 +36,7 @@
     display: flex;
     margin-top: 0.8rem;
     margin: auto;
-    margin-left: 30%;
+ 
 
   }
 
@@ -135,7 +135,7 @@ button {
 
 #footer {
     width : 100%;
-    height : 4rem;
+    height : 3rem;
     background-color : #13455C;
     position: fixed;
     bottom:0;
@@ -145,7 +145,7 @@ button {
     color: white;
     font-family: "Padauk";
     text-align: center;
-    margin-top: 0.5rem;
+    
 }
 
 #footer p a {
@@ -282,6 +282,7 @@ body {
 
                                                     /******Posting Article Page*******/
 
+                                                    
 .article{
   border: 1px solid #13455C;
   width: 50%;
@@ -289,9 +290,16 @@ body {
   margin-top: 2rem;
   box-shadow: 3px 7px 10px 1px #13455C;
 }
+
+.articledetails {
+    font-family: "Padauk"; 
+   font-size: 23px;
+   margin-left: 2rem;
+   margin-top: 2rem;
+}
 #titreAnnonce {
    font-family: "Padauk"; 
-   font-size: 23px;
+   font-size: 20px;
    margin-left: 2rem;
    margin-top: 0.5rem;
 }
@@ -300,24 +308,15 @@ body {
    margin-left: 2rem; 
 }
 
-input {
-
-   border-radius: 3px;
+button {
+ 
 }
 
 #cat {
    margin-left: 2rem; 
    margin-top: 0.5rem;
 }
-#post {
-    background-color: #13455C;
-    color: white;
-    text-align: center;
-    margin-left: 2rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 1px 3px 4px rgba(0, 0, 0, .5);
-}
+
 
 #post:hover {
     box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
@@ -344,7 +343,7 @@ input {
     margin: auto;
 }
 .contact p {
-  margin-left: 12%;
+  margin: auto;
   text-align: center;
 }
 #map {
@@ -370,7 +369,7 @@ input {
    color: #13455C;
 }
 
-/* USER */
+                                                /* USER */
 
 .userInfo {
     width : 40%;
@@ -401,7 +400,18 @@ input {
     cursor: pointer;
 }
 
+.create a {
+     color : white;
+     text-decoration: none;
+}
+
+.create a:hover {
+     color : white;
+     text-decoration: none;
+}
 .create:hover {
+     color : white;
+     text-decoration: none;
      box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
 }
 
