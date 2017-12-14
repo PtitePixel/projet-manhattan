@@ -13,7 +13,7 @@
   }
 
 
-/* HEADER */
+                                /* HEADER */
 
 /* menu  */
 .menu {
@@ -132,7 +132,7 @@ button {                        /* Added 'buttons' CSS further down. This might 
     text-decoration: none;
 }
 
-/*FOOTER */
+                                    /*FOOTER */         
 
 
 #footer {
@@ -158,7 +158,7 @@ button {                        /* Added 'buttons' CSS further down. This might 
     text-decoration: none;
 }
 
-/* INDEX */
+                            /* INDEX */     
 
 
 .container {
@@ -226,7 +226,7 @@ body {
     text-decoration: none;
     box-shadow: 1px 3px 4px rgba(0, 0, 0, .5);
 }
-
+    
 .btn:hover {
     color: white;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
