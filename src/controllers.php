@@ -32,6 +32,8 @@ $app->get('/contact', function () use ($app) {
 ->bind('contact')
 ;
 
+
+
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {
         return;

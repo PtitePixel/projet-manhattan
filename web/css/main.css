@@ -23,7 +23,7 @@
 .menu h1 {
      color: white;
      margin-left: 1rem;
-     margin-top: 1rem;
+     
      display: flex;
      font-size: 40px;
      font-weight: lighter;
@@ -36,6 +36,9 @@
     display: flex;
     margin-top: 0.8rem;
     margin: auto;
+    margin-left: 3
+        
+        0%;
 
   }
 
@@ -114,7 +117,8 @@ button {
     color: white;
     font-family: "Padauk";
     text-decoration: none;
-    margin-top: 0.8rem;
+    margin-top: 1rem;
+    margin-left: 2rem;
     font-size: 18px;
 
 }
