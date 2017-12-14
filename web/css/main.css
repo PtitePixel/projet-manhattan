@@ -207,7 +207,7 @@ body {
 
 
 .signup{
-  margin-left: 10rem;
+  margin-left: 14rem;
   border: 1px solid #13455C;
   width: 30%;
   box-shadow: 3px 7px 10px 1px #13455C;
@@ -218,14 +218,20 @@ body {
     font-family: "Padauk";
     font-size: 30px;
     color:white;
+    text-align: center;
+    margin: 0px;
+    height: 40px; 
+    background-color: #1A6487;
+    line-height: normal;
 }
-
 #inscription {  
   font-family: "Padauk";
   font-size : 20px; 
+  margin-bottom: 0px;
+  margin-top: 8px; 
 }
 
-#champ {
+#champsign {
    margin-left: 2rem;  
    margin-top: 1rem;
 }
@@ -233,7 +239,7 @@ body {
 
 #signupbutton{
   margin-left: 75%;
-  background-color: #13455C;
+  background-color: #1A6487;
   color: white;
   font-family: "Padauk";
   font-size : 18px;
@@ -245,28 +251,30 @@ body {
  box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);   
 }
 
-
-#titrebgcouleur{
-    border: 1px solid green;
-    border-radius: 3px;
-    background-color: green;
-    height: 40px;
+.date{
+    width: 178px;
 }
 
+.countries{
+   height:30px;
+}
 /* Login Details */
 .login{
   border: 1px solid #13455C;
   width: 30%;
   box-shadow: 3px 7px 10px 1px #13455C;
-  margin-left: 60rem;
+  margin-left: 67rem;
   margin-top: -35rem;
+  border-radius: 3px;
 }
 
+.login form{
+    margin-left: 2rem;
+}
 
 #mdp {
     font-family: "Padauk";
-    font-size : 13px;
-    margin-left: 2rem;
+    font-size : 13px;    
     margin-top: 0.5rem;
 }
 
