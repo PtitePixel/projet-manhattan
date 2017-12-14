@@ -118,11 +118,14 @@ button {
     font-family: "Padauk";
     text-decoration: none;
     margin-top: 1rem;
-    margin-left: 2rem;
+    
     font-size: 18px;
 
 }
 
+.menu li:last-child {
+    margin-right: 4rem;
+}
 .menu a:hover {
     color: white;
     text-decoration: none;
@@ -173,7 +176,7 @@ body {
 }
 
 .annonces {
-     font-family: "Padauk";
+     font-family: "Kreon";
      color:#13455C;
      text-align: center;
      margin-top: 1rem;
@@ -330,7 +333,7 @@ input {
     margin: auto;
 }
 .contact p {
-  margin-left: 3.5rem;
+  margin-left: 12%;
   text-align: center;
 }
 #map {
