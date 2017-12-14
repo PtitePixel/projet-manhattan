@@ -14,6 +14,24 @@ $app->get('/', function () use ($app) {
 ->bind('homepage')
 ;
 
+$app->get('/login', function () use ($app) {
+    return $app['twig']->render('login.html.twig', array());
+})
+->bind('login')
+;
+
+$app->get('/mentionslegales', function () use ($app) {
+    return $app['twig']->render('mentions.html.twig', array());
+})
+->bind('mentions')
+;
+
+$app->get('/contact', function () use ($app) {
+    return $app['twig']->render('contact.html.twig', array());
+})
+->bind('contact')
+;
+
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {
         return;

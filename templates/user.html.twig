@@ -1,18 +1,21 @@
-{# empty Twig template #}
+
+
+{% block content %}
 <div class="userInfo">
-    <ul>
-        <li> Civilité : </li>
+    <ul id="info">
+     
         <li> Nom : </li>
-        <li> Prénom : </li>
+        <li> Prenom : </li>
         <li> Date de naissance : </li>  
         <li> Adresse : </li> 
         <li> Pays : </li>
         <li> E-mail : </li>
-        <li> Téléphone : </li>  
+        <li> Telephone : </li>  
     </ul>    
      
 </div>   
 <div class="create"    
-     <button> + Créer Annonce </button>
+     <button id="new"> + Creer Annonce </button>
 
-</div>    
+</div>      
+{% endblock %}
