@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Controller\UserController;
 
+
 //Request::setTrustedProxies(array('127.0.0.1'));
 
 $app->match('/', 'Controller\UserController::registerAction')->bind('register');
@@ -31,6 +32,7 @@ $app->get('/admin', function () use ($app) {
 ->bind('homepage')
 ;
 
+<<<<<<< HEAD
 $app->get('/login', function(Request $request) use ($app){
     return $app['twig']->render('login.html.twig', 
         [
@@ -39,6 +41,27 @@ $app->get('/login', function(Request $request) use ($app){
         ]
     );
 })->bind('login');
+=======
+$app->get('/login', function () use ($app) {
+    return $app['twig']->render('login.html.twig', array());
+})
+->bind('login')
+;
+
+$app->get('/mentionslegales', function () use ($app) {
+    return $app['twig']->render('mentions.html.twig', array());
+})
+->bind('mentions')
+;
+
+$app->get('/contact', function () use ($app) {
+    return $app['twig']->render('contact.html.twig', array());
+})
+->bind('contact')
+;
+
+
+>>>>>>> dd4690e2e943ca46ed9f3a8f97996c0580ff2349
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {
