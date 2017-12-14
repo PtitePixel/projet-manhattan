@@ -9,7 +9,7 @@
   }
 
 
-/* HEADER */
+                                /* HEADER */
 
 /* menu  */
 .menu {
@@ -36,9 +36,7 @@
     display: flex;
     margin-top: 0.8rem;
     margin: auto;
-    margin-left: 3
-        
-        0%;
+    margin-left: 30%;
 
   }
 
@@ -100,7 +98,7 @@ form {
     border-radius: 5rem;
     border : none;
     background-color: #0e3445;
-
+    padding-left: 10px;
     color: white;
 
 }
@@ -131,7 +129,8 @@ button {
     text-decoration: none;
 }
 
-/*************  FOOTER *************/
+                                    /*FOOTER */         
+
 
 
 #footer {
@@ -155,7 +154,9 @@ button {
     text-decoration: none;
 }
 
-/******** INDEX *********/
+
+                                         /* INDEX */     
+
 
 
 
@@ -198,7 +199,7 @@ body {
     text-decoration: none;
     box-shadow: 1px 3px 4px rgba(0, 0, 0, .5);
 }
-
+    
 .btn:hover {
     color: white;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
@@ -206,7 +207,9 @@ body {
 
 
 
-/******* LOG IN / SIGN IN PAGE *******/
+
+                                                    /******* Login/Signup Page *******/
+
 
 /* Signup Details */
 
@@ -216,15 +219,16 @@ body {
   border: 1px solid #13455C;
   width: 30%;
   box-shadow: 3px 7px 10px 1px #13455C;
+  border-radius: 3px;
 }
 
 #sign {
     font-family: "Padauk";
-    font-size: 18px;
+    font-size: 30px;
+    color:white;
 }
 
-#inscription {
-  margin-left: 3rem;
+#inscription {  
   font-family: "Padauk";
   font-size : 20px; 
 }
@@ -251,6 +255,12 @@ body {
 }
 
 
+#titrebgcouleur{
+    border: 1px solid green;
+    border-radius: 3px;
+    background-color: green;
+    height: 40px;
+}
 
 /* Login Details */
 .login{
@@ -270,7 +280,7 @@ body {
 }
 
 
-/******Posting Article Page*******/
+                                                    /******Posting Article Page*******/
 
 .article{
   border: 1px solid #13455C;
@@ -291,7 +301,8 @@ body {
 }
 
 input {
-   border-radius: 5rem;
+
+   border-radius: 3px;
 }
 
 #cat {
@@ -311,7 +322,7 @@ input {
 #post:hover {
     box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
 }
-/* CONTACT */
+                                                    /* CONTACT */
 
 .contactez {
    font-family: "Kreon"; 
@@ -344,7 +355,7 @@ input {
 
 
 
-/* MENTIONS LEGALES */
+                                                 /* MENTIONS LEGALES */
 
 .mentions {
    width : 70%;
@@ -393,5 +404,4 @@ input {
 .create:hover {
      box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
 }
-
 
