@@ -114,7 +114,7 @@ button {
     color: white;
     font-family: "Padauk";
     text-decoration: none;
-
+    margin-top: 0.8rem;
     font-size: 18px;
 
 }
@@ -204,8 +204,10 @@ body {
 /******* Login/Signup Page *******/
 
 /* Signup Details */
+
+
 .signup{
-  margin-left: 3rem;
+  margin-left: 10rem;
   border: 1px solid #13455C;
   width: 30%;
   box-shadow: 3px 7px 10px 1px #13455C;
@@ -223,31 +225,44 @@ body {
 }
 
 #champ {
-   margin-left: 3rem;  
-}
-.country,.date,.signupbutton{
-  margin-left: 3px;
+   margin-left: 2rem;  
+   margin-top: 1rem;
 }
 
-.signupbutton{
-  padding: 8px;
+
+#signupbutton{
+  margin-left: 75%;
+  background-color: #13455C;
+  color: white;
+  font-family: "Padauk";
+  font-size : 18px;
+  margin-bottom: 1rem;
+  box-shadow: 1px 3px 4px rgba(0, 0, 0, .5);
 }
+
+#signupbutton:hover {
+ box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);   
+}
+
+
 
 /* Login Details */
 .login{
   border: 1px solid #13455C;
   width: 30%;
   box-shadow: 3px 7px 10px 1px #13455C;
+  margin-left: 60rem;
+  margin-top: -35rem;
 }
 
-/* Green Line */
-.greenline{
- 
-  width: 1px;
-  height: 800px;
-  border: solid #13455C;
-  margin: auto 950px;
+
+#mdp {
+    font-family: "Padauk";
+    font-size : 13px;
+    margin-left: 2rem;
+    margin-top: 0.5rem;
 }
+
 
 /******Posting Article Page*******/
 
@@ -284,33 +299,36 @@ input {
     margin-left: 2rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    box-shadow: 1px 3px 4px rgba(0, 0, 0, .5);
+}
+
+#post:hover {
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
 }
 /* CONTACT */
 
 .contactez {
    font-family: "Padauk"; 
    color: #13455C;
-   margin-left: 5rem;
-   margin-top: 2rem;
+  text-align: center;
        
 }
 .contact {
- width:25%;
+ width:50%;
  background-color: #13455C;
- margin-left: 5rem;
- margin-top: 2rem;
+ margin: auto;
  color : white;
  font-family: "Padauk";
  padding: 2rem;
+ text-align: center;
+
 }
 
-.google {
-    width : 20rem;
-    height : 20rem;
-    background-color: #13455C;
-    margin: auto;
-    
+.col-sm-4 {
+     display: inline-grid;
 }
+
+
 
 /* MENTIONS LEGALES */
 
@@ -326,3 +344,40 @@ input {
    font-family: "Padauk"; 
    color: #13455C;
 }
+
+/* USER */
+
+.userInfo {
+    width : 40%;
+    border: 1px solid #13455C;
+    box-shadow: 3px 7px 10px 1px #13455C;
+    margin-left: 10rem;
+    margin-top: 3rem;
+}
+
+#info {
+   list-style: none;
+   font-family: "Padauk";
+   font-size: 20px;
+   padding-top: 1rem;
+   width : 30%;
+}
+
+.create {
+    width : 20%;
+    background-color: #13455C;
+    box-shadow: 1px 3px 4px rgba(0, 0, 0, .5);
+    font-family: "Padauk";
+    font-size: 30px;
+    text-align: center;
+    margin-left: 65%;
+    margin-top: -10rem;
+    color: white;
+    cursor: pointer;
+}
+
+.create:hover {
+     box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+}
+
+
