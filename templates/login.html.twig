@@ -1,46 +1,38 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="../web/css/main.css">
-  <title>Sign Up/Login</title>
-</head>
-<body>
+{% extends "layout.html.twig" %}
+{% block content%}
   <!-- Sign up Details -->
   <section class="signup">
-    <h1 class="inscri">Inscrivez-vous</h1>
-    <h3>Nom</h3>
-      <form action="">
+    <h1>Inscrivez-vous</h1>
+    
+    <h3 id="inscription">Nom</h3>
+      <form id="champ" action="">
         <input type="text">
       </form>
-    <h3>Prénom</h3>
-      <form action="">
+    <h3 id="inscription">Prenom</h3>
+      <form id="champ" action="">
         <input type="text">
       </form>
-    <h3>Date de Naissance</h3>
-      <input class="date" type="date" name="" value="">
-    <h3>Numéro de Maison/Appartement</h3>
-      <form action="">
+    <h3 id="inscription">Date de Naissance</h3>
+      <input id="champ" class="date" type="date" name="" value="">
+    <h3 id="inscription">Numero de Maison/Appartement</h3>
+      <form id="champ" action="">
         <input type="text">
       </form>
-    <h3>Rue</h3>
-      <form action="">
+    <h3 id="inscription">Rue</h3>
+      <form id="champ" action="">
         <input type="text">
       </form>
-    <h3>Code Postale</h3>
-      <form action="">
+    <h3 id="inscription">Code Postal</h3>
+      <form id="champ" action="">
         <input type="text">
       </form>
-    <h3>Ville</h3>
-      <form action="">
+    <h3 id="inscription">Ville</h3>
+      <form id="champ" action="">
         <input type="text">
       </form>
     <!-- List of all countries in drop down -->
-    <h3>Pays</h3>
-    <select name="pays" class="country">
+    <h3 id="inscription">Pays</h3>
+    <select  id="champ" name="pays" class="country">
 
     <option value="Afghanistan">Afghanistan </option>
     <option value="Afrique_Centrale">Afrique Centrale </option>
@@ -300,23 +292,15 @@
     </select>
 
     <!-- Contact Details : Phone & Email -->
-    <h3>Téléphone</h3>
-      <form action="">
+    <h3 id="inscription">Téléphone</h3>
+      <form id="champ" action="">
         <input type="text">
       </form>
-    <h3>Adresse Email</h3>
-      <form action="">
+    <h3 id="inscription">Adresse Email</h3>
+      <form id="champ" action="">
         <input type="text">
       </form>
-    <h3>Username</h3>
-      <form action="">
-        <input type="text">
-      </form>
-    <h3>Password</h3>
-      <form action="">
-        <input type="text">
-      </form>
-    <a href="user.html.twig"><input class="signupbutton" type="submit" value="S'inscrire"></a>
+    <input id="champ" class="signupbutton" type="submit" value="S'inscrire">
   </section>
 
   <div class="greenline">
@@ -324,22 +308,13 @@
   </div>
 
   <!-- Login -->
-  <section id="login" class="login" style="opacity:1">
-    <div class="loginhover">
-      <h1 class="loginbgcolor">Login</h1>
-      <h3>Nom d'Utilisateur</h3>
-      <input class="padform" type="text" autofocus>
-      <h3>Mot de Passe</h3>
-      <input class="padform" type="text">
-      <h5><a class="linkstyling" href="http://trumpdonald.org/">Mot de Passe oublié? Cliquez-ici!</a></h5>       <!-- Placeholder! -->
-      <a href="user.html.twig"><input type="submit" id="buttons" value="Se Connecter"></a>
-    </div>
+  <section class="login">
+    <h1>Se connecter</h1>
+    <h3>Nom d'Utilisateur</h3>
+    <input type="text" autofocus>
+    <h3>Mot de Passe</h3>
+    <input type="text">
+    <h5>Mot de Passe oublié? Cliquez-ici!</h5>
+    <input type="submit" value="Connexion">
   </section>
-
-  <!-- Scripts -->
-  <script src="../web/js/jquery-3.2.1.min.js"></script>
-  <script src="../web/js/script.js"></script>
-
-
-</body>
-</html>
+{% endblock %}
