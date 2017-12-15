@@ -10,20 +10,20 @@ namespace Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Silex\Application;
-use Models\ArticleModel;
+use Models\UserModel;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Form\ArticleForm;
-
+use Form\UserForm;
+use Models\Role;
 
 /**
  * Description of UserController
  *
  * @author Etudiant
  */
-class AirticleController {
+class UserController {
 
     public function getAllAction(Request $request, Application $app) {
-        $repository = $app['orm.em']->getRepository(\Models\ArticleModel::class);
+        $repository = $app['orm.em']->getRepository(\Models\UserModel::class);
 
         $result = [];
         foreach ($repository->findAll() as $user) {
@@ -33,44 +33,112 @@ class AirticleController {
         return $app->json($result);
     }
 
-    public function createArticleAction(Request $request, Application $app) {
- 
-        if (!$request->request->has('art_title')) {
+    public function createUserAction(Request $request, Application $app) {
+        /*
+         * if (!isset($_POST['user_firstname'])) {
+         *  message = 'user_firstname must be defined';
+         *  return $app->json(['status' => 'error', 'message' => $message], 400);
+         * }
+         */
+        if (!$request->request->has('user_firstname')) {
             $message = 'user_firstname must be defined';
             return $app->json(['status' => 'error', 'message' => $message], 400);
         }
 
-        if (!$request->request->has('art_price')) {
+        /*
+         * if (!isset($_POST['user_lastname'])) {
+         *  message = 'user_lastname must be defined';
+         *  return $app->json(['status' => 'error', 'message' => $message], 400);
+         * }
+         */
+        if (!$request->request->has('user_lastname')) {
             $message = 'user_lastname must be defined';
             return $app->json(['status' => 'error', 'message' => $message], 400);
         }
 
-        if (!$request->request->has('art_price')) {
+        if (!$request->request->has('user_username')) {
             $message = 'user_username must be defined';
             return $app->json(['status' => 'error', 'message' => $message], 400);
         }
 
-        if (!$request->request->has('art_description')) {
+        if (!$request->request->has('user_email')) {
             $message = 'user_email must be defined';
             return $app->json(['status' => 'error', 'message' => $message], 400);
         }
 
-        $artTitle = $request->request->get('art_title');
-        $artPrice = $request->request->get('art_price');
-        $artDescription = $request->request->get('art_description');
-        $art_sold = $request->request->get('art_sold');
-        
+        if (!$request->request->has('user_telephone')) {
+            $message = 'user_telephone must be defined';
+            return $app->json(['status' => 'error', 'message' => $message], 400);
+        }
 
-        $roleInstance = $app['orm.em']->getRepository(\Models\ArticleModel::class)->findOneByLabel($role);
+        if (!$request->request->has('user_number')) {
+            $message = 'user_house_number must be defined';
+            return $app->json(['status' => 'error', 'message' => $message], 400);
+        }
+
+        if (!$request->request->has('user_street')) {
+            $message = 'user_street must be defined';
+            return $app->json(['status' => 'error', 'message' => $message], 400);
+        }
+
+        if (!$request->request->has('user_city')) {
+            $message = 'user_city must be defined';
+            return $app->json(['status' => 'error', 'message' => $message], 400);
+        }
+
+        if (!$request->request->has('user_zip')) {
+            $message = 'user_zip must be defined';
+            return $app->json(['status' => 'error', 'message' => $message], 400);
+        }
+
+        if (!$request->request->has('user_country')) {
+            $message = 'user_country must be defined';
+            return $app->json(['status' => 'error', 'message' => $message], 400);
+        }
+
+        if (!$request->request->has('user_password')) {
+            $message = 'user_password must be defined';
+            return $app->json(['status' => 'error', 'message' => $message], 400);
+        }
+
+        if (!$request->request->has('user_role')) {
+            $message = 'user_role must be defined';
+            return $app->json(['status' => 'error', 'message' => $message], 400);
+        }
+        $username = $request->request->get('user_username');
+        $password = $request->request->get('user_password');
+        $role = $request->request->get('user_role');
+        // $firstname = $_POST['user_firstname'];
+        $firstname = $request->request->get('user_firstname');
+        // $lastname = $_POST['user_lastname'];
+        $lastname = $request->request->get('user_lastname');
+        $email = $request->request->get('user_email');
+        $telephone = $request->request->get('user_telephone');
+        $username = $request->request->get('user_name');
+        $number = $request->request->get('user_number');
+        $street = $request->request->get('user_street');
+        $city = $request->request->get('user_city');
+        $zip = $request->request->get('user_zip');
+        $country = $request->request->get('user_country');
+
+        $roleInstance = $app['orm.em']->getRepository(\Models\Role::class)->findOneByLabel($role);
         if (!$role) {
             throw new NotFoundHttpException('Role ' . $role . ' not found');
         }
 
         $user = new UserModel();
-        $user->setArtTitle($artTitle)
-                ->setArtPrice($artPrice)
-                ->setArtDescription($artDescription)
-                ->setArtSold($artSold);
+        $user->setFirstname($firstname)
+                ->setLastname($lastname)
+                ->setEmail($email)
+                ->setTelephone($telephone)
+                ->setNumber($number)
+                ->setStreet($street)
+                ->setCity($city)
+                ->setZip($zip)
+                ->setCountry($country)
+                ->setUsername($username)
+                ->setPassword($password)
+                ->setRoles([$roleInstance]);
 
         $entityManager = $app['orm.em'];
         $entityManager->persist($user);
@@ -78,15 +146,14 @@ class AirticleController {
 
         return $app->json($user->toArray());
     }
-// c'est a partir d'ici que j'ai des problemes mg
-    
-    public function deleteAction(Request $request, Application $app, $artId) {
-        $manager = $app['orm.em'];
-        $repository = $manager->getRepository(ArticleModel::class);
-        $article = $repository->find($artId);
 
-        if (!$artId) {
-            $message = sprintf('User %d not found', $artId);
+    public function deleteAction(Request $request, Application $app, $id) {
+        $manager = $app['orm.em'];
+        $repository = $manager->getRepository(UserModel::class);
+        $user = $repository->find($id);
+
+        if (!$user) {
+            $message = sprintf('User %d not found', $id);
             return $app->json(['status' => 'error', 'message' => $message], 404);
         }
 
@@ -97,13 +164,27 @@ class AirticleController {
     }
 
     public function registerAction(Request $request, Application $app) {
-        $article = new ArticleModel();
+        $user = new UserModel();
 
         $formFactory = $app['form.factory'];
-        $articleForm = $formFactory->create(ArticleForm::class, $article, ['standalone' => true]);
+        $userForm = $formFactory->create(UserForm::class, $user, ['standalone' => true]);
+
+        $userForm->handleRequest($request);
+        if ($userForm->isSubmitted() && $userForm->isValid()) {
+            $entityManager = $app['orm.em'];
+            $roleRepository = $entityManager->getRepository(Role::class);
+            $userRole = $roleRepository->findOneByLabel('ROLE_USER');
+
+            $user->addRole($userRole);
+
+            $entityManager->persist($user);
+            $entityManager->flush();
+
+            return $app->redirect($app['url_generator']->generate('login'));
+        }
 
         return $app['twig']->render(
-                        'Article/ArticleSubmitTemplate.html.twig', [
+                        'User/RegistrationTemplate.html.twig', [
                     'form' => $userForm->createView()
                         ]
         );
