@@ -1,0 +1,32 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    <!-- Add New Article Box -->
+    <section class="article">
+        <div class="articledetails">Entrez les details de votre article :</div>{# Before this was an <H2> so corret the css #}
+        
+        <div id="inscription">{{ form_label(form.categorie) }}</div>
+        <div id="formbox"> {{ form_widget(form.categorie) }}</div>
+        <div class="formBoxError">{{ form_errors(form.categorie) }}</div>
+        
+        <div id="titreAnnonce">{{ form_label(form.artTitle) }}</div>
+        <div id="formbox"> {{ form_widget(form.artTitle) }}</div>{# display form artTitle widget apply the css to the INPUT atribute ro #formbox #}  
+        <div class="formBoxError">{{ form_errors(form.artTitle) }}</div>
+        
+        <div id="titreAnnonce">{{ form_label(form.artPrice) }}</div>
+        <div id="formbox">{{ form_widget(form.artPrice) }} </div> 
+        <div class="formBoxError">{{ form_errors(form.artPrice) }}</div>
+        
+        <div id="titreAnnonce">{{ form_label(form.artDescription) }}</div>
+        <div id="formbox">{{ form_widget(form.artDescription) }} </div> 
+        <div class="formBoxError">{{ form_errors(form.artDescription) }}</div>
+        
+        <div id="titreAnnonce">{{ form_label(form.artDescription) }}</div> {# radiobutton default non "true" --> not sold/for sell -> checked False no dispaly #}
+        <div id="formbox">{{ form_widget(form.artDescription) }} </div> 
+        {# no erroe display #}
+        
+        <div id="signupbutton"> {{ form_row(form.submit, {"lable": "Publier"}) }} </div> {# display form submit button #}
+
+
+    </section>
+{% endblock %}

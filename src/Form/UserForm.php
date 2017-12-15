@@ -127,13 +127,12 @@ class UserForm extends AbstractType
                 ChoiceType::class, 
                 [
                     'choices' => [
-                        'placeholder' => 'Choisissez votre pays',
                         'Germany' => 'Deutschland',
                         'Begium' => 'Belgique',
                         'France' => 'France' ,
                         'Luxembourg' => 'Luxembourg',
                     ],
-                    'placeholder' => 'Choose an option',
+                    'placeholder' => 'Choisissez votre pays',
                 ]
             );
         

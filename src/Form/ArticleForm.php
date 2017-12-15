@@ -8,6 +8,12 @@
 
 namespace Form;
 
+/**
+ * Description of UserForm
+ *
+ * @author MG
+ */
+
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -24,12 +30,12 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @author Etudiant
  */
-class UserForm extends AbstractType
+class ArticleForm extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add(
-                'firstname',
+                'artTitle',
                 TextType::class,
                 [
                     'constraints' => [
@@ -37,26 +43,15 @@ class UserForm extends AbstractType
                     ]
                 ]
             )->add(
-                'lastname',
-                TextType::class,
+                'artPrice',
+                IntegerType::class,
                 [
                     'constraints' => [
                         new Assert\NotBlank()
                     ]
                 ]
             )->add(
-                'email',
-                TextType::class,
-                [
-                    'constraints' => [
-                        new Assert\NotBlank(),
-                        new Assert\Regex([
-                            'pattern' => '/^[a-zA-Z0-9.!#$%&’*+\=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/'
-                        ])
-                    ]
-                ]
-            )->add(
-                'telephone',
+                'artDescription',
                 TextType::class,
                 [
                     'constraints' => [
@@ -64,76 +59,19 @@ class UserForm extends AbstractType
                     ]
                 ]
             )->add(
-                'username',
-                TextType::class,
-                [
-                    'constraints' => [
-                        new Assert\NotBlank(),
-                        new Assert\Regex([
-                            'pattern' => '/^[A-Za-z0-9_-]$/'
-                        ])
-                    ]
-                ]
+                'artSold',  // ce ci doit être un raidio boton pout true ou false
+                IntegerType::class,// ca cest pas just pas trouver dans le manuel
+                []
             )->add(
-                'password',
-                RepeatedType::class,
-                [
-                    'type' => PasswordType::class,
-                    'required' => true,
-                    'first_options' => [
-                        'label' => 'Password'
-                    ],
-                    'second_options' => [
-                        'label' => 'Repeat password'
-                    ],
-                    'constraints' => [
-                        new Assert\NotBlank()
-                    ]
-                ]
-            )->add(
-                'number',
-                TextType::class,
-                [
-                    'constraints' => [
-                        new Assert\NotBlank(),
-                    ]
-                ] 
-            )->add(
-                'street',
-                TextType::class,
-                [
-                    'constraints' => [
-                        new Assert\NotBlank(),
-                    ]
-                ]  
-            )->add(
-                'zip',
-                TextType::class,
-                [
-                    'constraints' => [
-                        new Assert\NotBlank(),
-                    ]
-                ]  
-            )->add(
-                'city',
-                TextType::class,
-                [
-                    'constraints' => [
-                        new Assert\NotBlank(),
-                    ]
-                ]   
-            )->add(
-                'country', 
-                ChoiceType::class, 
+                'categorie', 
+                ChoiceType::class, //doit encore fonctionner avec la DB provisoir pour template
                 [
                     'choices' => [
-                        'placeholder' => 'Choisissez votre pays',
-                        'Germany' => 'Deutschland',
-                        'Begium' => 'Belgique',
-                        'France' => 'France' ,
-                        'Luxembourg' => 'Luxembourg',
+                        'Littérature' => 'Littérature',
+                        'Informatique' => 'Informatique',
+                        'Meubles' => 'Meubles' ,
                     ],
-                    'placeholder' => 'Choose an option',
+                    'placeholder' => 'Choisissez votre catégorie',
                 ]
             );
         
@@ -144,7 +82,7 @@ class UserForm extends AbstractType
 
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefault('data_class', UserModel::class);
+        $resolver->setDefault('data_class', ArticleModel::class);
         $resolver->setDefault('standalone', false);
         
         $resolver->addAllowedTypes('standalone', 'bool');
