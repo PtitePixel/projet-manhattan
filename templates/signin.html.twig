@@ -7,21 +7,22 @@
     <h1 id="sign">Inscrivez-vous</h1>    
     <form id="champsign" action="">
         <h3 id="inscription">Nom</h3>
-            <input type="text" maxlength="15" autofocus>      
+            <input type="text" maxlength="15" required autofocus>      
         <h3 id="inscription">Prenom</h3>          
-            <input type="text" maxlength="15">  
+            <input type="text" maxlength="15" required>  
         <h3 id="inscription">Numero de Maison/Appartement</h3>          
-            <input type="text" maxlength="4">      
+            <input type="text" maxlength="4" required>      
         <h3 id="inscription">Rue</h3>         
-            <input type="text" maxlength="30">      
+            <input type="text" maxlength="30" required>      
         <h3 id="inscription">Code Postal</h3>         
-            <input type="text" maxlength="6">      
+            <input type="text" maxlength="6" required>      
         <h3 id="inscription">Ville</h3>         
-            <input type="text" maxlength="15">      
+            <input type="text" maxlength="15" required>      
         <!-- List of all countries in drop down -->
         <h3 id="inscription">Pays</h3>
-        <select class="countries" name="pays">
+        <select class="countries" name="pays" required>
 
+        <option value="" </option>
         <option value="Afghanistan">Afghanistan </option>
         <option value="Afrique_Centrale">Afrique Centrale </option>
         <option value="Afrique_du_sud">Afrique du Sud </option>
@@ -256,13 +257,13 @@
 
         <!-- Contact Details : Phone & Email -->
         <h3 id="inscription">Telephone</h3>      
-            <input type="text" maxlength="14">      
+            <input type="text" maxlength="14" pattern=".{9,}" required title ="9 characters minimum">      
         <h3 id="inscription">Adresse Email</h3>      
-            <input type="text" maxlength="30">      
+            <input type="text" maxlength="30" required>      
         <h3 id="inscription"> Nom d'Utilisateur</h3>        
-                <input type="text" maxlength="15">        
+                <input type="text" maxlength="15" pattern=".{5,}" required title ="5 characters minimum">        
         <h3 id="inscription"> Mot de Passe</h3>        
-                <input type="text" maxlength="15">
+                <input type="text" maxlength="15" pattern=".{5,}" required title ="5 characters minimum">
         <input id="inscriverbutton" type="submit" value="S'inscrire">    
     </form>
   </section>
