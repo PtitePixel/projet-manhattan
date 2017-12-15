@@ -265,6 +265,7 @@ body {
   margin-top: 2rem;
   box-shadow: 3px 7px 10px 1px #13455C;
   border-radius: 3px;
+  overflow: auto;
 }
 .articledetails {
    font-family: "Padauk"; 
