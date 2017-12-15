@@ -8,32 +8,81 @@
 <h1 class="contactez"> Nous Contacter </h1>
 
 <div class="contact">
-    <div class="col-sm-4">
-
         <p>
             Adresse : <br>
             9 avenue des hauts fourneaux <br>
             4362 Esch-Sur-Alzette
         </p> 
         <p>
-            Téléphonne : <br>
+            Telephonne : <br>
             +352 597  482 573
         </p>  
         <p>
             E-mail : <br>
             lux@bay.lu
-        </p>  
-
-    </div>  
+        </p>   
 </div>
 <div class="contact">
+    <h4 class="team"> We are </h4>
+</div>    
+<div class="contact">
+  
+    <p>
+        Laureen François <br>
+        <script language="JavaScript">
+            var User = "francois.laureen"; 
+            var Domain = "gmail.com"; 
+            var Address = User+String.fromCharCode(64)+Domain;
+            document.write('<a href="mai'+'lto:'+Address+'">'+Address+'</a>');
+        </script>
+    </p> 
+    <p>
+        Michel Ginsbach <br>
+        <script language="JavaScript">
+            var User = "michel"; 
+            var Domain = "gmail.com"; 
+            var Address = User+String.fromCharCode(64)+Domain;
+            document.write('<a href="mai'+'lto:'+Address+'">'+Address+'</a>');
+         </script>
+    </p> 
+    <p>
+        Conor Dunne <br>
+         <script language="JavaScript">
+            var User = "conordu"; 
+            var Domain = "gmail.com"; 
+            var Address = User+String.fromCharCode(64)+Domain;
+            document.write('<a href="mai'+'lto:'+Address+'">'+Address+'</a>');
+         </script>
+    </p> 
+</div>    
 
-    <div class="col-sm-4">
 
-        GOOGLE MAP
+    <div id="map">
+ 
+     
+     
+    </div>    
 
-    </div>        
-</div>
+<!-- API GOOGLE MAP -->
+<script>
+      function initMap() {
+        var uluru = {lat: 49.5024421, lng: 5.949233599999957};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC1dy8BzPUu7h2-YKjk2blzfchmUQx45Q&callback=initMap">
+</script>
+
+
+
 
 {% endblock %}
 

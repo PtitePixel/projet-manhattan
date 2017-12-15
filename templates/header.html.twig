@@ -8,7 +8,7 @@
                 
                 <div class="dropdown-content" id="myDropdown">
                   <a href="#">Informatique</a>
-                  <a href="#">Littérature</a>
+                  <a href="#">Litterature</a>
                   <a href="#">Meubles</a>
                 </div>
         
@@ -20,7 +20,12 @@
              <i class="fa fa-search"></i>  
           </button>
         </form>
-        <a href="{{ path("login") }}"> Log In/Sign In </a>
+       <!-- IF empty session -->
+        <li> <a href="{{ path("signin") }}"> Inscription </a> </li>
+        <li> <a href="{{ path("login") }}"> Connexion </a> </li>
+       <!-- IF session -->
+        <li> <a href="{{ path("user") }}"> Mon Compte </a> </li> 
+        <li> <a href="{{ path("logout") }}"> Deconnexion</a> </li> 
       </ul>
 
  

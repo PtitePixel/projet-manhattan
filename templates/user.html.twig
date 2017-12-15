@@ -1,4 +1,4 @@
-
+{% extends "layout.html.twig" %}
 
 {% block content %}
 <div class="userInfo">
@@ -14,8 +14,7 @@
     </ul>    
      
 </div>   
-<div class="create"    
-     <button id="new"> + Creer Annonce </button>
-
+<div class="create">
+     <a href="{{ path("article") }}"> + Creer Annonce </a>
 </div>      
 {% endblock %}
