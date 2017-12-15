@@ -252,10 +252,11 @@ body {
   box-shadow: 3px 7px 10px 1px #13455C;
 }
 .articledetails {
-    font-family: "Padauk"; 
+   font-family: "Padauk"; 
    font-size: 23px;
    margin-left: 2rem;
    margin-top: 2rem;
+   background-color: #1A6487;
 }
 #titreAnnonce {
    font-family: "Padauk"; 
