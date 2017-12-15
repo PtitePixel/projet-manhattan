@@ -164,12 +164,17 @@ body {
                                     /** INSCRIPTION **/
 /* Signup Details */
 .signup{
-  margin-left: 14rem;
+  margin-left: 41rem;
   border: 1px solid #13455C;
   width: 30%;
   box-shadow: 3px 7px 10px 1px #13455C;
   border-radius: 3px;
 }
+
+.signup input{
+    width: 217px;
+}
+
 #sign {
     font-family: "Padauk";
     font-size: 30px;
@@ -202,8 +207,10 @@ body {
   font-size : 18px;
   margin-bottom: 1rem;
   box-shadow: 1px 3px 4px rgba(0, 0, 0, .5);
-margin-top:40px;  
+  margin-top:40px; 
+  width: 90px;
 }
+
 #signupbutton:hover {
  box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);   
 }
