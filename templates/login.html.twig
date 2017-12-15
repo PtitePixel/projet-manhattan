@@ -3,17 +3,13 @@
 {% block content%}
   <!-- Sign up Details -->
 
-  <section class="signup">
-    <div id="titrebgcouleur">
-        <h1 id="sign">Inscrivez-vous</h1>
-    </div>
-    <form id="champ" action="">
+  <section class="signup">   
+    <h1 id="sign">Inscrivez-vous</h1>    
+    <form id="champsign" action="">
         <h3 id="inscription">Nom</h3>
             <input type="text">      
         <h3 id="inscription">Prenom</h3>          
-            <input type="text">      
-        <h3 id="inscription">Date de Naissance</h3>
-          <input type="date" name="" value="">
+            <input type="text">  
         <h3 id="inscription">Numero de Maison/Appartement</h3>          
             <input type="text">      
         <h3 id="inscription">Rue</h3>         
@@ -24,7 +20,7 @@
             <input type="text">      
     <!-- List of all countries in drop down -->
     <h3 id="inscription">Pays</h3>
-    <select name="pays" class="country">
+    <select class="countries" name="pays">
 
     <option value="Afghanistan">Afghanistan </option>
     <option value="Afrique_Centrale">Afrique Centrale </option>
@@ -263,9 +259,9 @@
         <input type="text">      
     <h3 id="inscription">Adresse Email</h3>      
         <input type="text">      
-    <h3 id="inscription"> Username</h3>        
+    <h3 id="inscription"> Nom d'Utilisateur</h3>        
             <input type="text">        
-    <h3 id="inscription"> Password</h3>        
+    <h3 id="inscription"> Mot de Passe</h3>        
             <input type="text">
     <input id="signupbutton" type="submit" value="S'inscrire">    
         </form>
@@ -276,15 +272,15 @@
 </div>
   
   <!-- Login -->
-  <section class="login">
-     <div id="titrebgcouleur">
-        <h1 id="sign">Se connecter</h1>
-     </div>
-    <h3 id="inscription">Nom d'Utilisateur</h3>
-    <input id="champ" type="text" autofocus>
-    <h3 id="inscription">Mot de Passe</h3>
-    <input id="champ" type="text">
-    <h5 id="mdp">Mot de Passe oublié? Cliquez-ici!</h5>
+  <section class="login">     
+     <h1 id="sign">Se connecter</h1>     
+     <form>
+       <h3 id="inscription">Nom d'Utilisateur</h3>
+       <input id="champ" type="text" autofocus>
+       <h3 id="inscription">Mot de Passe</h3>
+       <input id="champ" type="text">
+       <a href=""><h5 id="mdp">Mot de Passe oublié? Cliquez-ici!</h5></a>
+     </form>
     <input id="signupbutton"  type="submit" value="Connexion">
   </section>
 {% endblock %}
