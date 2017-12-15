@@ -15,12 +15,27 @@ $app->get('/', function () use ($app) {
 ->bind('homepage')
 ;
 
-//PAGE LOGIN
+//PAGE INSCRIPTION
+$app->get('/signin', function () use ($app) {
+    return $app['twig']->render('signin.html.twig', array());
+})
+->bind('signin')
+;
+
+//PAGE CONNEXION
 $app->get('/login', function () use ($app) {
     return $app['twig']->render('login.html.twig', array());
 })
 ->bind('login')
 ;
+
+//DECONNEXION
+$app->get('/logout', function () use ($app) {
+    return $app['twig']->render('logout.html.twig', array());
+})
+->bind('logout')
+;
+
 
 // PAGE COMPTE
 $app->get('/user', function () use ($app) {

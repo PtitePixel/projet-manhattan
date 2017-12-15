@@ -34,8 +34,8 @@
     margin: auto;
 }
 .menu li {
-   margin : 1rem 2rem 0rem 3rem;
-}
+   margin : 1rem 2rem 0rem 2rem;
+}  
  /* roll down menu */
 .dropdown {
     float: left;
@@ -161,7 +161,7 @@ body {
     color: white;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
 }    
-                                     /******* Login/Signup Page *******/
+                                    /** INSCRIPTION **/
 /* Signup Details */
 .signup{
   margin-left: 14rem;
@@ -211,13 +211,13 @@ margin-top:40px;
 .countries{
    height:30px;
 }
-/* Login Details */
+                                            /* LOGIN DETAILS*/
 .login{
   border: 1px solid #13455C;
   width: 30%;
   box-shadow: 3px 7px 10px 1px #13455C;
-  margin-left: 67rem;
-  margin-top: -35rem;
+  margin: auto;
+  margin-top: 5rem;
   border-radius: 3px;
 }
 
