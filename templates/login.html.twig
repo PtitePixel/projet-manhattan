@@ -7,17 +7,17 @@
     <h1 id="sign">Inscrivez-vous</h1>    
     <form id="champsign" action="">
         <h3 id="inscription">Nom</h3>
-            <input type="text">      
+            <input type="text" maxlength="15" autofocus>      
         <h3 id="inscription">Prenom</h3>          
-            <input type="text">  
+            <input type="text" maxlength="15">  
         <h3 id="inscription">Numero de Maison/Appartement</h3>          
-            <input type="text">      
+            <input type="text" maxlength="3">      
         <h3 id="inscription">Rue</h3>         
-            <input type="text">      
+            <input type="text" maxlength="25">      
         <h3 id="inscription">Code Postal</h3>         
-            <input type="text">      
+            <input type="text" maxlength="6">      
         <h3 id="inscription">Ville</h3>         
-            <input type="text">      
+            <input type="text" maxlength="15">      
     <!-- List of all countries in drop down -->
     <h3 id="inscription">Pays</h3>
     <select class="countries" name="pays">
@@ -256,13 +256,13 @@
 
     <!-- Contact Details : Phone & Email -->
     <h3 id="inscription">Telephone</h3>      
-        <input type="text">      
+        <input type="text" maxlength="14">      
     <h3 id="inscription">Adresse Email</h3>      
-        <input type="text">      
+        <input type="text" maxlength="30">      
     <h3 id="inscription"> Nom d'Utilisateur</h3>        
-            <input type="text">        
+            <input type="text" maxlength="10">        
     <h3 id="inscription"> Mot de Passe</h3>        
-            <input type="text">
+            <input type="text" maxlength="10">
     <input id="signupbutton" type="submit" value="S'inscrire">    
         </form>
   </section>
@@ -276,7 +276,7 @@
      <h1 id="sign">Se connecter</h1>     
      <form>
        <h3 id="inscription">Nom d'Utilisateur</h3>
-       <input id="champ" type="text" autofocus>
+       <input id="champ" type="text">
        <h3 id="inscription">Mot de Passe</h3>
        <input id="champ" type="text">
        <a href=""><h5 id="mdp">Mot de Passe oublié? Cliquez-ici!</h5></a>
