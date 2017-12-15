@@ -15,6 +15,13 @@ $app->get('/', function () use ($app) {
 ->bind('homepage')
 ;
 
+// PAGE RECHERCHE
+$app->get('/search', function () use ($app) {
+    return $app['twig']->render('search.html.twig', array());
+})
+->bind('search')
+;
+
 //PAGE INSCRIPTION
 $app->get('/signin', function () use ($app) {
     return $app['twig']->render('signin.html.twig', array());

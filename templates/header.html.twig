@@ -16,9 +16,9 @@
         </li> 
         <form id="searchbar" action="" method="get">
           <input type="text" name="search" placeholder="Rechercher..." />
-          <button type="submit" id="submit" />
-             <i class="fa fa-search"></i>  
-          </button>
+          
+          <a href="{{ path ("search") }}"> <i class="fa fa-search"> </i> </a>  
+         
         </form>
        <!-- IF empty session -->
         <li> <a href="{{ path("signin") }}"> Inscription </a> </li>
