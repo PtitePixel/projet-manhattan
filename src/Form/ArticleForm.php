@@ -59,9 +59,14 @@ class ArticleForm extends AbstractType
                     ]
                 ]
             )->add(
-                'artSold',  // ce ci doit être un raidio boton pout true ou false
-                IntegerType::class,// ca cest pas just pas trouver dans le manuel
-                []
+                'artSold',  // ce ci doit être un raidio pout true ou false
+                RadioType::class,// ca cest pas just pas trouver dans le manuel
+                [
+                    'choices' => [
+                        'true' => 'Mettre en vente',
+                        'false' => 'Déjà vendu (ne va plus être affiché sur le site)'
+                    ]
+                ]
             )->add(
                 'categorie', 
                 ChoiceType::class, //doit encore fonctionner avec la DB provisoir pour template

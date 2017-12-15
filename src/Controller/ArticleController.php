@@ -36,29 +36,24 @@ class AirticleController {
     public function createArticleAction(Request $request, Application $app) {
  
         if (!$request->request->has('art_title')) {
-            $message = 'user_firstname must be defined';
+            $message = 'Insérer votre titre de votre Article!';
             return $app->json(['status' => 'error', 'message' => $message], 400);
         }
 
         if (!$request->request->has('art_price')) {
-            $message = 'user_lastname must be defined';
-            return $app->json(['status' => 'error', 'message' => $message], 400);
-        }
-
-        if (!$request->request->has('art_price')) {
-            $message = 'user_username must be defined';
+            $message = 'Insérer votre prix!';
             return $app->json(['status' => 'error', 'message' => $message], 400);
         }
 
         if (!$request->request->has('art_description')) {
-            $message = 'user_email must be defined';
+            $message = 'Insérer votre description!';
             return $app->json(['status' => 'error', 'message' => $message], 400);
         }
 
         $artTitle = $request->request->get('art_title');
         $artPrice = $request->request->get('art_price');
         $artDescription = $request->request->get('art_description');
-        $art_sold = $request->request->get('art_sold');
+        $artsold = $request->request->get('art_sold');
         
 
         $roleInstance = $app['orm.em']->getRepository(\Models\ArticleModel::class)->findOneByLabel($role);
@@ -66,8 +61,8 @@ class AirticleController {
             throw new NotFoundHttpException('Role ' . $role . ' not found');
         }
 
-        $user = new UserModel();
-        $user->setArtTitle($artTitle)
+        $article= new UserModel();
+        $article->setArtTitle($artTitle)
                 ->setArtPrice($artPrice)
                 ->setArtDescription($artDescription)
                 ->setArtSold($artSold);
