@@ -1,0 +1,79 @@
+                            
+{% extends "layout.html.twig" %}
+
+{% block content%}
+
+    {# Sign up form #}
+    {{ form_start(form) }} {# display open tag of the form #}
+    <section class="signup">
+        
+        <div id="titrebgcouleur">Inscrivez-vous</div>
+        
+        <div id="inscription">{{ form_label(form.lastname) }} </div> {# Before this was an <H3> so corret the css #}
+        <div id="formbox"> {{ form_widget(form.lastname) }}</div>{# display form firstname widget apply the css to the INPUT atribute ro #formbox #} 
+        <div class="formBoxError">{{ form_errors(form.lastname) }}</div>
+        
+        <div id="inscription">{{ form_label(form.firstname) }}</div>
+        <div id="formbox">{{ form_widget(form.firstname) }} </div> 
+        <div class="formBoxError">{{ form_errors(form.firstname) }}</div>
+        
+        <div id="inscription">{{ form_label(form.zip) }}</div>
+        <div id="formbox"> {{ form_widget(form.zip) }} </div> 
+        <div class="formBoxError">{{ form_errors(form.zip) }}</div>
+        
+        <div id="inscription">{{ form_label(form.city) }}</div>
+        <div id="formbox"> {{ form_widget(form.city) }} </div>
+        <div class="formBoxError">{{ form_errors(form.city) }}</div>
+        
+        {# List of countries in drop down (MG have given an other/same ID change if you need  #}
+        <div id="inscription">{{ form_label(form.country) }}</div>
+        <div id="formbox"> {{ form_widget(form.country) }}</div>
+        <div class="formBoxError">{{ form_errors(form.country) }}</div>
+        
+        {# Contact Details : Phone & Email #}
+        <div id="inscription">{{ form_label(form.telephone) }}</div>      
+        <div id="formbox"> {{ form_widget(form.telephone) }} </div> 
+        <div class="formBoxError" >{{ form_errors(form.telephone) }}</div>
+        
+        <div id="inscription">{{ form_label(form.email) }}</div>      
+        <div id="formbox"> {{ form_widget(form.email) }} </div> 
+        <div class="formBoxError">{{ form_errors(form.email) }}</div>
+        
+        <div id="inscription"> {{ form_label(form.username) }}</div>        
+        <div id="formbox">{{ form_widget(form.username) }} </div>
+        <div class="formBoxError">{{ form_errors(form.username) }}</div>
+        
+        <div id="inscription"> {{ form_label(form.password) }}</div>        
+        <div id="formbox"> {{ form_widget(form.password) }} </div>
+        <div class="formBoxError">{{ form_errors(form.password) }}</div>
+        
+        <div id="signupbutton"> {{ form_row(form.submit, {"lable": "S'inscrire"}) }} </div> {# display form submit button #}     
+ 
+    </section>
+    {{ form_rest(form) }}
+    {{ form_end(form) }} {# display close tag of the form #}
+
+    <div class="greenline"></div>
+
+    {# Login form #}
+    {{ form_start(form) }} {# display open tag of the form #}
+    <section class="login">
+        <div id="titrebgcouleur">Se connecter</div>
+             
+        <div id="inscription">{{ form_label(form.username) }}</div>
+        <div id="formbox"> {{ form_widget(form.username) }} </div>
+        <div class="formBoxError">{{ form_errors(form.username) }}</div>
+        
+        <div id="inscription">{{ form_label(form.password) }}</div>
+        <div id="formbox"> {{ form_widget(form.password) }} </div>
+        <div class="formBoxError">{{ form_errors(form.password) }}</div> 
+        
+        <div id="mdp">Mot de Passe oublié? Cliquez-ici!</div>
+        
+        <div id="signupbutton">{{ form_row(form.submit, { 'label': 'Connection' }) }}</div>
+    </section>
+    {{ form_rest(form) }}
+    {{ form_end(form) }} {# display close tag of the form #}
+
+{% endblock %}
+
