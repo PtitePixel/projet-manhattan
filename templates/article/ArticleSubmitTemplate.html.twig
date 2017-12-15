@@ -15,9 +15,9 @@
         <div class="formBoxError">{{ form_errors(form.artTitle) }}</div>
         
         {#file upload test  no DB#}
-        <div id="titreAnnonce">Upload picture</div>
-        <div id="formbox"> {{ form_widget(formupload) }}</div>
-        <div class="formBoxError">{{ form_errors(form.artTitle) }}</div>
+        <div id="titreAnnonce">{{ form_label(form.picture) }}</div>
+        <div id="formbox"> {{ form_widget(form.picture) }}</div>
+        <div class="formBoxError">{{ form_errors(form.picture) }}</div>
         
         <div id="titreAnnonce">{{ form_label(form.artPrice) }}</div>
         <div id="formbox">{{ form_widget(form.artPrice) }} </div> 

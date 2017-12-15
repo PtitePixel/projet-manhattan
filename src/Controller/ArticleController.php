@@ -61,7 +61,7 @@ class AirticleController {
             throw new NotFoundHttpException('Role ' . $role . ' not found');
         }
 
-        $article= new UserModel();
+        $article= new ArticleModel();
         $article->setArtTitle($artTitle)
                 ->setArtPrice($artPrice)
                 ->setArtDescription($artDescription)
@@ -73,7 +73,7 @@ class AirticleController {
 
         return $app->json($user->toArray());
     }
-// c'est a partir d'ici que j'ai des problemes mg
+// c'est a partir d'ici que j'ai des problemes MG
     
     public function deleteAction(Request $request, Application $app, $artId) {
         $manager = $app['orm.em'];

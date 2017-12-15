@@ -66,7 +66,7 @@ $app->get('/contact', function () use ($app) {
 ;
 
 //upload image to directory test1  ****************************
-$app->match('/', function (Request $request) use ($app){
+/**$app->match('/', function (Request $request) use ($app){
     $formupload = $app['form.factory']
         ->createBuilder('form')
         ->add('FileUpload', 'file')
@@ -81,7 +81,7 @@ $app->match('/', function (Request $request) use ($app){
         if ($formupload->isValid()) {
             $files = $request->files->get($formupload->getName());
             /* Make sure that Upload Directory is properly configured and writable */
-            $path = __DIR__.'/../web/upload/';
+/**            $path = __DIR__.'/../web/upload/';
             $filename = $files['FileUpload']->getClientOriginalName();
             $files['FileUpload']->move($path,$filename);
             $message = 'File was successfully uploaded!';
@@ -99,7 +99,7 @@ $app->match('/', function (Request $request) use ($app){
     
     return $response;
     
-}, 'GET|POST');
+/**}, 'GET|POST');*/
 //end of first test********************************************
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {

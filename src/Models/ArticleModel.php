@@ -37,6 +37,11 @@ class ArticleModel {
      */
     private $artSold;
     
+    /**
+     * @Column (name="art_picture", Type="integer")
+     */
+    private $picture;
+    
     // Getter
     function getArtId() {
         return $this->artId;
@@ -57,6 +62,9 @@ class ArticleModel {
     function getArtSold() {
         return $this->artSold;
     }
+     public function getPicture() {
+        return $this->picture;
+    }
 
     // Setter
     function setArtTitle($artTitle) {
@@ -76,6 +84,10 @@ class ArticleModel {
 
     function setArtSold($artSold) {
         $this->artSold = $artSold;
+        return $this;
+    }
+     public function setBrochure($picture) {
+        $this->brochure = $picture;
         return $this;
     }
 
