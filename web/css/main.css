@@ -228,7 +228,7 @@ body {
   font-family: "Padauk";
   font-size : 20px; 
   margin-bottom: 0px;
-  margin-top: 8px; 
+  margin-top: 9px; 
 }
 
 #champsign {
@@ -245,14 +245,11 @@ body {
   font-size : 18px;
   margin-bottom: 1rem;
   box-shadow: 1px 3px 4px rgba(0, 0, 0, .5);
+margin-top:40px;  
 }
 
 #signupbutton:hover {
  box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);   
-}
-
-.date{
-    width: 178px;
 }
 
 .countries{
@@ -269,14 +266,18 @@ body {
 }
 
 .login form{
-    margin-left: 2rem;
+    margin-left: 2rem;    
 }
 
 #mdp {
     font-family: "Padauk";
     font-size : 13px;    
     margin-top: 0.5rem;    
-    color:black;
+    color: black;
+    width: 180px;
+    position: absolute;
+    float:left;     
+}
 
                                                     /******Posting Article Page*******/
 
@@ -298,8 +299,7 @@ body {
    margin-left: 2rem; 
 }
 
-input {
-   //border-radius: 5rem;
+input {  
    border-radius: 3px;
 }
 
