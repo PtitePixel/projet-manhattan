@@ -34,8 +34,8 @@
     margin: auto;
 }
 .menu li {
-   margin : 1rem 2rem 0rem 3rem;
-}
+   margin : 1rem 2rem 0rem 2rem;
+}  
  /* roll down menu */
 .dropdown {
     float: left;
@@ -161,64 +161,89 @@ body {
     color: white;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
 }    
-                                     /******* Login/Signup Page *******/
+                                    /** INSCRIPTION **/
 /* Signup Details */
 .signup{
-  margin-left: 10rem;
+  margin-left: 41rem;
   border: 1px solid #13455C;
   width: 30%;
   box-shadow: 3px 7px 10px 1px #13455C;
   border-radius: 3px;
 }
+
+.signup input{
+    width: 217px;
+}
+
 #sign {
     font-family: "Padauk";
     font-size: 30px;
     color:white;
+    text-align: center;
+    margin: 0px;
+    height: 40px; 
+    background-color: #1A6487;
+    line-height: normal;
 }
 #inscription {  
   font-family: "Padauk";
   font-size : 20px; 
+  margin-bottom: 0px;
+  margin-top: 9px; 
 }
-#champ {
+
+
+
+#champsign {
    margin-left: 2rem;  
    margin-top: 1rem;
 }
 #signupbutton{
   margin-left: 75%;
-  background-color: #13455C;
   border : none;
+  background-color: #1A6487;
   color: white;
   font-family: "Padauk";
   font-size : 18px;
   margin-bottom: 1rem;
   box-shadow: 1px 3px 4px rgba(0, 0, 0, .5);
+  margin-top:40px; 
+  width: 90px;
 }
+
 #signupbutton:hover {
  box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);   
 }
-#titrebgcouleur{
-    border: 1px solid green;
-    border-radius: 3px;
-    background-color: green;
-    height: 40px;
+
+.countries{
+   height:30px;
 }
-/* Login Details */
+                                            /* LOGIN DETAILS*/
 .login{
   border: 1px solid #13455C;
   width: 30%;
   box-shadow: 3px 7px 10px 1px #13455C;
-  margin-left: 60rem;
-  margin-top: -35rem;
+  margin: auto;
+  margin-top: 5rem;
+  border-radius: 3px;
+}
+
+.login form{
+    margin-left: 2rem;    
 }
 #mdp {
     font-family: "Padauk";
-    font-size : 13px;
-    margin-left: 2rem;
-    margin-top: 0.5rem;
+    font-size : 13px;    
+    margin-top: 0.5rem;    
+    color: black;
+    width: 180px;
+    position: absolute;
+    float:left;     
 }
+                                                                                
+                                                    /******Posting Article Page*******/
 
-                                      /******Posting Article Page*******/
-                                                  
+
 .article{
   border: 1px solid #13455C;
   width: 50%;
@@ -241,6 +266,12 @@ body {
 #article {
    margin-left: 2rem; 
 }
+
+
+input {  
+   border-radius: 3px;
+}
+
 #cat {
    margin-left: 2rem; 
    margin-top: 0.5rem;
@@ -276,6 +307,7 @@ body {
     width: 50%; 
     margin: auto;
 }
+
 
                                                  /* MENTIONS LEGALES */
 .mentions {
