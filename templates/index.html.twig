@@ -1,6 +1,53 @@
 {% extends "layout.html.twig" %}
 
+{% block head %}
+	{{ parent() }}
+	<script src="{{ asset('js/admin/adminUser.js') }}"></script>
+{% endblock %}
+
 {% block content %}
+<<<<<<< HEAD
+	<div>
+		{% if user is not null %}
+			{{ user.username }} is connected with roles [
+				{{ user.getRoles()|join(', ')|lower }}
+			]
+		{% endif %}
+	</div>
+	<h4>Create user :</h4>
+	
+	<form id="form_create_user">
+		<div>
+			<label for="user_username">Username :</label>
+			<input type="text" name="user_username"/>
+		</div>
+		<div>
+			<label for="user_password">Password :</label>
+			<input type="text" name="user_password"/>
+		</div>
+		<div>
+			<label for="user_role">Role :</label>
+			<select name="user_role">
+				<option value="ROLE_ADMIN">ROLE_ADMIN</option>
+				<option value="ROLE_USER">ROLE_USER</option>
+			</select>
+		</div>
+		<div>
+			<label for="user_firstname">Firstname :</label>
+			<input type="text" name="user_firstname"/>
+		</div>
+		<div>
+			<label for="user_lastname">Lastname :</label>
+			<input type="text" name="user_lastname"/>
+		</div>
+		<button type="button" id="btn_create_user">Send</button>
+	</form>
+	
+    <h4>Current users :</h4>
+	
+	<ul id="userId">
+	</ul>
+=======
 <container> 
 <h1 class="annonces"> Articles </h1>
 <div class="maincontent">      
@@ -79,4 +126,5 @@
     </div>       
 </div>   
 </container>    
+>>>>>>> dd4690e2e943ca46ed9f3a8f97996c0580ff2349
 {% endblock %}
