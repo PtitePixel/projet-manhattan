@@ -6,6 +6,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Controller\UserController;
+use Controller\ArticleController;
 
 //Request::setTrustedProxies(array('127.0.0.1'));
 
@@ -52,9 +53,7 @@ $app->get('/user', function () use ($app) {
 ;
 
 //PAGE ANNONCE
-$app->get('/article', function () use ($app) {
-    return $app['twig']->render('article.html.twig', array());
-})
+$app->get('/article', "Controller\ArticleController::createArticleAction")
 ->bind('article')
 ;
 

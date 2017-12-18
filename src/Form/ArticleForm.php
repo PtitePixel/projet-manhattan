@@ -12,13 +12,16 @@ namespace Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Models\UserModel;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\RadioType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Validator\Constraints as Assert;
+use Models\ArticleModel;
+use Controller\ArticleController;
 
 /**
  * Description of UserForm
@@ -54,29 +57,26 @@ class ArticleForm extends AbstractType
                     ]
                 ]
             )->add(
-                'uploadfile', 
-                FileType::class,[
-                    'label' => 'TÃ©lÃ©versez votre photo (JPG file)'
-                    ]
-            )->add(
-                'artSold',  // ce ci doit Ãªtre un raidio pout true ou false
-                RadioType::class,// ca cest pas just pas trouver dans le manuel
+                'artSold',  // ce ci doit être un raidio pout true ou false
+                ChoiceType::class,// ca cest pas just pas trouver dans le manuel
                 [
                     'choices' => [
                         'true' => 'Mettre en vente',
-                        'false' => 'DÃ©jÃ  vendu (ne va plus Ãªtre affichÃ© sur le site)'
-                    ]
+                        'false' => 'Déjà vendu (ne va plus être affiché sur le site)'
+                    ],
+                    'expanded'=> true,
+                    'multiple'=> false
                 ]
             )->add(
-                'categorie', 
+                'artCategorie', 
                 ChoiceType::class, //doit encore fonctionner avec la DB provisoir pour template
                 [
                     'choices' => [
-                        'LittÃ©rature' => 'LittÃ©rature',
+                        'Littérature' => 'Littérature',
                         'Informatique' => 'Informatique',
                         'Meubles' => 'Meubles' ,
                     ],
-                    'placeholder' => 'Choisissez votre catÃ©gorie',
+                    'placeholder' => 'Choisissez votre catégorie',
                 ]
             );
         
