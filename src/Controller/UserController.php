@@ -89,13 +89,11 @@ class UserController {
             $message = 'Password must be defined';
             return $app->json(['status' => 'error', 'message' => $message], 400);
         }
-
+        // like in php  $lastname = $_POST['user_lastname'];
         $username = $request->request->get('user_username');
         $password = $request->request->get('user_password');
         $role = $request->request->get('user_role');
-        // $firstname = $_POST['user_firstname'];
         $firstname = $request->request->get('user_firstname');
-        // $lastname = $_POST['user_lastname'];
         $lastname = $request->request->get('user_lastname');
         $email = $request->request->get('user_email');
         $telephone = $request->request->get('user_telephone');

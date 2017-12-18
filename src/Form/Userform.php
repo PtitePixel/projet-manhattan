@@ -30,7 +30,9 @@ class LoginForm extends AbstractType
                     'constraints' => [
                         new Assert\NotBlank(),
                         new Assert\Regex([
-                            'pattern' => '/^[A-Za-z0-9_-]$/'
+                            'pattern' => '/^[A-Za-z0-9_-]$/',
+                            'message'=> 'Pas de caractère spécieaux'
+                            
                         ])
                     ]
                 ]

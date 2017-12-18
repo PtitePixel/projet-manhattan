@@ -23,10 +23,8 @@ $app->get('/search', function () use ($app) {
 ->bind('search')
 ;
 
-//PAGE INSCRIPTION
-$app->get('/signin', function () use ($app) {
-    return $app['twig']->render('signin.html.twig', array());
-})
+//PAGE INSCRIPTION qui fait maintement appel au controlleur
+$app->match('/signin', "Controller\UserController::createUserAction")
 ->bind('signin')
 ;
 

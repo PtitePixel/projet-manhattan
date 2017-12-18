@@ -41,7 +41,7 @@ class ArticleController {
             $entityManager->persist($article);
             $entityManager->flush();
 
-            return $app->redirect($app['url_generator']->generate('login'));
+            return $app->redirect($app['url_generator']->generate('homepage'));
         }
 
         return $app['twig']->render(

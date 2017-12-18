@@ -22,7 +22,7 @@ class ArticleModel {
     private $artTitle;
 
     /**
-     * @Column(name="art_price", type="integer", length=10, nullable=false)
+     * @Column(name="art_price", type="float", length=10, nullable=false)
      */
     private $artPrice;
 
