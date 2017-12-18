@@ -31,11 +31,14 @@ $app->get('/signin', function () use ($app) {
 ;
 
 //PAGE CONNEXION
-$app->get('/login', function () use ($app) {
-    return $app['twig']->render('login.html.twig', array());
-})
-->bind('login')
-;
+$app->get('/login', function(Request $request) use ($app){
+    return $app['twig']->render('login.html.twig', 
+        [
+            'error' => $app['security.last_error']($request),
+            'last_username' => $app['session']->get('_security.last_username')
+        ]
+    );
+})->bind('login');
 
 //DECONNEXION
 $app->get('/logout', function () use ($app) {
@@ -52,7 +55,7 @@ $app->get('/user', function () use ($app) {
 ->bind('user')
 ;
 
-//PAGE ANNONCE
+//PAGE ANNONCE qui fait maintement appel au controlleur
 $app->match('/article', "Controller\ArticleController::createArticleAction")
 ->bind('article')
 ;
@@ -70,49 +73,6 @@ $app->get('/contact', function () use ($app) {
 })
 ->bind('contact')
 ;
-
-// PAGE DETAILS
-$app->get('/details', function () use ($app) {
-    return $app['twig']->render('articledetails.html.twig', array());
-})
-->bind('details')
-;
-//upload image to directory test1  ****************************
-/**$app->match('/', function (Request $request) use ($app){
-    $formupload = $app['form.factory']
-        ->createBuilder('form')
-        ->add('FileUpload', 'file')
-        ->getForm()
-    ;
-    $request = $app['request'];
-    $message = 'Upload a file';
-    if ($request->isMethod('POST')) {
-        
-        $formupload->bind($request);
-        
-        if ($formupload->isValid()) {
-            $files = $request->files->get($formupload->getName());
-            /* Make sure that Upload Directory is properly configured and writable */
-/**            $path = __DIR__.'/../web/upload/';
-            $filename = $files['FileUpload']->getClientOriginalName();
-            $files['FileUpload']->move($path,$filename);
-            $message = 'File was successfully uploaded!';
-        } else {
-            $message = 'File was not uploaded!';
-        }
-    }
-    $response =  $app['twig']->render(
-        'test1.html.twig',  
-        array(
-            'message' => $message,
-            'formupload' => $formupload->createView()
-        )
-    );
-    
-    return $response;
-    
-/**}, 'GET|POST');*/
-//end of first test********************************************
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {

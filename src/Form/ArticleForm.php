@@ -61,7 +61,6 @@ class ArticleForm extends AbstractType
                     ],
                     'label' => 'Description'
                 ]
-           
             )->add(
                 'artCategorie', 
                 ChoiceType::class, //doit encore fonctionner avec la DB provisoir pour template

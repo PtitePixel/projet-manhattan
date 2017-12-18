@@ -34,50 +34,39 @@ class UserController {
     }
 
     public function createUserAction(Request $request, Application $app) {
-        /*
-         * if (!isset($_POST['user_firstname'])) {
-         *  message = 'user_firstname must be defined';
-         *  return $app->json(['status' => 'error', 'message' => $message], 400);
-         * }
-         */
+
         if (!$request->request->has('user_firstname')) {
-            $message = 'user_firstname must be defined';
+            $message = 'Firstname must be defined';
             return $app->json(['status' => 'error', 'message' => $message], 400);
         }
 
-        /*
-         * if (!isset($_POST['user_lastname'])) {
-         *  message = 'user_lastname must be defined';
-         *  return $app->json(['status' => 'error', 'message' => $message], 400);
-         * }
-         */
         if (!$request->request->has('user_lastname')) {
-            $message = 'user_lastname must be defined';
+            $message = 'Lastname must be defined';
             return $app->json(['status' => 'error', 'message' => $message], 400);
         }
 
         if (!$request->request->has('user_username')) {
-            $message = 'user_username must be defined';
+            $message = 'Username must be defined';
             return $app->json(['status' => 'error', 'message' => $message], 400);
         }
 
         if (!$request->request->has('user_email')) {
-            $message = 'user_email must be defined';
+            $message = 'Email must be defined';
             return $app->json(['status' => 'error', 'message' => $message], 400);
         }
 
         if (!$request->request->has('user_telephone')) {
-            $message = 'user_telephone must be defined';
+            $message = 'Telephone must be defined';
             return $app->json(['status' => 'error', 'message' => $message], 400);
         }
 
         if (!$request->request->has('user_number')) {
-            $message = 'user_house_number must be defined';
+            $message = 'House_number must be defined';
             return $app->json(['status' => 'error', 'message' => $message], 400);
         }
 
         if (!$request->request->has('user_street')) {
-            $message = 'user_street must be defined';
+            $message = 'Street must be defined';
             return $app->json(['status' => 'error', 'message' => $message], 400);
         }
 
@@ -101,10 +90,6 @@ class UserController {
             return $app->json(['status' => 'error', 'message' => $message], 400);
         }
 
-        if (!$request->request->has('user_role')) {
-            $message = 'user_role must be defined';
-            return $app->json(['status' => 'error', 'message' => $message], 400);
-        }
         $username = $request->request->get('user_username');
         $password = $request->request->get('user_password');
         $role = $request->request->get('user_role');

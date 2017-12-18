@@ -4,9 +4,8 @@
 namespace Models;
 
 /**
- * Description of UserArticle
- *
- * @author MG
+ * @Entity()
+ * @Table(name="article")
  */
 class ArticleModel {
     
@@ -31,14 +30,9 @@ class ArticleModel {
      * @Column(name="art_description", type="string", length=1000, nullable=false)
      */
     private $artDescription;
-    
-    /**
-     * @Column (name="art_sold", Type="integer")
-     */
-    private $artSold;
-    
+   
      /**
-     * @Column (name="art_categorie ", Type="string", lenght=50, nullable=false)
+     * @Column (name="art_categorie ", type="string", length=50, nullable=false)
      */
     private $artCategorie ;
     
@@ -58,10 +52,6 @@ class ArticleModel {
     function getArtDescription() {
         return $this->artDescription;
     }
-
-    function getArtSold() {
-        return $this->artSold;
-    }
     
     function getArtCategorie() {
         return $this->artCategorie;
@@ -80,11 +70,6 @@ class ArticleModel {
 
     function setArtDescription($artDescription) {
         $this->artDescription = $artDescription;
-        return $this;
-    }
-
-    function setArtSold($artSold) {
-        $this->artSold = $artSold;
         return $this;
     }
     

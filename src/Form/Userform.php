@@ -13,52 +13,17 @@ use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Validator\Constraints as Assert;
+use Controller\UserController;
 
 /**
- * Description of UserForm
- *
- * @author Etudiant
+ * @Entity()
+ * @Table(name="user")
  */
-class UserForm extends AbstractType
+class LoginForm extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add(
-                'firstname',
-                TextType::class,
-                [
-                    'constraints' => [
-                        new Assert\NotBlank()
-                    ]
-                ]
-            )->add(
-                'lastname',
-                TextType::class,
-                [
-                    'constraints' => [
-                        new Assert\NotBlank()
-                    ]
-                ]
-            )->add(
-                'email',
-                TextType::class,
-                [
-                    'constraints' => [
-                        new Assert\NotBlank(),
-                        new Assert\Regex([
-                            'pattern' => '/^[a-zA-Z0-9.!#$%&’*+\=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/'
-                        ])
-                    ]
-                ]
-            )->add(
-                'telephone',
-                TextType::class,
-                [
-                    'constraints' => [
-                        new Assert\NotBlank(),
-                    ]
-                ]
-            )->add(
                 'username',
                 TextType::class,
                 [
@@ -71,18 +36,14 @@ class UserForm extends AbstractType
                 ]
             )->add(
                 'password',
-                RepeatedType::class,
+                TextType::class,
                 [
                     'type' => PasswordType::class,
                     'required' => true,
-                    'first_options' => [
-                        'label' => 'Password'
-                    ],
-                    'second_options' => [
-                        'label' => 'Repeat password'
-                    ],
-                    'constraints' => [
-                        new Assert\NotBlank()
+                    [
+                        'constraints' => [
+                            new Assert\NotBlank()
+                        ]
                     ]
                 ]
             )->add(
