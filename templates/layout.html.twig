@@ -2,10 +2,10 @@
 <html>
     <head>
 		{% block head %}
-        <title>{% block title '' %} Luxbay </title>
+        <title>{% block title '' %} LuxBay - Vente de particuliers à particuliers</title>
 
         <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" />
-        <script src="{{ asset('js/client.js') }}"></script>
+        
         <!-- font awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
@@ -16,14 +16,8 @@
         
     </head>
     <body>
+     {% include 'header.html.twig' %}    
         {% block content %}{% endblock %}
-     
-        
-          
-     
-      
-        
-        
         
      {% include 'footer.html.twig' %}  
      
@@ -36,6 +30,6 @@
         <!-- CDN JQuery UI -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
         <script src="{{ asset('js/script.js') }}"></script> 
-        
+        <script src="{{ asset('js/client.js') }}"></script>
     </body>
 </html>

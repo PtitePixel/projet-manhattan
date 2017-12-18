@@ -50,7 +50,7 @@ class ArticleController {
                         ]
         );
     }
-// c'est a partir d'ici que j'ai des problemes mg
+// c'est a partir d'ici que j'ai des problemes MG
     
     public function deleteAction(Request $request, Application $app, $artId) {
         $manager = $app['orm.em'];

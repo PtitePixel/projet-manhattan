@@ -57,12 +57,12 @@ class ArticleForm extends AbstractType
                     ]
                 ]
             )->add(
-                'artSold',  // ce ci doit Ãªtre un raidio pout true ou false
+                'artSold',  // ce ci doit être un raidio pout true ou false
                 ChoiceType::class,// ca cest pas just pas trouver dans le manuel
                 [
                     'choices' => [
                         'true' => 'Mettre en vente',
-                        'false' => 'DÃ©jÃ  vendu (ne va plus Ãªtre affichÃ© sur le site)'
+                        'false' => 'Déjà vendu (ne va plus être affiché sur le site)'
                     ],
                     'expanded'=> true,
                     'multiple'=> false
@@ -72,11 +72,11 @@ class ArticleForm extends AbstractType
                 ChoiceType::class, //doit encore fonctionner avec la DB provisoir pour template
                 [
                     'choices' => [
-                        'LittÃ©rature' => 'LittÃ©rature',
+                        'Littérature' => 'Littérature',
                         'Informatique' => 'Informatique',
                         'Meubles' => 'Meubles' ,
                     ],
-                    'placeholder' => 'Choisissez votre catÃ©gorie',
+                    'placeholder' => 'Choisissez votre catégorie',
                 ]
             );
         
@@ -91,6 +91,11 @@ class ArticleForm extends AbstractType
         $resolver->setDefault('standalone', false);
         
         $resolver->addAllowedTypes('standalone', 'bool');
+        $resolver->setDefaults(
+                [
+                    'data_class' => ArticleModel::class,
+                ]   
+        );
     }
 }
     

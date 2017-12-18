@@ -87,6 +87,7 @@ class ArticleModel {
         $this->artSold = $artSold;
         return $this;
     }
+    
    function setArtCategorie($artCategorie) {
         $this->artCategorie = $artCategorie;
         return $this;
