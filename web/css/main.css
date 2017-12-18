@@ -1,17 +1,17 @@
+/* Fonts imported */
 @font-face {
      font-family: "Kreon";
      src:url(../fonts/Kreon-Regular.ttf);
   }
-
 @font-face {
        font-family: "Padauk";
        src:url(../fonts/Padauk-Regular.ttf);
   }
 
 
-                                /* HEADER */
+                                   /* HEADER */
 
-/* menu  */
+/* Menu */
 .menu {
  background-color : #13455C;
  width : 100%;
@@ -36,7 +36,7 @@
 .menu li {
    margin : 1rem 2rem 0rem 2rem;
 }  
- /* roll down menu */
+ /* Roll down menu */
 .dropdown {
     float: left;
 }
@@ -58,7 +58,6 @@
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     margin-left: 2rem;
 }
-
 .dropdown-content a {
     float: none;
     color: white;
@@ -73,7 +72,7 @@
 .show {
     display: block;
 }
-/* search button */
+/* Search button */
 form {
     margin-top: 1rem;
 }
@@ -90,7 +89,7 @@ form {
     color : white;
     cursor: pointer;
 }
-/* sign in /log in link */
+/* Sign In Links */
 .menu a{
     color: white;
     font-family: "Padauk";
@@ -124,7 +123,7 @@ form {
     font-family: "Padauk";
     text-decoration: none;
 }
-                                         /* INDEX */     
+                                       /* INDEX */     
 
 container {
  width : 100%;
@@ -170,11 +169,9 @@ body {
   box-shadow: 3px 7px 10px 1px #13455C;
   border-radius: 3px;
 }
-
 .signup input{
     width: 217px;
 }
-
 #sign {
     font-family: "Padauk";
     font-size: 30px;
@@ -191,9 +188,6 @@ body {
   margin-bottom: 0px;
   margin-top: 9px; 
 }
-
-
-
 #champsign {
    margin-left: 2rem;  
    margin-top: 1rem;
@@ -210,14 +204,12 @@ body {
   margin-top:40px; 
   width: 90px;
 }
-
 #signupbutton:hover {
  box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);   
 }
-
 .countries{
    height:30px;
-}
+}                                           
                                             /* LOGIN DETAILS*/
 .login{
   border: 1px solid #13455C;
@@ -227,7 +219,6 @@ body {
   margin-top: 5rem;
   border-radius: 3px;
 }
-
 .login form{
     margin-left: 2rem;    
 }
@@ -239,8 +230,7 @@ body {
     width: 180px;
     position: absolute;
     float:left;     
-}
-                                                                                
+}                                                                                
                                                     /* POST ANNONCE */
                                                     
 #formbox {
@@ -253,7 +243,6 @@ body {
   margin: auto;
   margin-top: 2rem;
   box-shadow: 3px 7px 10px 1px #13455C;
-  
 }
 .articledetails {
    font-family: "Padauk"; 
@@ -261,7 +250,6 @@ body {
    margin-left: 2rem;
    margin-top: 2rem;
    background-color: #1A6487;
-
 }
 #titreAnnonce {
    font-family: "Padauk"; 
@@ -272,12 +260,9 @@ body {
 #article {
    margin-left: 2rem; 
 }
-
-
 input {  
    border-radius: 3px;
 }
-
 #cat {
    margin-left: 2rem; 
    margin-top: 0.5rem;
@@ -300,8 +285,7 @@ input {
 .formBoxError {
     font-size: 15px;
     color : red;
-}
-                                                    /* CONTACT */
+}                                                   /* CONTACT */
 .contactez {
    font-family: "Kreon"; 
    color: #13455C;
@@ -329,8 +313,6 @@ input {
     width: 50%; 
     margin: auto;
 }
-
-
                                                  /* MENTIONS LEGALES */
 .mentions {
    width : 70%;
@@ -440,16 +422,14 @@ input {
 #contactAnnonce:hover {
       box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);   
 }
-                                    
-                                    
-                                    /* For mobile phones: */
+                                                                       
+                                    /* For Tablets */
 
 @media screen and (min-width:650px) and (max-height:959px) {
                                 /* HEADER */
     .main li {
       margin : 0rem 2rem 1rem 0rem;
     }
-    
                                 /* ARTICLE */
     .article {
         width : 30%;

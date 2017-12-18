@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html>
     <head>
-		{% block head %}
+		
         <title>{% block title '' %} LuxBay - Vente de particuliers à particuliers</title>
 
         <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" />
         
-        <!-- font awesome -->
+        {# Font awesome #}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
-         <!-- CSS Bootstrap -->
+        {# CSS Bootstrap #}
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
         
 		{% endblock %}
         
     </head>
     <body>
-     {% include 'header.html.twig' %}    
+     {% include 'header.html.twig' %}  
+     
         {% block content %}{% endblock %}
         
      {% include 'footer.html.twig' %}  
      
      
-        <!-- CDN : jquery -->
+        {# CDN : jquery #}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" ></script>
-        <!-- CDN : script bootstrap -->
+        {# CDN : script bootstrap #}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-        <!-- CDN JQuery UI -->
+        {# CDN JQuery UI #}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
         <script src="{{ asset('js/script.js') }}"></script> 
-        <script src="{{ asset('js/client.js') }}"></script>
+       
     </body>
 </html>
