@@ -82,22 +82,22 @@ class UserController {
         }
 
         if (!$request->request->has('user_city')) {
-            $message = 'user_city must be defined';
+            $message = 'City must be defined';
             return $app->json(['status' => 'error', 'message' => $message], 400);
         }
 
         if (!$request->request->has('user_zip')) {
-            $message = 'user_zip must be defined';
+            $message = 'Zip must be defined';
             return $app->json(['status' => 'error', 'message' => $message], 400);
         }
 
         if (!$request->request->has('user_country')) {
-            $message = 'user_country must be defined';
+            $message = 'Country must be defined';
             return $app->json(['status' => 'error', 'message' => $message], 400);
         }
 
         if (!$request->request->has('user_password')) {
-            $message = 'user_password must be defined';
+            $message = 'Password must be defined';
             return $app->json(['status' => 'error', 'message' => $message], 400);
         }
 

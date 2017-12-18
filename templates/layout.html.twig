@@ -1,45 +1,23 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{% block title '' %}LuxBay - Vente de Particuliers à Particuliers</title>
+		{% block head %}
+        <title>{% block title '' %} LuxBay - Vente de particuliers à particuliers</title>
 
         <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" />
+        
         <!-- font awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
          <!-- CSS Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
-        <!-- CSS JQuery UI-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
         
+		{% endblock %}
         
-        
-        <script type="text/javascript">
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
-            _gaq.push(['_trackPageview']);
-
-            (function() {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
-        </script>
     </head>
-  
     <body>
-     {% include 'header.html.twig' %}  
-     
-     
-     
+     {% include 'header.html.twig' %}    
         {% block content %}{% endblock %}
-     
-        
-          
-     
-      
-        
-        
         
      {% include 'footer.html.twig' %}  
      
@@ -52,6 +30,6 @@
         <!-- CDN JQuery UI -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
         <script src="{{ asset('js/script.js') }}"></script> 
-        
+        <script src="{{ asset('js/client.js') }}"></script>
     </body>
 </html>
