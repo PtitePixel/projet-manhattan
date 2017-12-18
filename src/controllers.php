@@ -72,6 +72,12 @@ $app->get('/contact', function () use ($app) {
 ->bind('contact')
 ;
 
+// PAGE DETAILS
+$app->get('/details', function () use ($app) {
+    return $app['twig']->render('articledetails.html.twig', array());
+})
+->bind('details')
+;
 //upload image to directory test1  ****************************
 /**$app->match('/', function (Request $request) use ($app){
     $formupload = $app['form.factory']
