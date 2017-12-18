@@ -240,8 +240,7 @@ body {
   box-shadow: 3px 7px 10px 1px #13455C;
   margin: auto;
   margin-top: 5rem;
-  border-radius: 3px;  
-  
+  border-radius: 3px; 
 }
 
 .login form{
@@ -256,6 +255,7 @@ body {
     position: absolute;
     float:left;     
 }
+
                                                                                 
                                                     /* POST ANNONCE */
                                                     
@@ -527,11 +527,12 @@ input {
       background-color: #58C2F4;
       overflow-x: hidden;
       padding-top: 60px;
-      transition: 0.5s;      
+      transition: 0.5s;        
     }  
         
     #sidenav li{
       list-style-type: none;
+      
     }
     
     #sidenav a {
@@ -545,6 +546,7 @@ input {
     
     #sidenav a:hover {
       color: #red;
+      background-color: green;           
     }
     
     #sidenav .closebtn {
