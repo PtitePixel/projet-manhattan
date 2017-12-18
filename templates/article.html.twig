@@ -1,46 +1,36 @@
 {% extends "layout.html.twig" %}
 
 {% block content %}
-  <!-- Add New Article Box -->
+ {# Add New Article Box #}
+ {{ form_start(form) }}  
+ {# display open tag of the form #}
   <section class="article">
-    <h1 class="articledetails">Entrez les details de votre article :</h1>
-    <h2 id="titreAnnonce">Titre</h2>
-      <form id="article" action="">
-        <input type="text" autofocus>    
-      </form>
-    <h2 id="titreAnnonce">Prix</h2>
-      <form id="article" action="">
-        <input type="text" placeholder="€">
-      </form>
-    <h2 id="titreAnnonce">Description</h2>
-      <form id="article" action="">
-        <textarea name="application" id="application" rows="3" cols="30"></textarea>
-      </form>  
-    <h2 id="titreAnnonce">Choisir une catégorie:</h2>
-     
-      <select id="cat" name="" id="">
-          <option value=""> ----------------- </option>
-        <optgroup label="Littérature">
-          <option value="">Livres</option>
-          <option value="">Bandes Déssinées</option>
-          <option value="">Manuels Scolaires</option>
-        </optgroup>
-        <optgroup label="Informatique">
-          <option value="">Accessoires</option>
-          <option value="">Bureautiques</option>
-          <option value="">Consoles</option>
-        </optgroup>
-        <optgroup label="Meubles">
-          <option value="">Armoires</option>
-          <option value="">Canapé</option>
-          <option value="">Lampes</option>
-        </optgroup>
-      </select>
+      <h1 id="sign">Entrez les details de votre article :</h1>
+   
+      {# Title Input #}
+      <div id="titreAnnonce">{{ form_label(form.artTitle) }}</div> 
+      <div id="formbox"> {{ form_widget(form.artTitle) }}</div>
+      <div class="formBoxError">{{ form_errors(form.artTitle) }}</div> <br>
+      {# Price Input#}
+      <div id="titreAnnonce">{{ form_label(form.artPrice) }}</div>
+      <div id="formbox">{{ form_widget(form.artPrice) }} </div> 
+      <div class="formBoxError">{{ form_errors(form.artPrice) }}</div>
+      
+      {# Category #}
+      <div id="titreAnnonce">{{ form_label(form.artCategorie) }}</div>
+      <div id="formbox"> {{ form_widget(form.artCategorie) }}</div>
+      <div class="formBoxError">{{ form_errors(form.artCategorie) }}</div>
+      
+      <div id="titreAnnonce">{{ form_label(form.artDescription) }}</div> 
+      <div id="formbox">{{ form_widget(form.artDescription) }} </div> 
+      {# no error display #}
 
       </br>
-      <input id="post" type="submit" value="Poster l'annonce">
-
+      {# display form submit button #}
+      <div> {{ form_row(form.submit) }} </div> 
 
 
   </section>
+{{ form_rest(form) }}
+{{ form_end(form) }} {# display close tag of the form #}
 {% endblock %}

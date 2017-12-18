@@ -1,11 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace Controller;
 
 use Symfony\Component\HttpFoundation\Request;
@@ -20,7 +14,7 @@ use Form\ArticleForm;
  *
  * @author Etudiant
  */
-class AirticleController {
+class ArticleController {
 
     public function getAllAction(Request $request, Application $app) {
         $repository = $app['orm.em']->getRepository(\Models\ArticleModel::class);
@@ -32,48 +26,31 @@ class AirticleController {
 
         return $app->json($result);
     }
-
+//genere la form de lârticle
     public function createArticleAction(Request $request, Application $app) {
  
-        if (!$request->request->has('art_title')) {
-            $message = 'Insérer votre titre de votre Article!';
-            return $app->json(['status' => 'error', 'message' => $message], 400);
+        $article = new ArticleModel();
+
+        $formFactory = $app['form.factory'];
+        $articleForm = $formFactory->create(ArticleForm::class, $article, ['standalone' => true]);
+
+        $articleForm->handleRequest($request);
+        if ($articleForm->isSubmitted() && $articleForm->isValid()) {
+            $entityManager = $app['orm.em'];
+
+            $entityManager->persist($article);
+            $entityManager->flush();
+
+            return $app->redirect($app['url_generator']->generate('login'));
         }
 
-        if (!$request->request->has('art_price')) {
-            $message = 'Insérer votre prix!';
-            return $app->json(['status' => 'error', 'message' => $message], 400);
-        }
-
-        if (!$request->request->has('art_description')) {
-            $message = 'Insérer votre description!';
-            return $app->json(['status' => 'error', 'message' => $message], 400);
-        }
-
-        $artTitle = $request->request->get('art_title');
-        $artPrice = $request->request->get('art_price');
-        $artDescription = $request->request->get('art_description');
-        $artsold = $request->request->get('art_sold');
-        
-
-        $roleInstance = $app['orm.em']->getRepository(\Models\ArticleModel::class)->findOneByLabel($role);
-        if (!$role) {
-            throw new NotFoundHttpException('Role ' . $role . ' not found');
-        }
-
-        $article= new UserModel();
-        $article->setArtTitle($artTitle)
-                ->setArtPrice($artPrice)
-                ->setArtDescription($artDescription)
-                ->setArtSold($artSold);
-
-        $entityManager = $app['orm.em'];
-        $entityManager->persist($user);
-        $entityManager->flush();
-
-        return $app->json($user->toArray());
+        return $app['twig']->render(
+                        'article.html.twig', [
+                    'form' => $articleForm->createView()
+                        ]
+        );
     }
-// c'est a partir d'ici que j'ai des problemes mg
+// c'est a partir d'ici que j'ai des problemes MG
     
     public function deleteAction(Request $request, Application $app, $artId) {
         $manager = $app['orm.em'];

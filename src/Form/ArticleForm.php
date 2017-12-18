@@ -1,10 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 namespace Form;
 
@@ -17,13 +12,17 @@ namespace Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Models\UserModel;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\RadioType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Validator\Constraints as Assert;
+use Models\ArticleModel;
+use Controller\ArticleController;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 /**
  * Description of UserForm
@@ -40,48 +39,49 @@ class ArticleForm extends AbstractType
                 [
                     'constraints' => [
                         new Assert\NotBlank()
-                    ]
-                ]
+                    ],
+                    'label' => 'Titre'
+                 ]   
+                  
             )->add(
                 'artPrice',
                 IntegerType::class,
                 [
                     'constraints' => [
                         new Assert\NotBlank()
-                    ]
+                    ],
+                    'label' => 'Prix'
                 ]
             )->add(
                 'artDescription',
-                TextType::class,
+                TextareaType::class,
                 [
                     'constraints' => [
                         new Assert\NotBlank(),
-                    ]
+                    ],
+                    'label' => 'Description'
                 ]
+           
             )->add(
-                'artSold',  // ce ci doit être un raidio pout true ou false
-                RadioType::class,// ca cest pas just pas trouver dans le manuel
-                [
-                    'choices' => [
-                        'true' => 'Mettre en vente',
-                        'false' => 'Déjà vendu (ne va plus être affiché sur le site)'
-                    ]
-                ]
-            )->add(
-                'categorie', 
+                'artCategorie', 
                 ChoiceType::class, //doit encore fonctionner avec la DB provisoir pour template
                 [
                     'choices' => [
-                        'Littérature' => 'Littérature',
+                        'Litterature' => 'Litterature',
                         'Informatique' => 'Informatique',
                         'Meubles' => 'Meubles' ,
                     ],
-                    'placeholder' => 'Choisissez votre catégorie',
+                    'placeholder' => 'Choisissez votre categorie',
+                    'label' => 'Categorie'
                 ]
             );
         
         if ($options['standalone']) {
-            $builder->add('submit', SubmitType::class);
+            $builder->add('submit', SubmitType::class,
+             [
+                    
+                    'label' => "Publier l'annonce"
+             ]);
         }
     }
 
@@ -91,6 +91,11 @@ class ArticleForm extends AbstractType
         $resolver->setDefault('standalone', false);
         
         $resolver->addAllowedTypes('standalone', 'bool');
+        $resolver->setDefaults(
+                [
+                    'data_class' => ArticleModel::class,
+                ]   
+        );
     }
 }
     
