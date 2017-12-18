@@ -3,6 +3,7 @@
 {% block content %}
     <!-- Add New Article Box -->
     <section class="article">
+        {{ form_enctype(form) }} {# pas sur de miôn coup mais If true, form_enctype will render enctype="multipart/form-data". This only applies to the root form element.#}
         <div class="articledetails">Entrez les details de votre article :</div>{# Before this was an <H2> so corret the css #}
         
         <div id="inscription">{{ form_label(form.categorie) }}</div>
@@ -12,6 +13,11 @@
         <div id="titreAnnonce">c</div>
         <div id="formbox"> {{ form_widget(form.artTitle) }}</div>{# display form artTitle widget apply the css to the INPUT atribute ro #formbox #}  
         <div class="formBoxError">{{ form_errors(form.artTitle) }}</div>
+        
+        {#file upload test  no DB#}
+        <div id="titreAnnonce">{{ form_label(form.picture) }}</div>
+        <div id="formbox"> {{ form_widget(form.picture) }}</div>
+        <div class="formBoxError">{{ form_errors(form.picture) }}</div>
         
         <div id="titreAnnonce">{{ form_label(form.artPrice) }}</div>
         <div id="formbox">{{ form_widget(form.artPrice) }} </div> 

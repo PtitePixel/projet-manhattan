@@ -59,6 +59,11 @@ class ArticleForm extends AbstractType
                     ]
                 ]
             )->add(
+                'uploadfile', 
+                FileType::class,[
+                    'label' => 'Téléversez votre photo (JPG file)'
+                    ]
+            )->add(
                 'artSold',  // ce ci doit être un raidio pout true ou false
                 RadioType::class,// ca cest pas just pas trouver dans le manuel
                 [
@@ -91,6 +96,11 @@ class ArticleForm extends AbstractType
         $resolver->setDefault('standalone', false);
         
         $resolver->addAllowedTypes('standalone', 'bool');
+        $resolver->setDefaults(
+                [
+                    'data_class' => ArticleModel::class,
+                ]   
+        );
     }
 }
     
