@@ -260,7 +260,11 @@ body {
    font-size: 23px;
    margin-left: 2rem;
    margin-top: 2rem;
+<<<<<<< HEAD
+   background-color: #1A6487;
+=======
    
+>>>>>>> e692da203ca77a7e69ae44c45f8e9f49eea975dc
 }
 #titreAnnonce {
    font-family: "Padauk"; 
