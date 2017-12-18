@@ -260,11 +260,8 @@ body {
    font-size: 23px;
    margin-left: 2rem;
    margin-top: 2rem;
-<<<<<<< HEAD
    background-color: #1A6487;
-=======
-   
->>>>>>> e692da203ca77a7e69ae44c45f8e9f49eea975dc
+
 }
 #titreAnnonce {
    font-family: "Padauk"; 
@@ -299,6 +296,10 @@ input {
 }
 #article_form_submit:hover {
   box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);     
+}
+.formBoxError {
+    font-size: 15px;
+    color : red;
 }
                                                     /* CONTACT */
 .contactez {
@@ -412,7 +413,7 @@ input {
 }
 .detailsPrix {
       float: right;
-      margin-right: 23rem;
+      margin-right: 23.5rem;
       margin-top: -10rem;
 }
 .detailsText {
