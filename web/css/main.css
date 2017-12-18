@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 @font-face {
      font-family: "Kreon";
      src:url(../fonts/Kreon-Regular.ttf);
@@ -25,37 +23,26 @@
 .menu h1 {
      color: white;
      margin-left: 1rem;
-     
      display: flex;
      font-size: 40px;
      font-weight: lighter;
-
      font-family: "Kreon";
 }
-
 .menu ul {
     list-style: none;
     display: flex;
-    margin-top: 0.8rem;
     margin: auto;
-    margin-left: 3
-        
-        0%;
-
-  }
-
+}
 .menu li {
-   margin : 1rem 2rem 0rem 5rem;
-  }
-
+   margin : 1rem 2rem 0rem 2rem;
+}  
  /* roll down menu */
 .dropdown {
     float: left;
 }
-
 .dropdown {
     cursor: pointer;
-    font-size: 20px;
+    font-size: 18px;
     font-family: "Padauk";
     border: none;
     outline: none;
@@ -63,7 +50,6 @@
     margin-left: 4rem;
     background-color: inherit;
 }
-
 .dropdown-content {
     display: none;
     position: absolute;
@@ -76,9 +62,7 @@
 .dropdown-content a {
     float: none;
     color: white;
-
     padding-left: 2rem;
-
     text-decoration: none;
     display: block;
     text-align: left;
@@ -86,104 +70,74 @@
 .dropdown-content a:hover {
   background-color: #0e3445;
 }
-
 .show {
     display: block;
 }
-
 /* search button */
-
 form {
     margin-top: 1rem;
-
 }
-
 #searchbar input {
     border-radius: 5rem;
     border : none;
     background-color: #0e3445;
     padding-left: 10px;
     color: white;
-
 }
 button {
     background-color: #13455C;
     border : none;
     color : white;
     cursor: pointer;
-
 }
-
 /* sign in /log in link */
 .menu a{
     color: white;
     font-family: "Padauk";
     text-decoration: none;
     margin-top: 1rem;
-    margin-left: 2rem;
     font-size: 18px;
-
 }
-
+.menu li:last-child {
+    margin-right: 4rem;
+}
 .menu a:hover {
     color: white;
     text-decoration: none;
 }
 
-<<<<<<< HEAD
-/*************  FOOTER *************/
-=======
                                     /*FOOTER */         
->>>>>>> Conor
-
-
 #footer {
     width : 100%;
-    height : 4rem;
+    height : 3rem;
     background-color : #13455C;
     position: fixed;
     bottom:0;
 }
-
 #footer p {
     color: white;
     font-family: "Padauk";
     text-align: center;
-    margin-top: 0.5rem;
 }
-
 #footer p a {
     color : white;
     font-family: "Padauk";
     text-decoration: none;
 }
-
-<<<<<<< HEAD
-/******** INDEX *********/
-=======
                                          /* INDEX */     
->>>>>>> Conor
-
-
 
 container {
  width : 100%;
-
 }
-
 .row{
   width : 80%;
   margin-top: 1rem;
 }
-
 body {
   padding-top: 6rem;
-
-
 }
-
 .annonces {
-     font-family: "Padauk";
+     font-family: "Kreon";
      color:#13455C;
      text-align: center;
      margin-top: 1rem;
@@ -197,119 +151,124 @@ body {
    position: absolute;
    font-family: "Padauk";
 }
-
-
 .btn{
     background-color: #13455C;
     color: white;
     text-decoration: none;
     box-shadow: 1px 3px 4px rgba(0, 0, 0, .5);
 }
-    
 .btn:hover {
     color: white;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
 }    
-
-
-
-<<<<<<< HEAD
-/******* LOG IN / SIGN IN PAGE *******/
-=======
-                                                    /******* Login/Signup Page *******/
->>>>>>> Conor
-
+                                    /** INSCRIPTION **/
 /* Signup Details */
-
-
 .signup{
-  margin-left: 10rem;
+  margin-left: 41rem;
   border: 1px solid #13455C;
   width: 30%;
   box-shadow: 3px 7px 10px 1px #13455C;
   border-radius: 3px;
 }
 
+.signup input{
+    width: 217px;
+}
+
 #sign {
     font-family: "Padauk";
     font-size: 30px;
     color:white;
+    text-align: center;
+    margin: 0px;
+    height: 40px; 
+    background-color: #1A6487;
+    line-height: normal;
 }
-
 #inscription {  
   font-family: "Padauk";
   font-size : 20px; 
+  margin-bottom: 0px;
+  margin-top: 9px; 
 }
 
-#champ {
+
+
+#champsign {
    margin-left: 2rem;  
    margin-top: 1rem;
 }
-
-
 #signupbutton{
   margin-left: 75%;
-  background-color: #13455C;
   border : none;
+  background-color: #1A6487;
   color: white;
   font-family: "Padauk";
   font-size : 18px;
   margin-bottom: 1rem;
   box-shadow: 1px 3px 4px rgba(0, 0, 0, .5);
+  margin-top:40px; 
+  width: 90px;
 }
 
 #signupbutton:hover {
  box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);   
 }
 
-
-#titrebgcouleur{
-    border: 1px solid green;
-    border-radius: 3px;
-    background-color: green;
-    height: 40px;
+.countries{
+   height:30px;
 }
-
-/* Login Details */
+                                            /* LOGIN DETAILS*/
 .login{
   border: 1px solid #13455C;
   width: 30%;
   box-shadow: 3px 7px 10px 1px #13455C;
-  margin-left: 60rem;
-  margin-top: -35rem;
+  margin: auto;
+  margin-top: 5rem;
+  border-radius: 3px;
 }
 
-
+.login form{
+    margin-left: 2rem;    
+}
 #mdp {
     font-family: "Padauk";
-    font-size : 13px;
-    margin-left: 2rem;
-    margin-top: 0.5rem;
+    font-size : 13px;    
+    margin-top: 0.5rem;    
+    color: black;
+    width: 180px;
+    position: absolute;
+    float:left;     
 }
-
-
+                                                                                
                                                     /******Posting Article Page*******/
+
 
 .article{
   border: 1px solid #13455C;
-  width: 50%;
+  width: 40%;
   margin: auto;
   margin-top: 2rem;
   box-shadow: 3px 7px 10px 1px #13455C;
 }
+.articledetails {
+    font-family: "Padauk"; 
+   font-size: 23px;
+   margin-left: 2rem;
+   margin-top: 2rem;
+}
 #titreAnnonce {
    font-family: "Padauk"; 
-   font-size: 23px;
+   font-size: 20px;
    margin-left: 2rem;
    margin-top: 0.5rem;
 }
-
 #article {
    margin-left: 2rem; 
 }
 
-input {
-   //border-radius: 5rem;
+
+input {  
    border-radius: 3px;
 }
 
@@ -318,20 +277,22 @@ input {
    margin-top: 0.5rem;
 }
 #post {
-    background-color: #13455C;
-    color: white;
-    text-align: center;
-    margin-left: 2rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 1px 3px 4px rgba(0, 0, 0, .5);
+  margin-left: 70%;
+  border : none;
+  background-color: #1A6487;
+  color: white;
+  font-family: "Padauk";
+  font-size : 18px;
+  margin-bottom: 1rem;
+  box-shadow: 1px 3px 4px rgba(0, 0, 0, .5);
+  margin-top:40px; 
+ 
 }
-
 #post:hover {
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+   box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);     
 }
-                                                    /* CONTACT */
 
+                                                    /* CONTACT */
 .contactez {
    font-family: "Kreon"; 
    color: #13455C;
@@ -346,13 +307,12 @@ input {
  padding-top: 2rem;
  display: flex;
 }
-
 .team {
     font-family: "Kreon";
     margin: auto;
 }
 .contact p {
-  margin-left: 3.5rem;
+  margin: auto;
   text-align: center;
 }
 #map {
@@ -362,9 +322,7 @@ input {
 }
 
 
-
                                                  /* MENTIONS LEGALES */
-
 .mentions {
    width : 70%;
    margin: auto;
@@ -372,14 +330,11 @@ input {
    margin-top: 5rem;
    font-family: "Padauk";
 }
-
 .titreMention {
    font-family: "Kreon"; 
    color: #13455C;
 }
-
-/* USER */
-
+                                                /* USER */
 .userInfo {
     width : 40%;
     border: 1px solid #13455C;
@@ -387,7 +342,6 @@ input {
     margin-left: 10rem;
     margin-top: 3rem;
 }
-
 #info {
    list-style: none;
    font-family: "Padauk";
@@ -395,7 +349,6 @@ input {
    padding-top: 1rem;
    width : 30%;
 }
-
 .create {
     width : 20%;
     background-color: #13455C;
@@ -408,9 +361,65 @@ input {
     color: white;
     cursor: pointer;
 }
-
+.create a {
+     color : white;
+     text-decoration: none;
+}
+.create a:hover {
+     color : white;
+     text-decoration: none;
+}
 .create:hover {
+     color : white;
+     text-decoration: none;
      box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
 }
 
->>>>>>> dd4690e2e943ca46ed9f3a8f97996c0580ff2349
+                                    /* SEARCH */
+ .card-text {
+     font-size : 18px;
+}
+                                    
+#search {
+     font-family: "Kreon";
+     color:#13455C;
+     text-align: center;
+     margin-top: 1rem; 
+}
+                                    /* For mobile phones: */
+
+@media screen and (min-width:650px) and (max-height:959px) {
+                                /* HEADER */
+    .main li {
+      margin : 0rem 2rem 1rem 0rem;
+    }
+    
+                                /* ARTICLE */
+    .article {
+        width : 30%;
+    }
+    #post {
+        margin-left: 50%;
+    }
+                                /*USER */
+    .userInfo {
+        width : 50%;
+        margin: auto;
+    }
+    .create {
+        width : 50%;
+        margin: auto;
+        margin-top: 2rem;
+    }
+                                /* INSCRIPTION */
+    .signup {
+        width: 50%;
+        margin: auto;
+    }
+                                /* CONNEXION */
+    .login {
+         width: 50%;
+        margin: auto;
+    }
+} 
+
