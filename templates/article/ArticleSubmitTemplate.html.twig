@@ -9,7 +9,7 @@
         <div id="formbox"> {{ form_widget(form.categorie) }}</div>
         <div class="formBoxError">{{ form_errors(form.categorie) }}</div>
         
-        <div id="titreAnnonce">{{ form_label(form.artTitle) }}</div>
+        <div id="titreAnnonce">c</div>
         <div id="formbox"> {{ form_widget(form.artTitle) }}</div>{# display form artTitle widget apply the css to the INPUT atribute ro #formbox #}  
         <div class="formBoxError">{{ form_errors(form.artTitle) }}</div>
         
@@ -25,7 +25,7 @@
         <div id="formbox">{{ form_widget(form.artDescription) }} </div> 
         {# no erroe display #}
         
-        <div id="signupbutton"> {{ form_row(form.submit, {"lable": "Publier"}) }} </div> {# display form submit button #}
+        <div id="signupbutton"> {{ form_row(form.submit), {"lable": "Publier"}) }} </div> {# display form submit button #}
 
 
     </section>
