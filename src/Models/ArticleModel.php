@@ -30,7 +30,7 @@ class ArticleModel {
      * @Column(name="art_description", type="string", length=1000, nullable=false)
      */
     private $artDescription;
-   
+    
      /**
      * @Column (name="art_categorie ", type="string", length=50, nullable=false)
      */

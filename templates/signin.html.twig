@@ -1,27 +1,13 @@
 {% extends "layout.html.twig" %}
 
-{% block content%}
-  <!-- Sign up Details -->
 
-  <section class="signup">   
-    <h1 id="sign">Inscrivez-vous</h1>    
-    <form id="champsign" action="">
-        <h3 id="inscription">Nom</h3>
-            <input type="text" maxlength = "20" autofocus>      
-        <h3 id="inscription">Prenom</h3>          
-            <input type="text" maxlength = "20">  
-        <h3 id="inscription">Numero de Maison/Appartement</h3>          
-            <input type="text" maxlength = "3">      
-        <h3 id="inscription">Rue</h3>         
-            <input type="text" maxlength = "50">      
-        <h3 id="inscription" maxlength = "4">Code Postal</h3>         
-            <input type="text">      
-        <h3 id="inscription">Ville</h3>         
-            <input type="text" maxlength = "20">      
-    <!-- List of all countries in drop down -->
-    <h3 id="inscription">Pays</h3>
-    <select class="countries" name="pays">
+{% block content %}
+  {# Sign up Details #}
 
+
+	{{ form_start(form) }} {# display open tag of the form #}
+
+<<<<<<< HEAD
     <option value="Afghanistan">Afghanistan </option>
     <option value="Afrique_Centrale">Afrique Centrale </option>
     <option value="Afrique_du_sud">Afrique du Sud </option>
@@ -254,7 +240,7 @@
     <option value="Zimbabwe">Zimbabwe </option>
     </select>
 
-    <!-- Contact Details : Phone & Email -->
+    
     <h3 id="inscription">Telephone</h3>      
         <input type="text">      
     <h3 id="inscription">Adresse Email</h3>      
@@ -266,5 +252,58 @@
     <input id="signupbutton" type="submit" value="S'inscrire">    
         </form>
   </section>
+
+		<fieldset>
+			<legend>Person :</legend>
+			<div class="row">                            
+                            <div id="inscription">{{ form_label(form.firstname) }}</div> <br>
+                            <div id="inscription">{{ form_widget(form.firstname) }}</div> <br>
+                            <div id="formerror">{{ form_errors (form.firstname) }}</div> <br>
+			</div>			
+                        <div id="inscription">{{ form_label (form.lastname) }}</div> <br>
+                        <div id="inscription">{{ form_widget (form.lastname) }}</div> <br>
+                        <div id="formerror">{{ form_errors (form.lastname) }}</div> <br>
+                        
+                        <div id="inscription">{{ form_label (form.email) }}</div> <br>
+                        <div id="inscription">{{ form_widget (form.email) }}</div> <br>
+                        <div id="formerror">{{ form_errors (form.email) }}</div> <br>
+                        
+                        <div id="inscription">{{ form_label (form.telephone) }}</div> <br>
+                        <div id="inscription">{{ form_widget (form.telephone) }}</div> <br>
+                        <div id="formerror">{{ form_errors (form.telephone) }}</div> <br>
+                        
+                        <div id="inscription">{{ form_label (form.username) }}</div> <br>
+                        <div id="inscription">{{ form_widget (form.username) }}</div> <br>
+                        <div id="formerror">{{ form_errors (form.username) }}</div> <br>
+                        
+                        <div id="inscription">{{ form_label (form.password) }}</div> <br>
+                        <div id="inscription">{{ form_widget (form.password) }}</div> <br>
+                        <div id="formerror">{{ form_errors (form.password) }}</div> <br>
+                        
+                        <div id="inscription">{{ form_label (form.street)}}</div> <br>
+                        <div id="inscription">{{ form_widget (form.street)}}</div> <br>
+                        <div id="inscription">{{ form_errors (form.street)}}</div> <br>
+                        
+                        <div id="inscription">{{ form_label (form.number)}}</div> <br>
+                        <div id="inscription">{{ form_widget (form.number)}}</div> <br>
+                        <div id="inscription">{{ form_errors (form.number)}}</div> <br>
+                        
+                        <div id="inscription">{{ form_label (form.zip)}}</div> <br>
+                        <div id="inscription">{{ form_widget (form.zip)}}</div> <br>
+                        <div id="formerror">{{ form_errors (form.zip)}}</div> <br>
+                        
+                        <div id="inscription">{{ form_label (form.city)}}</div> <br>
+                        <div id="inscription">{{ form_widget (form.city)}}</div> <br>
+                        <div id="formerror">{{ form_errors (form.city)}}</div> <br>
+                        
+                        <div id="inscription">{{ form_label(form.country) }}</div> <br>
+                        <div id="inscription">{{ form_widget(form.country) }}</div> <br>
+                        <div id="formerror">{{ form_errors(form.country) }}</div> <br>
+		</fieldset>
+	
+		{{ form_row(form.submit) }}
+		
+		{{ form_rest(form) }}
+	{{ form_end(form) }} {# display close tag of the form #}
 
 {% endblock %}

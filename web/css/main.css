@@ -1,17 +1,17 @@
+/* Fonts imported */
 @font-face {
      font-family: "Kreon";
      src:url(../fonts/Kreon-Regular.ttf);
   }
-
 @font-face {
        font-family: "Padauk";
        src:url(../fonts/Padauk-Regular.ttf);
   }
 
 
-                                /* HEADER */
+                                   /* HEADER */
 
-/* menu  */
+/* Menu */
 .menu {
  background-color : #13455C;
  width : 100%;
@@ -36,7 +36,7 @@
 .menu li {
    margin : 1rem 2rem 0rem 2rem;
 }  
- /* roll down menu */
+ /* Roll down menu */
 .dropdown {
     float: left;
 }
@@ -58,7 +58,6 @@
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     margin-left: 2rem;
 }
-
 .dropdown-content a {
     float: none;
     color: white;
@@ -73,7 +72,7 @@
 .show {
     display: block;
 }
-/* search button */
+/* Search button */
 form {
     margin-top: 1rem;
 }
@@ -84,13 +83,13 @@ form {
     padding-left: 10px;
     color: white;
 }
-button {
+.dropbtn {
     background-color: #13455C;
     border : none;
     color : white;
     cursor: pointer;
 }
-/* sign in /log in link */
+/* Sign In Links */
 .menu a{
     color: white;
     font-family: "Padauk";
@@ -124,7 +123,7 @@ button {
     font-family: "Padauk";
     text-decoration: none;
 }
-                                         /* INDEX */     
+                                       /* INDEX */     
 
 container {
  width : 100%;
@@ -170,11 +169,9 @@ body {
   box-shadow: 3px 7px 10px 1px #13455C;
   border-radius: 3px;
 }
-
 .signup input{
     width: 217px;
 }
-
 #sign {
     font-family: "Padauk";
     font-size: 30px;
@@ -191,15 +188,13 @@ body {
   margin-bottom: 0px;
   margin-top: 9px; 
 }
-
-
-
 #champsign {
    margin-left: 2rem;  
-   margin-top: 1rem;
+   margin-top: 1rem;  
+   
 }
 #signupbutton{
-  margin-left: 75%;
+  margin-left: 70%;
   border : none;
   background-color: #1A6487;
   color: white;
@@ -208,16 +203,16 @@ body {
   margin-bottom: 1rem;
   box-shadow: 1px 3px 4px rgba(0, 0, 0, .5);
   margin-top:40px; 
-  width: 90px;
+  width: 145px;  
 }
-
 #signupbutton:hover {
- box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);   
+ box-shadow: 1px 1px 1px rgba(0, 0, 0, .5); 
 }
-
 .countries{
    height:30px;
 }
+
+
                                             /* LOGIN DETAILS*/
 .login{
   border: 1px solid #13455C;
@@ -225,9 +220,8 @@ body {
   box-shadow: 3px 7px 10px 1px #13455C;
   margin: auto;
   margin-top: 5rem;
-  border-radius: 3px;
+  border-radius: 3px; 
 }
-
 .login form{
     margin-left: 2rem;    
 }
@@ -239,11 +233,12 @@ body {
     width: 180px;
     position: absolute;
     float:left;     
+}                                  /* POST ANNONCE */
+                                                    
+#formbox {
+    margin-left: 2rem; 
+    margin-bottom: 1rem;
 }
-                                                                                
-                                                    /******Posting Article Page*******/
-
-
 .article{
   border: 1px solid #13455C;
   width: 40%;
@@ -251,32 +246,45 @@ body {
   margin-top: 2rem;
   box-shadow: 3px 7px 10px 1px #13455C;
 }
+
+   input:focus{
+    border-color:red;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
 .articledetails {
-    font-family: "Padauk"; 
+   font-family: "Padauk"; 
+   font-size: 30px;
+   margin-left: 0;
+   margin-top: 0;
+   background-color: #1A6487;
+   color: white;
+   text-align: center;
+   line-height: normal;
+   height: 50px;
    font-size: 23px;
    margin-left: 2rem;
    margin-top: 2rem;
+   background-color: #1A6487;
 }
 #titreAnnonce {
    font-family: "Padauk"; 
    font-size: 20px;
-   margin-left: 2rem;
-   margin-top: 0.5rem;
+   margin-left: 2rem; 
+   margin-top:2rem;
 }
 #article {
    margin-left: 2rem; 
 }
-
-
 input {  
    border-radius: 3px;
 }
-
 #cat {
    margin-left: 2rem; 
    margin-top: 0.5rem;
+   width: 303px;
 }
-#post {
+#article_form_submit{
   margin-left: 70%;
   border : none;
   background-color: #1A6487;
@@ -286,13 +294,19 @@ input {
   margin-bottom: 1rem;
   box-shadow: 1px 3px 4px rgba(0, 0, 0, .5);
   margin-top:40px; 
- 
+  width: 25%;  
 }
-#post:hover {
-   box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);     
+#article_form_submit:hover {
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);     
 }
 
+.formBoxError {
+    font-size: 15px;
+    color : red;
+
+
                                                     /* CONTACT */
+
 .contactez {
    font-family: "Kreon"; 
    color: #13455C;
@@ -320,8 +334,6 @@ input {
     width: 50%; 
     margin: auto;
 }
-
-
                                                  /* MENTIONS LEGALES */
 .mentions {
    width : 70%;
@@ -386,14 +398,59 @@ input {
      text-align: center;
      margin-top: 1rem; 
 }
-                                    /* For mobile phones: */
+
+                                    /* ARTICLE DETAILS */
+ #details {
+     width : 50%;
+     border: 1px solid #13455C;
+     box-shadow: 3px 7px 10px 1px #13455C;
+     margin: auto;
+     margin-top: 3rem;
+}                                 
+.imgArticle {
+     width : 40%; 
+}
+.detailsTitle {
+      float: right;
+      margin-right: 10rem;
+}
+.detailsPrix {
+      float: right;
+      margin-right: 23.5rem;
+      margin-top: -10rem;
+}
+.detailsText {
+      float: right;
+      margin-right: 9rem;
+      margin-top: -8rem;
+}
+.detailsSynopsis {
+      margin-top: 3rem;
+}
+#contactAnnonce {
+      margin-left: 70%;
+      border : none;
+      background-color: #1A6487;
+      color: white;
+      font-family: "Padauk";
+      font-size : 18px;
+      margin-bottom: 1rem;
+      box-shadow: 1px 3px 4px rgba(0, 0, 0, .5);
+      margin-top:40px; 
+      width: 30%;
+}
+
+#contactAnnonce:hover {
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);   
+}
+                                                                       
+                                    /* For Tablets */
 
 @media screen and (min-width:650px) and (max-height:959px) {
                                 /* HEADER */
     .main li {
       margin : 0rem 2rem 1rem 0rem;
     }
-    
                                 /* ARTICLE */
     .article {
         width : 30%;
@@ -421,5 +478,63 @@ input {
          width: 50%;
         margin: auto;
     }
+    #signupbutton{
+        margin-left: 65%;
+    }
+    .dropbtn{
+        
+    }
+    .menu li{
+      display: none;      
+    }
+    
+                                    /* Side-navigational Bar */
+    
+    #sidenav{
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      background-color: #58C2F4;
+      overflow-x: hidden;
+      padding-top: 60px;
+      transition: 0.5s;        
+    }  
+        
+    #sidenav li{
+      list-style-type: none;
+      
+    }
+    
+    #sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: purple;
+      display: block;
+      transition: 0.3s;
+    }
+    
+    #sidenav a:hover {
+      color: #red;
+      background-color: green;           
+    }
+    
+    #sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+    
+    #testdiv{
+      background-color: green;
+      width: 200px;
+      height: 200px;        
+    } 
 } 
+
 

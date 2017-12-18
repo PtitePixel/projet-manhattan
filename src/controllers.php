@@ -71,6 +71,12 @@ $app->get('/contact', function () use ($app) {
 })
 ->bind('contact')
 ;
+//PAGE DETAILS ARTICLE
+$app->get('/details', function () use ($app) {
+    return $app['twig']->render('articledetails.html.twig', array());
+})
+->bind('details')
+;
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {

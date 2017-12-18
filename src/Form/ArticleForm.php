@@ -21,6 +21,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Validator\Constraints as Assert;
 use Models\ArticleModel;
 use Controller\ArticleController;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 /**
  * Description of UserForm
@@ -37,8 +38,10 @@ class ArticleForm extends AbstractType
                 [
                     'constraints' => [
                         new Assert\NotBlank()
-                    ]
-                ]
+                    ],
+                    'label' => 'Titre'
+                 ]   
+                  
             )->add(
                 'artPrice',
                 NumberType::class,
@@ -46,34 +49,38 @@ class ArticleForm extends AbstractType
                 [
                     'constraints' => [
                         new Assert\NotBlank()
-                    ]
+                    ],
+                    'label' => 'Prix'
                 ]
             )->add(
                 'artDescription',
-                TextType::class,
+                TextareaType::class,
                 [
                     'constraints' => [
                         new Assert\NotBlank(),
-             
-                    ]
-                   
+                    ],
+                    'label' => 'Description'
                 ]
-
             )->add(
                 'artCategorie', 
                 ChoiceType::class, //doit encore fonctionner avec la DB provisoir pour template
                 [
                     'choices' => [
-                        'Littérature' => 'Littérature',
+                        'Litterature' => 'Litterature',
                         'Informatique' => 'Informatique',
                         'Meubles' => 'Meubles' ,
                     ],
-                    'placeholder' => 'Choisissez votre catégorie',
+                    'placeholder' => 'Choisissez votre categorie',
+                    'label' => 'Categorie'
                 ]
             );
         
         if ($options['standalone']) {
-            $builder->add('submit', SubmitType::class);
+            $builder->add('submit', SubmitType::class,
+             [
+                    
+                    'label' => "Publier l'annonce"
+             ]);
         }
     }
 
