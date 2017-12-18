@@ -5,55 +5,67 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Controller\UserController;
 
 
 //Request::setTrustedProxies(array('127.0.0.1'));
 
-$app->match('/', 'Controller\UserController::registerAction')->bind('register');
-
-$app->get('/admin/users', sprintf('%s::getAllAction', UserController::class))->bind('get_all_users');
-$app->post('/admin/user', sprintf('%s::createUserAction', UserController::class))->bind('create_user');
-$app->delete('/admin/user/{id}', sprintf('%s::deleteAction', UserController::class))->bind('delete_user');
-
-$app->get('/admin', function () use ($app) {
-    
-    $user = null;
-    $token = $app['security.token_storage']->getToken();  // Get current authentication token 
-    
-    if ($token !== null) {
-        $user = $token->getUser();                        // Get user from token
-    }
-    
-    // user is instance of Symfony\Component\Security\Core\User\UserInterface
-    
-    return $app['twig']->render('index.html.twig', array('user' => $user));
+$app->get('/', function () use ($app) {
+    return $app['twig']->render('index.html.twig', array());
 })
 ->bind('homepage')
 ;
 
-<<<<<<< HEAD
-$app->get('/login', function(Request $request) use ($app){
-    return $app['twig']->render('login.html.twig', 
-        [
-            'error' => $app['security.last_error']($request),
-            'last_username' => $app['session']->get('_security.last_username')
-        ]
-    );
-})->bind('login');
-=======
+// PAGE RECHERCHE
+$app->get('/search', function () use ($app) {
+    return $app['twig']->render('search.html.twig', array());
+})
+->bind('search')
+;
+
+//PAGE INSCRIPTION
+$app->get('/signin', function () use ($app) {
+    return $app['twig']->render('signin.html.twig', array());
+})
+->bind('signin')
+;
+
+//PAGE CONNEXION
 $app->get('/login', function () use ($app) {
     return $app['twig']->render('login.html.twig', array());
 })
 ->bind('login')
 ;
 
+//DECONNEXION
+$app->get('/logout', function () use ($app) {
+    return $app['twig']->render('logout.html.twig', array());
+})
+->bind('logout')
+;
+
+
+// PAGE COMPTE
+$app->get('/user', function () use ($app) {
+    return $app['twig']->render('user.html.twig', array());
+})
+->bind('user')
+;
+
+//PAGE ANNONCE
+$app->get('/article', function () use ($app) {
+    return $app['twig']->render('article.html.twig', array());
+})
+->bind('article')
+;
+
+//PAGE MENTION LEGALES
 $app->get('/mentionslegales', function () use ($app) {
     return $app['twig']->render('mentions.html.twig', array());
 })
 ->bind('mentions')
 ;
 
+//PAGE CONTACT
 $app->get('/contact', function () use ($app) {
     return $app['twig']->render('contact.html.twig', array());
 })
@@ -61,7 +73,6 @@ $app->get('/contact', function () use ($app) {
 ;
 
 
->>>>>>> dd4690e2e943ca46ed9f3a8f97996c0580ff2349
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {

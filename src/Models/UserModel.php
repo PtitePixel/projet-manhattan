@@ -68,14 +68,14 @@ class UserModel implements UserInterface {
     private $zip;
 
     /**
-     * @Column(name="usr_country", type="integer", length=50, nullable=false)
+     * @Column(name="usr_country", type="string", length=50, nullable=false)
      */
     private $country;
 
     /**
      * @ManyToMany(targetEntity="Models\Role")
      * @JoinTable(name="users_roles",
-     *      joinColumns={@JoinColumn(name="use_id", referencedColumnName="use_id")},
+     *      joinColumns={@JoinColumn(name="use_id", referencedColumnName="usr_id")},
      *      inverseJoinColumns={@JoinColumn(name="role_id", referencedColumnName="id")}
      *  )
      */

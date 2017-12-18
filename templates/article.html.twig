@@ -1,16 +1,16 @@
-
+{% extends "layout.html.twig" %}
 
 {% block content %}
   <!-- Add New Article Box -->
   <section class="article">
-    <h1 class="articledetails">Entrez les détails de votre article:</h1>
+    <h1 class="articledetails">Entrez les details de votre article :</h1>
     <h2 id="titreAnnonce">Titre</h2>
       <form id="article" action="">
         <input type="text" autofocus>    
       </form>
     <h2 id="titreAnnonce">Prix</h2>
       <form id="article" action="">
-        <input type="text">
+        <input type="text" placeholder="€">
       </form>
     <h2 id="titreAnnonce">Description</h2>
       <form id="article" action="">
@@ -36,7 +36,11 @@
           <option value="">Lampes</option>
         </optgroup>
       </select>
+
       </br>
       <input id="post" type="submit" value="Poster l'annonce">
+
+
+
   </section>
 {% endblock %}

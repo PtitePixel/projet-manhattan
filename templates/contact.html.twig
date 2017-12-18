@@ -14,7 +14,7 @@
             4362 Esch-Sur-Alzette
         </p> 
         <p>
-            Téléphonne : <br>
+            Telephonne : <br>
             +352 597  482 573
         </p>  
         <p>
@@ -29,15 +29,30 @@
   
     <p>
         Laureen François <br>
-        francois.laureen@gmail.com
+        <script language="JavaScript">
+            var User = "francois.laureen"; 
+            var Domain = "gmail.com"; 
+            var Address = User+String.fromCharCode(64)+Domain;
+            document.write('<a href="mai'+'lto:'+Address+'">'+Address+'</a>');
+        </script>
     </p> 
     <p>
         Michel Ginsbach <br>
-        michelginsbach@gmail.com
+        <script language="JavaScript">
+            var User = "michel"; 
+            var Domain = "gmail.com"; 
+            var Address = User+String.fromCharCode(64)+Domain;
+            document.write('<a href="mai'+'lto:'+Address+'">'+Address+'</a>');
+         </script>
     </p> 
     <p>
         Conor Dunne <br>
-        conordu@gmail.com
+         <script language="JavaScript">
+            var User = "conordu"; 
+            var Domain = "gmail.com"; 
+            var Address = User+String.fromCharCode(64)+Domain;
+            document.write('<a href="mai'+'lto:'+Address+'">'+Address+'</a>');
+         </script>
     </p> 
 </div>    
 
@@ -48,6 +63,7 @@
      
     </div>    
 
+<!-- API GOOGLE MAP -->
 <script>
       function initMap() {
         var uluru = {lat: 49.5024421, lng: 5.949233599999957};
@@ -64,6 +80,9 @@
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC1dy8BzPUu7h2-YKjk2blzfchmUQx45Q&callback=initMap">
 </script>
+
+
+
 
 {% endblock %}
 
