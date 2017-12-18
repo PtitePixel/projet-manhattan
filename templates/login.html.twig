@@ -4,18 +4,36 @@
 
 
 
-<!-- Login -->
-
+{# Login form #}
+    <form action="{{ path('admin_login_check') }}" method="post">
 
   <section class="login">     
-     <h1 id="sign">Se connecter</h1>     
-     <form>
-       <h3 id="inscription">Nom d'Utilisateur</h3>
-       <input id="champ" type="text" autofocus>
-       <h3 id="inscription">Mot de Passe</h3>
-       <input id="champ" type="text">
-       <a href=""><h5 id="mdp">Mot de Passe oublié? Cliquez-ici!</h5></a>
-     </form>
-    <input id="signupbutton"  type="submit" value="Connexion">
-  </section>
+     <div id="sign">Se connecter</div>  
+          
+     <input type="text" name="_username" value="{{ last_username }}" />
+     <input type="password" name="_password" value="" />
+     <input type="submit" value="Se connecter"/>              
+     
+  </section>      
+    
+<div id="sidenav">
+    <ul>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav();">x</a>
+        <a href=""><li>A</li></a>
+        <a href=""><li>B</li></a>
+        <a href=""><li>C</li></a>
+    </ul>
+</div>
+<div id="testdiv" onclick="openNav();">
+</div>
+<script>
+function openNav() {
+    document.getElementById("sidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("sidenav").style.width = "0";
+}
+</script>
+</form> 
 {%endblock%}
