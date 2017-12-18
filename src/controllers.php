@@ -53,7 +53,7 @@ $app->get('/user', function () use ($app) {
 ;
 
 //PAGE ANNONCE
-$app->get('/article', "Controller\ArticleController::createArticleAction")
+$app->match('/article', "Controller\ArticleController::createArticleAction")
 ->bind('article')
 ;
 
