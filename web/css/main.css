@@ -84,7 +84,7 @@ form {
     padding-left: 10px;
     color: white;
 }
-button {
+.dropbtn {
     background-color: #13455C;
     border : none;
     color : white;
@@ -241,27 +241,32 @@ body {
     float:left;     
 }
                                                                                 
-                                                    /******Posting Article Page*******/
-
-
+                                                    /* POST ANNONCE */
+                                                    
+#formbox {
+    margin-left: 2rem; 
+    margin-bottom: 1rem;
+}
 .article{
   border: 1px solid #13455C;
   width: 40%;
   margin: auto;
   margin-top: 2rem;
   box-shadow: 3px 7px 10px 1px #13455C;
+  
 }
 .articledetails {
-    font-family: "Padauk"; 
+   font-family: "Padauk"; 
    font-size: 23px;
    margin-left: 2rem;
    margin-top: 2rem;
+   
 }
 #titreAnnonce {
    font-family: "Padauk"; 
    font-size: 20px;
-   margin-left: 2rem;
-   margin-top: 0.5rem;
+   margin-left: 2rem; 
+   margin-top:2rem;
 }
 #article {
    margin-left: 2rem; 
@@ -276,7 +281,7 @@ input {
    margin-left: 2rem; 
    margin-top: 0.5rem;
 }
-#post {
+#article_form_submit{
   margin-left: 70%;
   border : none;
   background-color: #1A6487;
@@ -286,12 +291,11 @@ input {
   margin-bottom: 1rem;
   box-shadow: 1px 3px 4px rgba(0, 0, 0, .5);
   margin-top:40px; 
- 
+  width: 25%;  
 }
-#post:hover {
-   box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);     
+#article_form_submit:hover {
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);     
 }
-
                                                     /* CONTACT */
 .contactez {
    font-family: "Kreon"; 
@@ -386,6 +390,53 @@ input {
      text-align: center;
      margin-top: 1rem; 
 }
+
+                                    /* ARTICLE DETAILS */
+ #details {
+     width : 50%;
+     border: 1px solid #13455C;
+     box-shadow: 3px 7px 10px 1px #13455C;
+     margin: auto;
+     margin-top: 3rem;
+}                                 
+.imgArticle {
+     width : 40%; 
+}
+.detailsTitle {
+      float: right;
+      margin-right: 10rem;
+}
+.detailsPrix {
+      float: right;
+      margin-right: 23rem;
+      margin-top: -10rem;
+}
+.detailsText {
+      float: right;
+      margin-right: 9rem;
+      margin-top: -8rem;
+}
+.detailsSynopsis {
+      margin-top: 3rem;
+}
+#contactAnnonce {
+      margin-left: 70%;
+      border : none;
+      background-color: #1A6487;
+      color: white;
+      font-family: "Padauk";
+      font-size : 18px;
+      margin-bottom: 1rem;
+      box-shadow: 1px 3px 4px rgba(0, 0, 0, .5);
+      margin-top:40px; 
+      width: 30%;
+}
+
+#contactAnnonce:hover {
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);   
+}
+                                    
+                                    
                                     /* For mobile phones: */
 
 @media screen and (min-width:650px) and (max-height:959px) {

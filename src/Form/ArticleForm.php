@@ -22,6 +22,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Validator\Constraints as Assert;
 use Models\ArticleModel;
 use Controller\ArticleController;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 /**
  * Description of UserForm
@@ -38,51 +39,48 @@ class ArticleForm extends AbstractType
                 [
                     'constraints' => [
                         new Assert\NotBlank()
-                    ]
-                ]
+                    ],
+                    'label' => 'Titre'
+                 ]   
+                  
             )->add(
                 'artPrice',
                 IntegerType::class,
                 [
                     'constraints' => [
                         new Assert\NotBlank()
-                    ]
+                    ],
+                    'label' => 'Prix'
                 ]
             )->add(
                 'artDescription',
-                TextType::class,
+                TextareaType::class,
                 [
                     'constraints' => [
                         new Assert\NotBlank(),
-                    ]
+                    ],
+                    'label' => 'Description'
                 ]
-            //Radio afficher ou pas afficher suprimer
-            //)->add(
-                //'artSold',  // ce ci doit être un raidio pout true ou false
-                //ChoiceType::class,// ca cest pas just pas trouver dans le manuel
-                //[
-                   // 'choices' => [
-                        //'true' => 'Mettre en vente',
-                        //'false' => 'Déjà vendu (ne va plus être affiché sur le site)'
-                    //],
-                    //'expanded'=> true,
-                    //'multiple'=> false
-                //]
             )->add(
                 'artCategorie', 
                 ChoiceType::class, //doit encore fonctionner avec la DB provisoir pour template
                 [
                     'choices' => [
-                        'Littérature' => 'Littérature',
+                        'Litterature' => 'Litterature',
                         'Informatique' => 'Informatique',
                         'Meubles' => 'Meubles' ,
                     ],
-                    'placeholder' => 'Choisissez votre catégorie',
+                    'placeholder' => 'Choisissez votre categorie',
+                    'label' => 'Categorie'
                 ]
             );
         
         if ($options['standalone']) {
-            $builder->add('submit', SubmitType::class);
+            $builder->add('submit', SubmitType::class,
+             [
+                    
+                    'label' => "Publier l'annonce"
+             ]);
         }
     }
 

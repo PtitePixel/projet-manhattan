@@ -5,32 +5,29 @@
  {{ form_start(form) }}  
  {# display open tag of the form #}
   <section class="article">
-      <div class="articledetails">Entrez les details de votre article :</div>
+      <h1 id="sign">Entrez les details de votre article :</h1>
    
       {# Title Input #}
-      <div id="titreAnnonce">{{ form_label(form.artTitle) }}</div> <br>
+      <div id="titreAnnonce">{{ form_label(form.artTitle) }}</div> 
       <div id="formbox"> {{ form_widget(form.artTitle) }}</div>
       <div class="formBoxError">{{ form_errors(form.artTitle) }}</div> <br>
       {# Price Input#}
       <div id="titreAnnonce">{{ form_label(form.artPrice) }}</div>
       <div id="formbox">{{ form_widget(form.artPrice) }} </div> 
       <div class="formBoxError">{{ form_errors(form.artPrice) }}</div>
-      {# Description Input #}
-      <div id="titreAnnonce">{{ form_label(form.artDescription) }}</div>
-      <div id="formbox">{{ form_widget(form.artDescription) }} </div> 
-      <div class="formBoxError">{{ form_errors(form.artDescription) }}</div>
+      
       {# Category #}
-      <div id="inscription">{{ form_label(form.artCategorie) }}</div>
+      <div id="titreAnnonce">{{ form_label(form.artCategorie) }}</div>
       <div id="formbox"> {{ form_widget(form.artCategorie) }}</div>
       <div class="formBoxError">{{ form_errors(form.artCategorie) }}</div>
-      {# radiobutton default non "true" --> not sold/for sell -> checked False no dispaly #}
+      
       <div id="titreAnnonce">{{ form_label(form.artDescription) }}</div> 
       <div id="formbox">{{ form_widget(form.artDescription) }} </div> 
       {# no error display #}
 
       </br>
       {# display form submit button #}
-      <div id="signupbutton"> {{ form_row(form.submit, {"lable": "Publier"}) }} </div> 
+      <div> {{ form_row(form.submit) }} </div> 
 
 
   </section>
