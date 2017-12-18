@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-		{% block head %}
-        <title>{% block title '' %} - My Silex Application</title>
+		
+        <title>{% block title '' %} LuxBay - Vente de particuliers à particuliers</title>
 
         <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" />
-<<<<<<< HEAD
-        <script src="{{ asset('js/client.js') }}"></script>
-		{% endblock %}
-=======
+
         <!-- font awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
@@ -30,12 +27,12 @@
                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
             })();
         </script>
->>>>>>> dd4690e2e943ca46ed9f3a8f97996c0580ff2349
+
     </head>
     <body>
+     {% include 'header.html.twig' %}    
         {% block content %}{% endblock %}
-<<<<<<< HEAD
-=======
+
      
         
           
@@ -56,6 +53,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
         <script src="{{ asset('js/script.js') }}"></script> 
         
->>>>>>> dd4690e2e943ca46ed9f3a8f97996c0580ff2349
+
     </body>
 </html>
