@@ -12,13 +12,16 @@ namespace Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Models\UserModel;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\RadioType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Validator\Constraints as Assert;
+use Models\ArticleModel;
+use Controller\ArticleController;
 
 /**
  * Description of UserForm
@@ -55,15 +58,17 @@ class ArticleForm extends AbstractType
                 ]
             )->add(
                 'artSold',  // ce ci doit être un raidio pout true ou false
-                RadioType::class,// ca cest pas just pas trouver dans le manuel
+                ChoiceType::class,// ca cest pas just pas trouver dans le manuel
                 [
                     'choices' => [
                         'true' => 'Mettre en vente',
                         'false' => 'Déjà vendu (ne va plus être affiché sur le site)'
-                    ]
+                    ],
+                    'expanded'=> true,
+                    'multiple'=> false
                 ]
             )->add(
-                'categorie', 
+                'artCategorie', 
                 ChoiceType::class, //doit encore fonctionner avec la DB provisoir pour template
                 [
                     'choices' => [

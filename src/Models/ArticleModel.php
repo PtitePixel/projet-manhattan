@@ -37,6 +37,11 @@ class ArticleModel {
      */
     private $artSold;
     
+     /**
+     * @Column (name="art_categorie ", Type="string", lenght=50, nullable=false)
+     */
+    private $artCategorie ;
+    
     // Getter
     function getArtId() {
         return $this->artId;
@@ -56,6 +61,10 @@ class ArticleModel {
 
     function getArtSold() {
         return $this->artSold;
+    }
+    
+    function getArtCategorie() {
+        return $this->artCategorie;
     }
 
     // Setter
@@ -78,7 +87,10 @@ class ArticleModel {
         $this->artSold = $artSold;
         return $this;
     }
-
+   function setArtCategorie($artCategorie) {
+        $this->artCategorie = $artCategorie;
+        return $this;
+    }
 
     
 }

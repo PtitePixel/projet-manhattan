@@ -1,11 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace Controller;
 
 use Symfony\Component\HttpFoundation\Request;
@@ -20,7 +14,7 @@ use Form\ArticleForm;
  *
  * @author Etudiant
  */
-class AirticleController {
+class ArticleController {
 
     public function getAllAction(Request $request, Application $app) {
         $repository = $app['orm.em']->getRepository(\Models\ArticleModel::class);
@@ -32,7 +26,7 @@ class AirticleController {
 
         return $app->json($result);
     }
-
+//genere la form de lârticle
     public function createArticleAction(Request $request, Application $app) {
  
         $article = new ArticleModel();
