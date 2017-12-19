@@ -8,7 +8,9 @@
      <div id="sign">Se connecter</div>  
         <form action="{{ path('admin_login_check') }}" method="post">
              {{ error }}    
-             <input class="logininput" type="text" name="_username" value="{{ last_username }}" /> <br>
+             <div id="titreAnnonce"> Pseudo </div>
+             <input class="logininput" type="text" name="_username" value="{{ last_username }}" />
+              <div id="titreAnnonce">Mot de passe</div>
              <input class="logininput" type="password" name="_password" value="" /> <br>
              <a id="mdp" href="{{ path("password") }}"> Mot de passe oublié? </a> 
              <input id="signupbutton"type="submit" value="Se connecter"/>          

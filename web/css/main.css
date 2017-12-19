@@ -246,6 +246,9 @@ body {
     position: absolute;
     float:left;     
 }  
+.logininput {
+   margin-top: 2rem;
+}
                             /* LOST PASSWORD */
 .lost {
     border: 1px solid #13455C;
