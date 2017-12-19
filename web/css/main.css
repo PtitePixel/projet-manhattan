@@ -104,6 +104,9 @@ form {
     color: white;
     text-decoration: none;
 }
+#hamburgericon{
+    display:none;
+}
 
                                     /*FOOTER */         
 #footer {
@@ -303,7 +306,7 @@ input {
 .formBoxError {
     font-size: 15px;
     color : red;
-
+}
 
                                                     /* CONTACT */
 
@@ -443,7 +446,10 @@ input {
 #contactAnnonce:hover {
       box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);   
 }
-                                                                       
+
+#tabletdiv{
+    display:none;
+}
                                     /* For Tablets */
 
 @media screen and (min-width:650px) and (max-height:959px) {
@@ -453,7 +459,7 @@ input {
     }
                                 /* ARTICLE */
     .article {
-        width : 30%;
+        width : 50%;
     }
     #post {
         margin-left: 50%;
@@ -475,18 +481,19 @@ input {
     }
                                 /* CONNEXION */
     .login {
-         width: 50%;
+        width: 50%;
         margin: auto;
     }
     #signupbutton{
         margin-left: 65%;
-    }
-    .dropbtn{
-        
+        cursor:pointer;
     }
     .menu li{
-      display: none;      
+      display:none;
     }
+                                /* Search */
+                                
+    
     
                                     /* Side-navigational Bar */
     
@@ -494,32 +501,32 @@ input {
       height: 100%;
       width: 0;
       position: fixed;
-      z-index: 1;
-      top: 0;
+      z-index: 1;      
       right: 0;
-      background-color: #58C2F4;
+      top: 0;
+      background-color: #8FD4F5;
       overflow-x: hidden;
       padding-top: 60px;
-      transition: 0.5s;        
+      transition: 0.4s; 
+      opacity: 0.9;      
     }  
         
     #sidenav li{
-      list-style-type: none;
-      
+      list-style-type: none;      
     }
     
     #sidenav a {
       padding: 8px 8px 8px 32px;
       text-decoration: none;
       font-size: 25px;
-      color: purple;
+      color: #13455C;
       display: block;
       transition: 0.3s;
     }
     
     #sidenav a:hover {
-      color: #red;
-      background-color: green;           
+      color: black;
+      background-color: white;           
     }
     
     #sidenav .closebtn {
@@ -528,13 +535,18 @@ input {
       right: 25px;
       font-size: 36px;
       margin-left: 50px;
-    }
-    
-    #testdiv{
-      background-color: green;
-      width: 200px;
-      height: 200px;        
+    }    
+
+    #hamburgericon{
+      display:inline;
+      width: 100px;
+      background-color:#13455C;
+      cursor: pointer;
     } 
+    #xlink{
+        width:80px;  
+        height:80px;
+    }
 } 
 
 

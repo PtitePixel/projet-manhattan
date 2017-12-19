@@ -1,24 +1,21 @@
 <div class="menu">
-      <a href="{{ path("homepage") }}"> <h1> LuxBay </h1> </a>
-      <ul>
-       
+    
+      <a href="{{ path("homepage") }}"> <h1> LuxBay </h1> </a>      
+      <ul>       
         <li> 
             {# Nav Category #}
             <div class="dropdown">
-                <button class="dropbtn" onclick="myFunction();"> Categories <i class="fa fa-caret-down"></i> </button>
-                
+                <button class="dropbtn" onclick="myFunction();"> Categories <i class="fa fa-caret-down"></i> </button>                
                 <div class="dropdown-content" id="myDropdown">
                   <a href="#">Informatique</a>
                   <a href="#">Litterature</a>
                   <a href="#">Meubles</a>
-                </div>
-        
+                </div>        
             </div>
         </li> 
         <form id="searchbar" action="" method="get">
           <input type="text" name="search" placeholder="Rechercher..." />
-          <a href="{{ path ("search") }}"> <i class="fa fa-search"> </i> </a>  
-         
+          <a href="{{ path ("search") }}"> <i class="fa fa-search"> </i> </a>         
         </form>
        {# If Empty session only display #}
         <li> <a href="{{ path("signin") }}"> Inscription </a> </li>
@@ -26,7 +23,6 @@
        {# If session only display #}
         <li> <a href="{{ path("user") }}"> Mon Compte </a> </li> 
         <li> <a href="{{ path("logout") }}"> Deconnexion</a> </li> 
-      </ul>
-
- 
+      </ul>      
+      <img id="hamburgericon" onclick="openNav();" src="../img/hamburgericon.png">     
 </div>
