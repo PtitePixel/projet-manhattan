@@ -131,6 +131,7 @@ container {
 .row{
   width : 80%;
   margin-top: 1rem;
+ 
 }
 body {
   padding-top: 6rem;
@@ -163,15 +164,13 @@ body {
                                     /** INSCRIPTION **/
 /* Signup Details */
 .signup{
-  margin-left: 41rem;
+  margin: auto;
   border: 1px solid #13455C;
-  width: 30%;
+  width: 50%;
   box-shadow: 3px 7px 10px 1px #13455C;
   border-radius: 3px;
 }
-.signup input{
-    width: 217px;
-}
+
 #sign {
     font-family: "Padauk";
     font-size: 30px;
@@ -193,6 +192,21 @@ body {
    margin-top: 1rem;  
    
 }
+#user_form_submit{
+  margin-left: 70%;
+  border : none;
+  background-color: #1A6487;
+  color: white;
+  font-family: "Padauk";
+  font-size : 18px;
+  margin-bottom: 1rem;
+  box-shadow: 1px 3px 4px rgba(0, 0, 0, .5);
+  margin-top:40px; 
+  width: 25%;  
+}
+#user_form_submit:hover {
+ box-shadow: 1px 1px 1px rgba(0, 0, 0, .5); 
+}
 #signupbutton{
   margin-left: 70%;
   border : none;
@@ -205,12 +219,20 @@ body {
   margin-top:40px; 
   width: 145px;  
 }
+
 #signupbutton:hover {
  box-shadow: 1px 1px 1px rgba(0, 0, 0, .5); 
 }
 .countries{
    height:30px;
 }
+#formBoxError  {
+  color: red;
+}
+#formBoxError ul {
+    list-style: none;
+}
+
 
 
                                             /* LOGIN DETAILS*/
@@ -249,7 +271,7 @@ body {
   margin-left: 2rem;  
 }
 .mailInfo {
-    margin-top: 4rem;
+    margin-top: 2rem;
     margin-left: 2rem;
 }
 

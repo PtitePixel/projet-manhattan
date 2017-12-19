@@ -3,15 +3,24 @@
 
 namespace Form;
 
+/**
+ * Description of UserForm
+ *
+ * @author MG
+ */
+
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
-use Models\UserModel;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Models\UserModel;
+use Controller\UserController;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -29,7 +38,8 @@ class UserForm extends AbstractType
                 [
                     'constraints' => [
                         new Assert\NotBlank()
-                    ]
+                    ],
+                    'label' => 'Prenom' 
                 ]
             )->add(
                 'lastname',
@@ -37,7 +47,8 @@ class UserForm extends AbstractType
                 [
                     'constraints' => [
                         new Assert\NotBlank()
-                    ]
+                    ],
+                    'label' => 'Nom' 
                 ]
             )->add(
                 'email',
@@ -48,7 +59,8 @@ class UserForm extends AbstractType
                         new Assert\Regex([
                             'pattern' => '/^[a-zA-Z0-9.!#$%&’*+\=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/'
                         ])
-                    ]
+                    ],
+                    'label' => 'Mail' 
                 ]
             )->add(
                 'telephone',
@@ -56,7 +68,8 @@ class UserForm extends AbstractType
                 [
                     'constraints' => [
                         new Assert\NotBlank(),
-                    ]
+                    ],
+                     'label' => 'Telephone' 
                 ]
             )->add(
                 'username',
@@ -64,10 +77,9 @@ class UserForm extends AbstractType
                 [
                     'constraints' => [
                         new Assert\NotBlank(),
-                        new Assert\Regex([
-                            'pattern' => '/^[A-Za-z0-9_-]$/'
-                        ])
-                    ]
+                       
+                    ],
+                    'label' => 'Pseudo' 
                 ]
             )->add(
                 'password',
@@ -76,10 +88,10 @@ class UserForm extends AbstractType
                     'type' => PasswordType::class,
                     'required' => true,
                     'first_options' => [
-                        'label' => 'Password'
+                        'label' => 'Mot de Passe' 
                     ],
                     'second_options' => [
-                        'label' => 'Repeat password'
+                        'label' => 'Retaper Mot de passe'
                     ],
                     'constraints' => [
                         new Assert\NotBlank()
@@ -91,7 +103,8 @@ class UserForm extends AbstractType
                 [
                     'constraints' => [
                         new Assert\NotBlank(),
-                    ]
+                    ],
+                     'label' => 'Numero' 
                 ] 
             )->add(
                 'street',
@@ -99,7 +112,8 @@ class UserForm extends AbstractType
                 [
                     'constraints' => [
                         new Assert\NotBlank(),
-                    ]
+                    ],
+                  'label' => 'Rue'    
                 ]  
             )->add(
                 'zip',
@@ -107,7 +121,8 @@ class UserForm extends AbstractType
                 [
                     'constraints' => [
                         new Assert\NotBlank(),
-                    ]
+                    ],
+                    'label' => 'Code Postal'  
                 ]  
             )->add(
                 'city',
@@ -115,7 +130,9 @@ class UserForm extends AbstractType
                 [
                     'constraints' => [
                         new Assert\NotBlank(),
-                    ]
+                    ],
+                    
+                     'label' => 'Ville' 
                 ]   
             )->add(
                 'country', 
@@ -128,11 +145,16 @@ class UserForm extends AbstractType
                         'Luxembourg' => 'Luxembourg',
                     ],
                     'placeholder' => 'Choisissez votre pays',
+                    'label' => 'Pays' 
                 ]
             );
         
         if ($options['standalone']) {
-            $builder->add('submit', SubmitType::class);
+            $builder->add('submit', SubmitType::class,
+             [
+                    
+                    'label' => "S'inscrire"
+             ]);
         }
     }
 
