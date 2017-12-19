@@ -40,6 +40,13 @@ $app->get('/login', function(Request $request) use ($app){
     );
 })->bind('login');
 
+//PAGE MOT DE PASSE PERDU
+$app->get('/password', function () use ($app) {
+    return $app['twig']->render('lostpassword.html.twig', array());
+})
+->bind('password')
+;
+
 //DECONNEXION
 $app->get('/logout', function () use ($app) {
     return $app['twig']->render('logout.html.twig', array());

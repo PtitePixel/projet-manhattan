@@ -233,7 +233,27 @@ body {
     width: 180px;
     position: absolute;
     float:left;     
-}                                  /* POST ANNONCE */
+}  
+                            /* LOST PASSWORD */
+.lost {
+    border: 1px solid #13455C;
+    box-shadow: 3px 7px 10px 1px #13455C; 
+    width: 30%;
+    margin: auto;
+    margin-top: 2rem;
+}
+.mail {
+  font-family: "Padauk";
+  font-size : 20px; 
+  margin-top: 2rem;
+  margin-left: 2rem;  
+}
+.mailInfo {
+    margin-top: 4rem;
+    margin-left: 2rem;
+}
+
+                        /* POST ANNONCE */
                                                     
 #formbox {
     margin-left: 2rem; 
@@ -247,7 +267,7 @@ body {
   box-shadow: 3px 7px 10px 1px #13455C;
 }
 
-   input:focus{
+input:focus{
     border-color:red;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
 }
@@ -303,7 +323,7 @@ input {
 .formBoxError {
     font-size: 15px;
     color : red;
-
+}
 
                                                     /* CONTACT */
 
@@ -458,6 +478,27 @@ input {
     #post {
         margin-left: 50%;
     }
+                                /*ARTICLE DETAILS */
+    .detailsTitle {
+        margin-bottom: 5rem;
+        margin-right: 2rem;
+    }
+    .detailsText {
+       margin-top: 0.5rem;
+       margin-right: 1.5rem;
+    }  
+    .detailsPrix {
+        margin-top: -4rem;
+        margin-right: 2rem;
+    }
+    .detailsSynopsis{
+        margin-top: 6rem;
+    }
+    #contactAnnonce {
+      margin-left: 65%;
+      width : 35%;
+    }
+    
                                 /*USER */
     .userInfo {
         width : 50%;
@@ -490,7 +531,7 @@ input {
     
                                     /* Side-navigational Bar */
     
-    #sidenav{
+   #sidenav{
       height: 100%;
       width: 0;
       position: fixed;

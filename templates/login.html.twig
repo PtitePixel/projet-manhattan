@@ -3,18 +3,26 @@
 {% block content %}
 
 {# Login form #}
-    <form action="{{ path('admin_login_check') }}" method="post">
 
 
-  <section class="login">     
+
+<section class="login">     
      <div id="sign">Se connecter</div>  
-          
-     <input class="logininput" type="text" name="_username" value="{{ last_username }}" /> <br>
-     <input class="logininput" type="password" name="_password" value="" /> <br>
-     <input id="signupbutton"type="submit" value="Se connecter"/>          
+        <form action="{{ path('admin_login_check') }}" method="post">
+             {{ error }}    
+             <input class="logininput" type="text" name="_username" value="{{ last_username }}" /> <br>
+             <input class="logininput" type="password" name="_password" value="" /> <br>
+              <a id="mdp" href="{{ path("password") }}"> Mot de passe oublié? </a> 
+             <input id="signupbutton"type="submit" value="Se connecter"/>          
+        </form>  
+             
+</section>      
+       
      
-  </section>      
-    
+     
+     
+     
+     
 <div id="sidenav">
     <ul>
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav();">x</a>
@@ -34,5 +42,5 @@ function closeNav() {
     document.getElementById("sidenav").style.width = "0";
 }
 </script>
-</form> 
+
 {% endblock %}
