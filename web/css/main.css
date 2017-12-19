@@ -7,11 +7,9 @@
        font-family: "Padauk";
        src:url(../fonts/Padauk-Regular.ttf);
   }
-
-
                                    /* HEADER */
 
-/* Menu */
+                                    /* Menu */
 .menu {
  background-color : #13455C;
  width : 100%;
@@ -36,7 +34,7 @@
 .menu li {
    margin : 1rem 2rem 0rem 2rem;
 }  
- /* Roll down menu */
+                            /* Roll down menu */
 .dropdown {
     float: left;
 }
@@ -72,7 +70,7 @@
 .show {
     display: block;
 }
-/* Search button */
+                                /* Search Bar */
 form {
     margin-top: 1rem;
 }
@@ -89,7 +87,7 @@ form {
     color : white;
     cursor: pointer;
 }
-/* Sign In Links */
+                                /* Sign In Links */
 .menu a{
     color: white;
     font-family: "Padauk";
@@ -104,8 +102,7 @@ form {
     color: white;
     text-decoration: none;
 }
-
-                                    /*FOOTER */         
+                                        /*FOOTER */         
 #footer {
     width : 100%;
     height : 3rem;
@@ -124,7 +121,6 @@ form {
     text-decoration: none;
 }
                                        /* INDEX */     
-
 container {
  width : 100%;
 }
@@ -161,8 +157,8 @@ body {
     color: white;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
 }    
-                                    /** INSCRIPTION **/
-/* Signup Details */
+                                         /* INSCRIPTION */
+                                        /* Signup Details */
 .signup{
   margin: auto;
   border: 1px solid #13455C;
@@ -170,7 +166,6 @@ body {
   box-shadow: 3px 7px 10px 1px #13455C;
   border-radius: 3px;
 }
-
 #sign {
     font-family: "Padauk";
     font-size: 30px;
@@ -190,7 +185,6 @@ body {
 #champsign {
    margin-left: 2rem;  
    margin-top: 1rem;  
-   
 }
 #user_form_submit{
   margin-left: 70%;
@@ -219,7 +213,6 @@ body {
   margin-top:40px; 
   width: 145px;  
 }
-
 #signupbutton:hover {
  box-shadow: 1px 1px 1px rgba(0, 0, 0, .5); 
 }
@@ -232,9 +225,6 @@ body {
 #formBoxError ul {
     list-style: none;
 }
-
-
-
                                             /* LOGIN DETAILS*/
 .login{
   border: 1px solid #13455C;
@@ -274,9 +264,7 @@ body {
     margin-top: 2rem;
     margin-left: 2rem;
 }
-
-                        /* POST ANNONCE */
-                                                    
+                        /* POST ANNONCE */                                                   
 #formbox {
     margin-left: 2rem; 
     margin-bottom: 1rem;
@@ -293,7 +281,6 @@ input:focus{
     border-color:red;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
 }
-
 .articledetails {
    font-family: "Padauk"; 
    font-size: 30px;
@@ -346,9 +333,7 @@ input {
     font-size: 15px;
     color : red;
 }
-
                                                     /* CONTACT */
-
 .contactez {
    font-family: "Kreon"; 
    color: #13455C;
@@ -428,7 +413,6 @@ input {
      text-decoration: none;
      box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
 }
-
                                     /* SEARCH */
  .card-text {
      font-size : 18px;
@@ -520,7 +504,6 @@ input {
       margin-left: 65%;
       width : 35%;
     }
-    
                                 /*USER */
     .userInfo {
         width : 50%;
@@ -550,9 +533,7 @@ input {
     .menu li{
       display: none;      
     }
-    
                                     /* Side-navigational Bar */
-    
    #sidenav{
       height: 100%;
       width: 0;
@@ -564,13 +545,10 @@ input {
       overflow-x: hidden;
       padding-top: 60px;
       transition: 0.5s;        
-    }  
-        
+    }    
     #sidenav li{
       list-style-type: none;
-      
     }
-    
     #sidenav a {
       padding: 8px 8px 8px 32px;
       text-decoration: none;
@@ -579,12 +557,10 @@ input {
       display: block;
       transition: 0.3s;
     }
-    
     #sidenav a:hover {
       color: #red;
       background-color: green;           
     }
-    
     #sidenav .closebtn {
       position: absolute;
       top: 0;
@@ -592,7 +568,6 @@ input {
       font-size: 36px;
       margin-left: 50px;
     }
-    
     #testdiv{
       background-color: green;
       width: 200px;

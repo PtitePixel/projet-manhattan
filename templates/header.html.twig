@@ -1,7 +1,6 @@
 <div class="menu">
       <a href="{{ path("homepage") }}"> <h1> LuxBay </h1> </a>
-      <ul>
-       
+      <ul>    
         <li> 
             {# Nav Category #}
             <div class="dropdown">
@@ -17,8 +16,7 @@
         </li> 
         <form id="searchbar" action="" method="get">
           <input type="text" name="search" placeholder="Rechercher..." />
-          <a href="{{ path ("search") }}"> <i class="fa fa-search"> </i> </a>  
-         
+          <a href="{{ path ("search") }}"> <i class="fa fa-search"> </i> </a> 
         </form>
        {# If Empty session only display #}
         <li> <a href="{{ path("signin") }}"> Inscription </a> </li>
@@ -27,6 +25,4 @@
         <li> <a href="{{ path("user") }}"> Mon Compte </a> </li> 
         <li> <a href="{{ path("admin/logout") }}"> Deconnexion</a> </li> 
       </ul>
-
- 
 </div>
