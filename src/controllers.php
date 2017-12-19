@@ -62,10 +62,10 @@ $app->get('/password', function () use ($app) {
 ;
 
 //DECONNEXION
-$app->get('/logout', function () use ($app) {
-    return $app['twig']->render('logout.html.twig', array());
+$app->get('/', function () use ($app) {
+    return $app['twig']->render('index.html.twig', array());
 })
-->bind('logout')
+->bind('admin/logout')
 ;
 
 
