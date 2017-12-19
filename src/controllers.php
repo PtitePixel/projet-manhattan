@@ -62,8 +62,8 @@ $app->get('/password', function () use ($app) {
 ;
 
 //DECONNEXION
-$app->get('/', function () use ($app) {
-    return $app['twig']->render('index.html.twig', array());
+$app->get('/admin/logout', function () use ($app) {
+    return $app['twig']->render('login.html.twig', array());
 })
 ->bind('admin/logout')
 ;
