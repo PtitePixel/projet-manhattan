@@ -20,13 +20,13 @@ class ArticleController {
         $repository = $app['orm.em']->getRepository(\Models\ArticleModel::class);
 
         $result = [];
-        foreach ($repository->findAll() as $user) {
-            $result[] = $user->toArray();
+        foreach ($repository->findAll() as $article) {
+            $result[] = $article->toArray();
         }
 
         return $app->json($result);
     }
-//genere la form de lârticle
+//genere la form de l'article
     public function createArticleAction(Request $request, Application $app) {
  
         $article = new ArticleModel();
@@ -76,7 +76,7 @@ class ArticleController {
 
         return $app['twig']->render(
                         'Article/ArticleSubmitTemplate.html.twig', [
-                    'form' => $userForm->createView()
+                    'form' => $articleForm->createView()
                         ]
         );
     }
