@@ -274,7 +274,7 @@ body {
     margin-top: 2rem;
     margin-left: 2rem;
 }
-                        /* POST ANNONCE */                                                   
+                                          /* POST ANNONCE */                                                   
 #formbox {
     margin-left: 2rem; 
     margin-bottom: 1rem;
@@ -343,6 +343,9 @@ input {
     font-size: 15px;
     color : red;
 }
+
+
+
                                                     /* CONTACT */
 .contactez {
    font-family: "Kreon"; 
@@ -498,24 +501,18 @@ input {
         margin-left: 50%;
     }
                                 /*ARTICLE DETAILS */
-    .detailsTitle {
-        margin-bottom: 5rem;
-        margin-right: 2rem;
-    }
+   
     .detailsText {
        margin-top: 0.5rem;
-       margin-right: 1.5rem;
+     
     }  
-    .detailsPrix {
-        margin-top: -4rem;
-        margin-right: 2rem;
-    }
+  
     .detailsSynopsis{
         margin-top: 6rem;
     }
     #contactAnnonce {
-      margin-left: 65%;
-      width : 35%;
+      margin-left: 50%;
+      width : 50%;
     }
                                 /*USER */
     .userInfo {
@@ -529,16 +526,17 @@ input {
     }
                                 /* INSCRIPTION */
     .signup {
-        width: 50%;
+        width: 80%;
         margin: auto;
     }
+   
                                 /* CONNEXION */
     .login {
         width: 50%;
         margin: auto;
     }
     #signupbutton{
-        margin-left: 65%;
+        margin-left: 60%;
         cursor:pointer;
     }
     .menu li{

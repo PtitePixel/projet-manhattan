@@ -18,11 +18,13 @@ use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\RadioType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Validator\Constraints as Assert;
 use Models\ArticleModel;
 use Controller\ArticleController;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 /**
  * Description of UserForm
@@ -45,7 +47,7 @@ class ArticleForm extends AbstractType
                   
             )->add(
                 'artPrice',
-                IntegerType::class,
+                NumberType::class,
                 [
                     'constraints' => [
                         new Assert\NotBlank()
@@ -61,6 +63,15 @@ class ArticleForm extends AbstractType
                     ],
                     'label' => 'Description'
                 ]
+            //image upload***************************************
+            )->add(
+                'artPicture', 
+                FileType::class, 
+                [
+                    'label' => 'Téléverser une image (Fichier .JPG)',
+                    'required' => false
+                ]
+            //*************************************************
             )->add(
                 'artCategorie', 
                 ChoiceType::class, //doit encore fonctionner avec la DB provisoir pour template
@@ -83,7 +94,7 @@ class ArticleForm extends AbstractType
              ]);
         }
     }
-
+    
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefault('data_class', ArticleModel::class);
@@ -99,4 +110,3 @@ class ArticleForm extends AbstractType
 }
     
     
-       

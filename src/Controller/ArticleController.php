@@ -7,6 +7,9 @@ use Silex\Application;
 use Models\ArticleModel;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Form\ArticleForm;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
 
 
 /**
@@ -30,18 +33,32 @@ class ArticleController {
     public function createArticleAction(Request $request, Application $app) {
  
         $article = new ArticleModel();
-
+        
         $formFactory = $app['form.factory'];
         $articleForm = $formFactory->create(ArticleForm::class, $article, ['standalone' => true]);
 
         $articleForm->handleRequest($request);
         if ($articleForm->isSubmitted() && $articleForm->isValid()) {
             $entityManager = $app['orm.em'];
+//Image upload****************************************
+            $file = $article->getArtPicture();
 
+            // Generate a unique name for the file before saving it
+            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+
+            // Move the file to the directory where brochures are stored
+            $file->move(
+                $app['upload.path'],
+                $fileName
+            );
+             // Update the 'brochure' property to store the PDF file name
+            // instead of its contents
+            $article->setArtpicture($fileName);
+//***************************************************
             $entityManager->persist($article);
             $entityManager->flush();
 
-            return $app->redirect($app['url_generator']->generate('login'));
+            return $app->redirect($app['url_generator']->generate('homepage')); //redirect pas just a voir avec pixel MG
         }
 
         return $app['twig']->render(

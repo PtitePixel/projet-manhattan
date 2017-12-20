@@ -32,6 +32,13 @@ $app->get('/admin', function () use ($app) {
 ->bind('homepage')
 ;
 
+// PAGE ACCUEIL
+$app->get('/accueil', function () use ($app) {
+    return $app['twig']->render('index.html.twig', array());
+})
+->bind('accueil')
+;
+
 // PAGE RECHERCHE
 $app->get('/search', function () use ($app) {
     return $app['twig']->render('search.html.twig', array());
@@ -70,7 +77,7 @@ $app->get('/admin/logout', function () use ($app) {
 
 
 // PAGE COMPTE
-$app->get('/user', function () use ($app) {
+$app->get('admin/user', function () use ($app) {
     return $app['twig']->render('user.html.twig', array());
 })
 ->bind('user')
