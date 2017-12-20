@@ -66,9 +66,6 @@ $app->register(
             'ROLE_SUPER_ADMIN' => ['ROLE_ADMIN'],               // ROLE_SUPER_ADMIN is upper than ROLE_ADMIN ad ROLE_USER
             'ROLE_ADMIN' => ['ROLE_USER']
         ],
-        'security.default_encoder' => function(){               // Create plain text password encoder
-            return new PlaintextPasswordEncoder();
-        },
         'security.access_rules' => [
             ['^/admin', 'ROLE_ADMIN'],
             ['^/admin/user', 'ROLE_USER']   // probleme a regler pour que seul les enregistrer ont le droit de creer des articles
