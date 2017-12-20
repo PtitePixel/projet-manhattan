@@ -14,6 +14,7 @@ use Models\UserModel;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Form\UserForm;
 use Models\Role;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 
 /**

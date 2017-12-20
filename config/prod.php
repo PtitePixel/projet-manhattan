@@ -58,17 +58,22 @@ $app->register(
                 ],
                 'form' => [
                     'login_path' => '/login',
-                    'check_path' => '/admin/login_check'
+                    'check_path' => '/admin/login_check',
+                    'default_target_path' => '/user',
+                    'always_use_default_target_path' => true
                 ]
             ]
         ],
+        'security.default_encoder' => function ($app) {
+            return $app['security.encoder.bcrypt'];
+        },
         'security.role_hierarchy' => [                          // Role hierarchy definition
             'ROLE_SUPER_ADMIN' => ['ROLE_ADMIN'],               // ROLE_SUPER_ADMIN is upper than ROLE_ADMIN ad ROLE_USER
             'ROLE_ADMIN' => ['ROLE_USER']
         ],
         'security.access_rules' => [
             ['^/admin', 'ROLE_ADMIN'],
-            ['^/admin/user', 'ROLE_USER']   // probleme a regler pour que seul les enregistrer ont le droit de creer des articles
+            ['^/user', 'ROLE_USER']   // probleme a regler pour que seul les enregistrer ont le droit de creer des articles
         ]
     ]
 );
