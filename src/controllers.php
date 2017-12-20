@@ -78,10 +78,10 @@ $app->get('/admin/logout', function () use ($app) {
 
 
 // PAGE COMPTE
-$app->get('admin/user', function () use ($app) {
+$app->get('/user/account', function () use ($app) {
     return $app['twig']->render('user.html.twig', array());
 })
-->bind('user')
+->bind('account')
 ;
 
 //PAGE ANNONCE qui fait maintement appel au controlleur

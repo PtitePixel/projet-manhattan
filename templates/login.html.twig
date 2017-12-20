@@ -19,6 +19,28 @@
          <a id="xlink" href="javascript:void(0)" class="closebtn" onclick="closeNav();">x</a>         
          <li id="lipadding"> <a href="{{ path("signin") }}"> Inscription </a> </li>
          <li> <a href="{{ path("login") }}"> Connexion </a> </li>
+
+         <li> <a href="{{ path("account") }}"> Mon Compte </a> </li>
+         <li> <a href="{{ path("logout") }}"> Deconnexion</a> </li>      
+     </div>
+
+    
+     
+     
+     
+     
+<div id="sidenav">
+    <ul>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav();">x</a>
+        <a href=""><li>A</li></a>
+        <a href=""><li>B</li></a>
+        <a href=""><li>C</li></a>
+    </ul>
+</div>
+
+<div id="testdiv" onclick="openNav();">
+</div>
+
          <li> <a href="{{ path("user") }}"> Mon Compte </a> </li>
          <li> <a href="{{ path("logout") }}"> Deconnexion</a> </li> 
  </div>
@@ -26,6 +48,7 @@
 
 
 <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
 
 <script>
 function openNav() {
