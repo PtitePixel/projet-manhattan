@@ -1,40 +1,20 @@
 <div class="menu">
-
-
-      <a href="{{ path("accueil") }}"> <h1> LuxBay </h1> </a>
-      <ul>    
-
-        <li> 
+      <a href="{{ path("accueil") }}"> <h1> LuxBay </h1> </a> 
             {# Nav Category #}
-
             <div class="dropdown">
                 <button class="dropbtn" onclick="myFunction();"> Categories <i class="fa fa-caret-down"></i> </button>
-                
                 <div class="dropdown-content" id="myDropdown">
                   <a href="#">Informatique</a>
                   <a href="#">Litterature</a>
                   <a href="#">Meubles</a>
-
                 </div>        
             </div>      
-          
       <ul> 
            <form id="searchbar" action="" method="get">
             <input type="text" name="search" placeholder="Rechercher..." />          
             <a href="{{ path ("search") }}"> <i class="fa fa-search"> </i> </a> 
-           </form>
- 
-
-                </div>
+           </form>   
         
-            </div>
-        </li> 
-        <form id="searchbar" action="" method="get">
-          <input type="text" name="search" placeholder="Rechercher..." />
-          <a href="{{ path ("search") }}"> <i class="fa fa-search"> </i> </a>  
-         
-        </form>
-
        {# If Empty session only display #}
         <li> <a href="{{ path("signin") }}"> Inscription </a> </li>
         <li> <a href="{{ path("login") }}"> Connexion </a> </li>
@@ -47,8 +27,5 @@
 
 </div>
 
-      </ul>
+     
 
-
- 
-</div>
