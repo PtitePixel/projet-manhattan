@@ -70,7 +70,8 @@ $app->register(
             return new PlaintextPasswordEncoder();
         },
         'security.access_rules' => [
-            ['^/admin', 'ROLE_ADMIN']
+            ['^/admin', 'ROLE_ADMIN'],
+            ['^/admin/user', 'ROLE_USER']   // probleme a regler pour que seul les enregistrer ont le droit de creer des articles
         ]
     ]
 );

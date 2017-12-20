@@ -20,6 +20,7 @@ $app->register(new ValidatorServiceProvider());
 $app->register(new FormServiceProvider());
 $app->register(new TranslationServiceProvider());
 
+$app['upload.path'] = str_replace('/', DIRECTORY_SEPARATOR, __DIR__.'/../upload');
 
 
 $app['twig'] = $app->extend('twig', function ($twig, $app) {
