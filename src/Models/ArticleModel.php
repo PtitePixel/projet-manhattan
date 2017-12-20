@@ -22,7 +22,11 @@ class ArticleModel {
     private $artTitle;
 
     /**
-     * @Column(name="art_price", type="integer", length=10, nullable=false)
+<<<<<<< HEAD
+     * @Column(name="art_price", type="float", length=100, nullable=false)
+=======
+     * @Column(name="art_price", type="float", length=10, nullable=false)
+>>>>>>> fb367c10090281d793c8dbd13620ba537b053f94
      */
     private $artPrice;
 
@@ -32,9 +36,14 @@ class ArticleModel {
     private $artDescription;
     
      /**
-     * @Column (name="art_categorie ", type="string", length=50, nullable=false)
+     * @Column (name="art_categorie", type="string", length=50, nullable=false)
      */
     private $artCategorie ;
+    
+     /**
+     * @Column (name="art_picture", type="string", length=50, nullable=false)
+     */
+    private $artPicture ;
     
     // Getter
     function getArtId() {
@@ -56,8 +65,9 @@ class ArticleModel {
     function getArtCategorie() {
         return $this->artCategorie;
     }
+  
 
-    // Setter
+        // Setter
     function setArtTitle($artTitle) {
         $this->artTitle = $artTitle;
         return $this;
@@ -77,6 +87,23 @@ class ArticleModel {
         $this->artCategorie = $artCategorie;
         return $this;
     }
+    
+    //image upload****************************
+    
+     /**
+     * @ORM\Column(type="string")
+     *
+     * @Assert\File(mimeTypes={ "image/jpeg" })
+     */
+    function setArtPicture($artPicture) {
+        $this->artPicture = $artPicture;
+        return $this;
+    }
+      
+    function getArtPicture() {
+        return $this->artPicture;
+    }
+    
 
     
 }

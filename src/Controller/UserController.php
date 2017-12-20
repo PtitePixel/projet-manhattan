@@ -14,6 +14,7 @@ use Models\UserModel;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Form\UserForm;
 use Models\Role;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 
 /**
@@ -48,11 +49,17 @@ class UserController {
             
             $role = $app['orm.em']->getRepository(Role::class)->findOneByLabel('ROLE_USER');
             $user->addRole($role);
+                
+            
+            $encoder = $app['security.encoder_factory']->getEncoder(UserInterface::class);
+            $password = $encoder->encodePassword($user->getPassword(), null);
+            $user->setPassword($password);
 
             $entityManager->persist($user);
             $entityManager->flush();
 
             return $app->redirect($app['url_generator']->generate('login'));
+
         }
 
         return $app['twig']->render(
@@ -84,7 +91,7 @@ class UserController {
 
         $formFactory = $app['form.factory'];
         $userForm = $formFactory->create(UserForm::class, $user, ['standalone' => true]);
-//attention a modifier ok
+//attention a modifier ok MG
         return $app['twig']->render(
                         'signin.html.twig', [
                     'form' => $userForm->createView()

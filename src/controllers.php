@@ -32,6 +32,13 @@ $app->get('/admin', function () use ($app) {
 ->bind('homepage')
 ;
 
+// PAGE ACCUEIL
+$app->get('/accueil', function () use ($app) {
+    return $app['twig']->render('index.html.twig', array());
+})
+->bind('accueil')
+;
+
 // PAGE RECHERCHE
 $app->get('/search', function () use ($app) {
     return $app['twig']->render('search.html.twig', array());
@@ -39,7 +46,8 @@ $app->get('/search', function () use ($app) {
 ->bind('search')
 ;
 
-//PAGE INSCRIPTION
+
+//PAGE INSCRIPTION qui fait maintement appel au controlleur
 $app->match('/signin', "Controller\UserController::createUserAction")
 ->bind('signin')
 ;
@@ -70,7 +78,7 @@ $app->get('/admin/logout', function () use ($app) {
 
 
 // PAGE COMPTE
-$app->get('/user', function () use ($app) {
+$app->get('admin/user', function () use ($app) {
     return $app['twig']->render('user.html.twig', array());
 })
 ->bind('user')
@@ -94,12 +102,14 @@ $app->get('/contact', function () use ($app) {
 })
 ->bind('contact')
 ;
+
 //PAGE DETAILS ARTICLE
 $app->get('/details', function () use ($app) {
     return $app['twig']->render('articledetails.html.twig', array());
 })
 ->bind('details')
 ;
+
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {

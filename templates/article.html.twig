@@ -26,8 +26,14 @@
       <div id="formbox">{{ form_widget(form.artDescription) }} </div> 
       {# no error display #}
 
-      {{ form_label(form.artPicture) }}
+<<<<<<< HEAD
+      <div id="titreAnnonce"> {{ form_label(form.artPicture) }} </div>
+      <div id="formbox"> {{ form_widget(form.artPicture) }} </div>
+      <div id="formBoxError"> {{ form_errors(form.artPicture) }} </div>
       
+=======
+
+>>>>>>> fb367c10090281d793c8dbd13620ba537b053f94
       </br>
       {# display form submit button #}
       <div> {{ form_row(form.submit) }} </div> 

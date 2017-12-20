@@ -2,3 +2,6 @@
 vendor/
 nbproject/
 
+upload/
+!upload/.gitkeep
+

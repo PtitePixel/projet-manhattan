@@ -5,10 +5,10 @@
   {# Sign up Details #}
 
 
-{{ form_start(form) }} {# display open tag of the form #}
-<section class="signup">
+   {{ form_start(form) }} {# display open tag of the form #}
+    <section class="signup">
        <h3 id="sign"> Inscription </h3>
-          
+
             <div class="row">
                 <div class="col-sm-12 col-md-4 col-md-offset-2" >                      
                     <div id="titreAnnonce">{{ form_label(form.firstname) }}</div>
@@ -68,12 +68,9 @@
             </div>
                     
 {{ form_row(form.submit) }}  
-          
-</section>
-         
-		
-{{ form_rest(form) }}
-{{ form_end(form) }} {# display close tag of the form #}
+
+        {{ form_rest(form) }}
+	{{ form_end(form) }} {# display close tag of the form #}
 
  <div id="sidenav">     
          <a id="xlink" href="javascript:void(0)" class="closebtn" onclick="closeNav();">x</a>         
