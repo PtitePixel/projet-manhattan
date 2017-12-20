@@ -49,10 +49,12 @@ class UserController {
             $role = $app['orm.em']->getRepository(Role::class)->findOneByLabel('ROLE_USER');
             $user->addRole($role);
 
+
             $entityManager->persist($user);
             $entityManager->flush();
 
             return $app->redirect($app['url_generator']->generate('login'));
+
         }
 
         return $app['twig']->render(
@@ -84,7 +86,7 @@ class UserController {
 
         $formFactory = $app['form.factory'];
         $userForm = $formFactory->create(UserForm::class, $user, ['standalone' => true]);
-//attention a modifier ok
+//attention a modifier ok MG
         return $app['twig']->render(
                         'signin.html.twig', [
                     'form' => $userForm->createView()

@@ -22,7 +22,11 @@ class ArticleModel {
     private $artTitle;
 
     /**
+<<<<<<< HEAD
      * @Column(name="art_price", type="float", length=100, nullable=false)
+=======
+     * @Column(name="art_price", type="float", length=10, nullable=false)
+>>>>>>> fb367c10090281d793c8dbd13620ba537b053f94
      */
     private $artPrice;
 
