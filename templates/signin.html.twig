@@ -66,6 +66,7 @@
                     <div id="formBoxError">{{ form_errors(form.country) }}</div> 
                  </div>
             </div>
+                    
 {{ form_row(form.submit) }}  
           
 </section>
@@ -73,5 +74,27 @@
 		
 {{ form_rest(form) }}
 {{ form_end(form) }} {# display close tag of the form #}
+
+ <div id="sidenav">     
+         <a id="xlink" href="javascript:void(0)" class="closebtn" onclick="closeNav();">x</a>         
+         <li id="lipadding"> <a href="{{ path("signin") }}"> Inscription </a> </li>
+         <li> <a href="{{ path("login") }}"> Connexion </a> </li>
+         <li> <a href="{{ path("user") }}"> Mon Compte </a> </li>
+         <li> <a href="{{ path("logout") }}"> Deconnexion</a> </li> 
+ </div>
+   
+      
+
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<script>
+function openNav() {
+    document.getElementById("sidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("sidenav").style.width = "0";
+}
+
+</script>
 
 {% endblock %}

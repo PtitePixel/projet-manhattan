@@ -54,7 +54,8 @@
     background-color:  #13455C;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    margin-left: 2rem;
+    margin-left: 6rem;
+    margin-top:70px;    
 }
 .dropdown-content a {
     float: none;
@@ -85,7 +86,11 @@ form {
     background-color: #13455C;
     border : none;
     color : white;
-    cursor: pointer;
+    cursor: pointer;    
+    margin-left: 125px;
+    margin-top: 2rem;
+    width:110px;
+    position: absolute;
 }
                                 /* Sign In Links */
 .menu a{
@@ -103,7 +108,10 @@ form {
     text-decoration: none;
 }
 
-#hamburgericon{
+.fa-bars{
+    color:#13455C;
+}
+#sidenav{
     display:none;
 }
 
@@ -480,9 +488,7 @@ input {
       box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);   
 }
 
-#tabletdiv{
-    display:none;
-}
+
                                     /* For Tablets */
 
 @media screen and (min-width:650px) and (max-height:959px) {
@@ -561,25 +567,27 @@ input {
       overflow-x: hidden;
       padding-top: 60px;      
       transition: 0.4s; 
-      opacity: 0.9;      
+      opacity: 0.9;
+      display:block;
     }  
         
     #sidenav li{
       list-style-type: none;      
-      transition: 0.5s;        
+      transition: 0.5s;      
     }    
-
+    #lipadding{
+        margin-top: 20px;
+    }
 
     #sidenav a {
       padding: 8px 8px 8px 32px;
       text-decoration: none;
       font-size: 20px;
-      color: #13455C;
+      color: white;
       display: block;
       transition: 0.3s;
     }
-    #sidenav a:hover {
-      color: black;
+    #sidenav a:hover {      
       background-color: #1A6487;           
     }
     #sidenav .closebtn {
@@ -587,27 +595,20 @@ input {
       top: 0;
       right: 25px;
       font-size: 36px;
-      margin-left: 50px;
-      
+      margin-left: 50px;       
     }    
 
-    #hamburgericon{
+    .fa-bars {
       display:inline;
-      width: 10%;
+      width: 8%;
       background-color:#13455C;
       cursor: pointer;
-      color:white;
-      font-size: 30px;
+      color:white;      
     }
-    #testdiv{
-      background-color: green;
-      width: 200px;
-      height: 200px;        
 
-    } 
     #xlink{
         width:80px;  
-        height:80px;
+        height:80px;        
     }
 } 
 
