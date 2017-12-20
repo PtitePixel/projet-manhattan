@@ -49,10 +49,12 @@ class UserController {
             $role = $app['orm.em']->getRepository(Role::class)->findOneByLabel('ROLE_USER');
             $user->addRole($role);
 
+
             $entityManager->persist($user);
             $entityManager->flush();
 
             return $app->redirect($app['url_generator']->generate('login'));
+
         }
 
         return $app['twig']->render(

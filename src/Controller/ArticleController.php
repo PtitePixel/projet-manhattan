@@ -58,7 +58,9 @@ class ArticleController {
             $entityManager->persist($article);
             $entityManager->flush();
 
+
             return $app->redirect($app['url_generator']->generate('homepage')); //redirect pas just a voir avec pixel MG
+
         }
 
         return $app['twig']->render(
