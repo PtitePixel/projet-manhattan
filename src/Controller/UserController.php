@@ -13,7 +13,8 @@ use Silex\Application;
 use Models\UserModel;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Form\UserForm;
-/**use Models\Role;
+use Models\Role;
+
 
 /**
  * Description of UserController
@@ -44,6 +45,9 @@ class UserController {
         $userForm->handleRequest($request);
         if ($userForm->isSubmitted() && $userForm->isValid()) {
             $entityManager = $app['orm.em'];
+            
+            $role = $app['orm.em']->getRepository(Role::class)->findOneByLabel('ROLE_USER');
+            $user->addRole($role);
 
             $entityManager->persist($user);
             $entityManager->flush();
