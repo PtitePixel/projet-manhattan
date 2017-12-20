@@ -13,7 +13,7 @@ use Silex\Application;
 use Models\UserModel;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Form\UserForm;
-use Models\Role;
+/**use Models\Role;
 
 /**
  * Description of UserController
@@ -33,112 +33,39 @@ class UserController {
         return $app->json($result);
     }
 
+//genere la form du User
     public function createUserAction(Request $request, Application $app) {
-
-        if (!$request->request->has('user_firstname')) {
-            $message = 'Firstname must be defined';
-            return $app->json(['status' => 'error', 'message' => $message], 400);
-        }
-
-        if (!$request->request->has('user_lastname')) {
-            $message = 'Lastname must be defined';
-            return $app->json(['status' => 'error', 'message' => $message], 400);
-        }
-
-        if (!$request->request->has('user_username')) {
-            $message = 'Username must be defined';
-            return $app->json(['status' => 'error', 'message' => $message], 400);
-        }
-
-        if (!$request->request->has('user_email')) {
-            $message = 'Email must be defined';
-            return $app->json(['status' => 'error', 'message' => $message], 400);
-        }
-
-        if (!$request->request->has('user_telephone')) {
-            $message = 'Telephone must be defined';
-            return $app->json(['status' => 'error', 'message' => $message], 400);
-        }
-
-        if (!$request->request->has('user_number')) {
-            $message = 'House_number must be defined';
-            return $app->json(['status' => 'error', 'message' => $message], 400);
-        }
-
-        if (!$request->request->has('user_street')) {
-            $message = 'Street must be defined';
-            return $app->json(['status' => 'error', 'message' => $message], 400);
-        }
-
-        if (!$request->request->has('user_city')) {
-            $message = 'City must be defined';
-            return $app->json(['status' => 'error', 'message' => $message], 400);
-        }
-
-        if (!$request->request->has('user_zip')) {
-            $message = 'Zip must be defined';
-            return $app->json(['status' => 'error', 'message' => $message], 400);
-        }
-
-        if (!$request->request->has('user_country')) {
-            $message = 'Country must be defined';
-            return $app->json(['status' => 'error', 'message' => $message], 400);
-        }
-
-        if (!$request->request->has('user_password')) {
-            $message = 'Password must be defined';
-            return $app->json(['status' => 'error', 'message' => $message], 400);
-        }
-
-        $username = $request->request->get('user_username');
-        $password = $request->request->get('user_password');
-        $role = $request->request->get('user_role');
-        // $firstname = $_POST['user_firstname'];
-        $firstname = $request->request->get('user_firstname');
-        // $lastname = $_POST['user_lastname'];
-        $lastname = $request->request->get('user_lastname');
-        $email = $request->request->get('user_email');
-        $telephone = $request->request->get('user_telephone');
-        $username = $request->request->get('user_name');
-        $number = $request->request->get('user_number');
-        $street = $request->request->get('user_street');
-        $city = $request->request->get('user_city');
-        $zip = $request->request->get('user_zip');
-        $country = $request->request->get('user_country');
-
-        $roleInstance = $app['orm.em']->getRepository(\Models\Role::class)->findOneByLabel($role);
-        if (!$role) {
-            throw new NotFoundHttpException('Role ' . $role . ' not found');
-        }
-
+ 
         $user = new UserModel();
-        $user->setFirstname($firstname)
-                ->setLastname($lastname)
-                ->setEmail($email)
-                ->setTelephone($telephone)
-                ->setNumber($number)
-                ->setStreet($street)
-                ->setCity($city)
-                ->setZip($zip)
-                ->setCountry($country)
-                ->setUsername($username)
-                ->setPassword($password)
-                ->setRoles([$roleInstance]);
 
-        $entityManager = $app['orm.em'];
-        $entityManager->persist($user);
-        $entityManager->flush();
+        $formFactory = $app['form.factory'];
+        $userForm = $formFactory->create(UserForm::class, $user, ['standalone' => true]);
 
-        return $app->json($user->toArray());
+        $userForm->handleRequest($request);
+        if ($userForm->isSubmitted() && $userForm->isValid()) {
+            $entityManager = $app['orm.em'];
+
+            $entityManager->persist($user);
+            $entityManager->flush();
+
+            return $app->redirect($app['url_generator']->generate('login'));
+        }
+
+        return $app['twig']->render(
+                        'signin.html.twig', [
+                    'form' => $userForm->createView()
+                        ]
+        );
     }
-
-    public function deleteAction(Request $request, Application $app, $id) {
+       // c'est a partir d'ici que j'ai des problemes MG
+    
+    public function deleteAction(Request $request, Application $app, $Id) {
         $manager = $app['orm.em'];
-        $repository = $manager->getRepository(UserModel::class);
-        $user = $repository->find($id);
+        $repository = $manager->getRepository(ArticleModel::class);
+        $user = $repository->find($Id);
 
-        if (!$user) {
-            $message = sprintf('User %d not found', $id);
+        if (!$Id) {
+            $message = sprintf('User %d not found', $Id);
             return $app->json(['status' => 'error', 'message' => $message], 404);
         }
 
@@ -153,23 +80,9 @@ class UserController {
 
         $formFactory = $app['form.factory'];
         $userForm = $formFactory->create(UserForm::class, $user, ['standalone' => true]);
-
-        $userForm->handleRequest($request);
-        if ($userForm->isSubmitted() && $userForm->isValid()) {
-            $entityManager = $app['orm.em'];
-            $roleRepository = $entityManager->getRepository(Role::class);
-            $userRole = $roleRepository->findOneByLabel('ROLE_USER');
-
-            $user->addRole($userRole);
-
-            $entityManager->persist($user);
-            $entityManager->flush();
-
-            return $app->redirect($app['url_generator']->generate('login'));
-        }
-
+//attention a modifier ok
         return $app['twig']->render(
-                        'User/RegistrationTemplate.html.twig', [
+                        'signin.html.twig', [
                     'form' => $userForm->createView()
                         ]
         );
