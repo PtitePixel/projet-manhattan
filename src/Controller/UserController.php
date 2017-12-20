@@ -48,7 +48,11 @@ class UserController {
             
             $role = $app['orm.em']->getRepository(Role::class)->findOneByLabel('ROLE_USER');
             $user->addRole($role);
-
+                
+            
+            $encoder = $app['security.encoder_factory']->getEncoder(UserInterface::class);
+            $password = $encoder->encodePassword($user->getPassword(), null);
+            $user->setPassword($password);
 
             $entityManager->persist($user);
             $entityManager->flush();
