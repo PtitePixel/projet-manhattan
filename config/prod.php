@@ -54,7 +54,7 @@ $app->register(
                 'logout' => [
                     'logout_path' => '/admin/logout',
                     'invalidate_session' => true,
-                    'target_url' => '/admin'
+                    'target_url' => '/login'
                 ],
                 'form' => [
                     'login_path' => '/login',

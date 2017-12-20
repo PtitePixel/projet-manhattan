@@ -8,7 +8,7 @@
 
 <section class="login">     
      <div id="sign">Se connecter</div>  
-<<<<<<< HEAD
+
      <form action="{{ path('admin_login_check') }}" method="post">
      {{ error }}        
        <input class="logininput" type="text" name="_username" value="{{ last_username }}" /> <br>
@@ -22,24 +22,11 @@
          <a id="xlink" href="javascript:void(0)" class="closebtn" onclick="closeNav();">x</a>
          <li> <a href="{{ path("signin") }}"> Inscription </a> </li>
          <li> <a href="{{ path("login") }}"> Connexion </a> </li>
-         <li> <a href="{{ path("user") }}"> Mon Compte </a> </li>
+         <li> <a href="{{ path("account") }}"> Mon Compte </a> </li>
          <li> <a href="{{ path("logout") }}"> Deconnexion</a> </li>      
      </div>
 
-   
-      
-=======
-        <form action="{{ path('admin_login_check') }}" method="post">
-             {{ error }}    
-             <input class="logininput" type="text" name="_username" value="{{ last_username }}" /> <br>
-             <input class="logininput" type="password" name="_password" value="" /> <br>
-              <a id="mdp" href="{{ path("password") }}"> Mot de passe oublié? </a> 
-             <input id="signupbutton"type="submit" value="Se connecter"/>          
-        </form>  
-             
-</section>      
-       
-     
+    
      
      
      
@@ -52,7 +39,7 @@
         <a href=""><li>C</li></a>
     </ul>
 </div>
->>>>>>> fb367c10090281d793c8dbd13620ba537b053f94
+
 <div id="testdiv" onclick="openNav();">
 </div>
 <script>

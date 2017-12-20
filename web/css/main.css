@@ -274,13 +274,12 @@ body {
     margin-top: 2rem;
     margin-left: 2rem;
 }
-<<<<<<< HEAD
+
                                           /* POST ANNONCE */                                                   
-=======
+
 
                         /* POST ANNONCE */
-                                                    
->>>>>>> fb367c10090281d793c8dbd13620ba537b053f94
+
 #formbox {
     margin-left: 2rem; 
     margin-bottom: 1rem;
@@ -351,11 +350,6 @@ input {
     color : red;
 }
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> fb367c10090281d793c8dbd13620ba537b053f94
                                                     /* CONTACT */
 
 .contactez {
@@ -546,15 +540,15 @@ input {
         margin: auto;
     }
     #signupbutton{
-<<<<<<< HEAD
+
         margin-left: 60%;
         cursor:pointer;
-=======
+
         margin-left: 65%;
     }
     .dropbtn{
         
->>>>>>> fb367c10090281d793c8dbd13620ba537b053f94
+
     }
     .menu li{
       display: none;      
