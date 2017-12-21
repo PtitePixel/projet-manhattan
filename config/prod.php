@@ -59,7 +59,7 @@ $app->register(
                 'form' => [
                     'login_path' => '/login',
                     'check_path' => '/admin/login_check',
-                    'default_target_path' => '/user',
+                    'default_target_path' => '/user/account',
                     'always_use_default_target_path' => true
                 ]
             ]
