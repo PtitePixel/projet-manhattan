@@ -10,8 +10,6 @@ use Controller\ArticleController;
 
 //Request::setTrustedProxies(array('127.0.0.1'));
 
-$app->match('/', 'Controller\UserController::registerAction')->bind('register');
-
 $app->get('/admin/users', sprintf('%s::getAllAction', UserController::class))->bind('get_all_users');
 $app->post('/admin/user', sprintf('%s::createUserAction', UserController::class))->bind('create_user');
 $app->delete('/admin/user/{id}', sprintf('%s::deleteAction', UserController::class))->bind('delete_user');
@@ -32,8 +30,10 @@ $app->get('/admin', function () use ($app) {
 ->bind('homepage')
 ;
 
+$app->match('/register', 'Controller\UserController::registerAction')->bind('register');
+
 // PAGE ACCUEIL
-$app->get('/accueil', function () use ($app) {
+$app->get('/', function () use ($app) {
     return $app['twig']->render('index.html.twig', array());
 })
 ->bind('accueil')
