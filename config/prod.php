@@ -45,8 +45,8 @@ $app->register(
     [
         'security.firewalls' => [                           // firewalls definition
             'firewall_named_admin' => [                     // firewall name
-                'pattern' => '^/admin',                     // firewall scope
-                'http' => true,                             // pure http authentication system
+                'pattern' => '^/',                     // firewall scope
+                'anonymous' => true,                             // pure http authentication system
                 'users' => function() use ($app) {
                     $repository = $app['orm.em']->getRepository(Models\UserModel::class);
                     return new \Provider\DBUserProvider($repository);
@@ -73,7 +73,7 @@ $app->register(
         ],
         'security.access_rules' => [
             ['^/admin', 'ROLE_ADMIN'],
-            ['^/user', 'ROLE_USER']   // probleme a regler pour que seul les enregistrer ont le droit de creer des articles
+            ['^/(user|article)', 'ROLE_USER']   // probleme a regler pour que seul les enregistrer ont le droit de creer des articles
         ]
     ]
 );
