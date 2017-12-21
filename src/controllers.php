@@ -79,7 +79,17 @@ $app->get('/admin/logout', function () use ($app) {
 
 // PAGE COMPTE
 $app->get('/user/account', function () use ($app) {
-    return $app['twig']->render('user.html.twig', array());
+    
+    $user = null;
+    $token = $app['security.token_storage']->getToken();  // Get current authentication token The current user information is stored in a token that is accessible via the security service
+    
+    if ($token !== null) {
+        $user = $token->getUser();                        // Get user from token f there is no information about the user, the token is null. If the user is known, you can get it with a call to getUser():
+    }
+    
+    // user is instance of Symfony\Component\Security\Core\User\UserInterface
+    
+    return $app['twig']->render('user.html.twig', array('user' => $user));
 })
 ->bind('account')
 ;

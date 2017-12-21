@@ -534,6 +534,9 @@ input {
         width : 50%;
         margin: auto;
     }
+    #info {
+        width: 70%;
+    }
     .create {
         width : 50%;
         margin: auto;
