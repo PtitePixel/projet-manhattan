@@ -417,7 +417,7 @@ input {
    font-family: "Padauk";
    font-size: 20px;
    padding-top: 1rem;
-   width : 30%;
+   width : 50%;
 }
 .create {
     width : 20%;
@@ -543,6 +543,9 @@ input {
     .userInfo {
         width : 50%;
         margin: auto;
+    }
+    #info {
+        width: 70%;
     }
     .create {
         width : 50%;

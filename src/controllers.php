@@ -10,8 +10,6 @@ use Controller\ArticleController;
 
 //Request::setTrustedProxies(array('127.0.0.1'));
 
-$app->match('/', 'Controller\UserController::registerAction')->bind('register');
-
 $app->get('/admin/users', sprintf('%s::getAllAction', UserController::class))->bind('get_all_users');
 $app->post('/admin/user', sprintf('%s::createUserAction', UserController::class))->bind('create_user');
 $app->delete('/admin/user/{id}', sprintf('%s::deleteAction', UserController::class))->bind('delete_user');
@@ -32,8 +30,10 @@ $app->get('/admin', function () use ($app) {
 ->bind('homepage')
 ;
 
+$app->match('/register', 'Controller\UserController::registerAction')->bind('register');
+
 // PAGE ACCUEIL
-$app->get('/accueil', function () use ($app) {
+$app->get('/', function () use ($app) {
     return $app['twig']->render('index.html.twig', array());
 })
 ->bind('accueil')
@@ -79,7 +79,17 @@ $app->get('/admin/logout', function () use ($app) {
 
 // PAGE COMPTE
 $app->get('/user/account', function () use ($app) {
-    return $app['twig']->render('user.html.twig', array());
+    
+    $user = null;
+    $token = $app['security.token_storage']->getToken();  // Get current authentication token The current user information is stored in a token that is accessible via the security service
+    
+    if ($token !== null) {
+        $user = $token->getUser();                        // Get user from token f there is no information about the user, the token is null. If the user is known, you can get it with a call to getUser():
+    }
+    
+    // user is instance of Symfony\Component\Security\Core\User\UserInterface
+    
+    return $app['twig']->render('user.html.twig', array('user' => $user));
 })
 ->bind('account')
 ;
