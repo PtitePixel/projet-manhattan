@@ -15,5 +15,24 @@
         en page de texte, comme Aldus PageMaker.
     </p>    
 </div>
+
+ <div id="sidenav">     
+    <a id="xlink" href="javascript:void(0)" class="closebtn" onclick="closeNav();">x</a>
+    <ul>         
+        <li id="lipadding"> <a href="{{ path("signin") }}"> Inscription </a> </li>
+        <li> <a href="{{ path("login") }}"> Connexion </a> </li>
+        <li> <a href="{{ path("account") }}"> Mon Compte </a> </li>
+        <li> <a href="{{ path("logout") }}"> Deconnexion</a> </li>  
+    </ul>
+ </div> 
+      
+<script>
+function openNav() {
+    document.getElementById("sidenav").style.width = "250px";
+}
+function closeNav() {
+    document.getElementById("sidenav").style.width = "0";
+}
+</script>    
 {% endblock %}
 

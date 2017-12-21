@@ -9,34 +9,53 @@
       <h1 id="sign">Entrez les details de votre article :</h1>
    
       {# Title Input #}
-      <div id="titreAnnonce">{{ form_label(form.artTitle) }}</div> 
-      <div id="formbox"> {{ form_widget(form.artTitle) }}</div>
+      <div class="titreAnnonce">{{ form_label(form.artTitle) }}</div> 
+      <div class="formbox"> {{ form_widget(form.artTitle) }}</div>
       <div class="formBoxError">{{ form_errors(form.artTitle) }}</div> 
       {# Price Input#}
-      <div id="titreAnnonce">{{ form_label(form.artPrice) }}</div>
-      <div id="formbox">{{ form_widget(form.artPrice) }} </div> 
+      <div class="titreAnnonce">{{ form_label(form.artPrice) }}</div>
+      <div class="formbox">{{ form_widget(form.artPrice) }} </div> 
       <div class="formBoxError">{{ form_errors(form.artPrice) }}</div>
       
       {# Category #}
-      <div id="titreAnnonce">{{ form_label(form.artCategorie) }}</div>
-      <div id="formbox"> {{ form_widget(form.artCategorie) }}</div>
+      <div class="titreAnnonce">{{ form_label(form.artCategorie) }}</div>
+      <div class="formbox"> {{ form_widget(form.artCategorie) }}</div>
       <div class="formBoxError">{{ form_errors(form.artCategorie) }}</div>
        {# Description #}
-      <div id="titreAnnonce">{{ form_label(form.artDescription) }}</div> 
-      <div id="formbox">{{ form_widget(form.artDescription) }} </div> 
+      <div class="titreAnnonce">{{ form_label(form.artDescription) }}</div> 
+      <div class="formbox">{{ form_widget(form.artDescription) }} </div> 
       {# no error display #}
 
 
-      <div id="titreAnnonce"> {{ form_label(form.artPicture) }} </div>
-      <div id="formbox"> {{ form_widget(form.artPicture) }} </div>
-      <div id="formBoxError"> {{ form_errors(form.artPicture) }} </div>
+      <div class="titreAnnonce"> {{ form_label(form.artPicture) }} </div>
+      <div class="formbox"> {{ form_widget(form.artPicture) }} </div>
+      <div class="formBoxError"> {{ form_errors(form.artPicture) }} </div>
 
       </br>
       {# display form submit button #}
       <div> {{ form_row(form.submit) }} </div> 
 
 
-  </section>
+ </section>
 {{ form_rest(form) }}
 {{ form_end(form) }} {# display close tag of the form #}
+
+ <section id="sidenav">     
+    <a id="xlink" href="javascript:void(0)" class="closebtn" onclick="closeNav();">x</a>
+    <ul>         
+        <li id="lipadding"> <a href="{{ path("signin") }}"> Inscription </a> </li>
+        <li> <a href="{{ path("login") }}"> Connexion </a> </li>
+        <li> <a href="{{ path("account") }}"> Mon Compte </a> </li>
+        <li> <a href="{{ path("logout") }}"> Deconnexion</a> </li>  
+    </ul>
+ </section> 
+      
+<script>
+function openNav() {
+    document.getElementById("sidenav").style.width = "250px";
+}
+function closeNav() {
+    document.getElementById("sidenav").style.width = "0";
+}
+</script>
 {% endblock %}

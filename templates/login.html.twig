@@ -8,24 +8,26 @@
      <div id="sign">Se connecter</div>  
      <form action="{{ path('admin_login_check') }}" method="post">
        {{ error }}        
-       <div id="titreAnnonce"> Pseudo </div>
+       <div class="titreAnnonce"> Pseudo </div>
        <input class="logininput" type="text" name="_username" value="{{ last_username }}" /> <br>
-       <div id="titreAnnonce">Mot de passe </div>
+       <div class="titreAnnonce">Mot de passe </div>
        <input class="logininput" type="password" name="_password" value="" /> <br>
-       <a id="mdp" href="{{ path("password") }}"> Mot de passe oublié? </a>
-       <input id="signupbutton"type="submit" value="Se connecter"/>          
+       <a class="mdp" href="{{ path("password") }}"> Mot de passe oublié? </a>
+       <input id="signupbutton" type="submit" value="Se connecter"/>          
      </form>
 </section>      
 
- <div id="sidenav">     
-         <a id="xlink" href="javascript:void(0)" class="closebtn" onclick="closeNav();">x</a>         
-         <li id="lipadding"> <a href="{{ path("signin") }}"> Inscription </a> </li>
-         <li> <a href="{{ path("login") }}"> Connexion </a> </li>
-         <li> <a href="{{ path("account") }}"> Mon Compte </a> </li>
-         <li> <a href="{{ path("logout") }}"> Deconnexion</a> </li>     
- </div> 
+ <section id="sidenav">     
+    <a id="xlink" href="javascript:void(0)" class="closebtn" onclick="closeNav();">x</a>
+    <ul>         
+        <li id="lipadding"> <a href="{{ path("signin") }}"> Inscription </a> </li>
+        <li> <a href="{{ path("login") }}"> Connexion </a> </li>
+        <li> <a href="{{ path("account") }}"> Mon Compte </a> </li>
+        <li> <a href="{{ path("logout") }}"> Deconnexion</a> </li>  
+    </ul>
+ </section> 
 
-<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
 <script>
 function openNav() {
     document.getElementById("sidenav").style.width = "250px";

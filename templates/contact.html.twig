@@ -22,7 +22,7 @@
             lux@bay.lu
         </p>   
 </div>
-<div class="contact">
+<div id="weare" class="contact">
     <h4 class="team"> We are </h4>
 </div>    
 <div class="contact">
@@ -45,7 +45,7 @@
             document.write('<a href="mai'+'lto:'+Address+'">'+Address+'</a>');
          </script>
     </p> 
-    <p>
+    <p id="conor">
         Conor Dunne <br>
          <script language="JavaScript">
             var User = "conordu"; 
@@ -60,6 +60,15 @@
 <div id="map">
 </div>    
 
+ <section id="sidenav">     
+    <a id="xlink" href="javascript:void(0)" class="closebtn" onclick="closeNav();">x</a>
+    <ul>         
+        <li id="lipadding"> <a href="{{ path("signin") }}"> Inscription </a> </li>
+        <li> <a href="{{ path("login") }}"> Connexion </a> </li>
+        <li> <a href="{{ path("account") }}"> Mon Compte </a> </li>
+        <li> <a href="{{ path("logout") }}"> Deconnexion</a> </li>  
+    </ul>
+ </section> 
 {# API Google Map #}
 <script>
       function initMap() {
@@ -78,6 +87,16 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC1dy8BzPUu7h2-YKjk2blzfchmUQx45Q&callback=initMap">
 </script>
 
+<script>
+function openNav() {
+    document.getElementById("sidenav").style.width = "250px";
+}
+function closeNav() {
+    document.getElementById("sidenav").style.width = "0";
+}
+</script>
+
+      
 
 
 
