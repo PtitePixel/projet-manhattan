@@ -7,8 +7,10 @@
 <section class="login">     
      <div id="sign">Se connecter</div>  
      <form action="{{ path('admin_login_check') }}" method="post">
-     {{ error }}        
+       {{ error }}        
+       <div id="titreAnnonce"> Pseudo </div>
        <input class="logininput" type="text" name="_username" value="{{ last_username }}" /> <br>
+       <div id="titreAnnonce">Mot de passe </div>
        <input class="logininput" type="password" name="_password" value="" /> <br>
        <a id="mdp" href="{{ path("password") }}"> Mot de passe oublié? </a>
        <input id="signupbutton"type="submit" value="Se connecter"/>          
@@ -20,9 +22,8 @@
          <li id="lipadding"> <a href="{{ path("signin") }}"> Inscription </a> </li>
          <li> <a href="{{ path("login") }}"> Connexion </a> </li>
          <li> <a href="{{ path("account") }}"> Mon Compte </a> </li>
-         <li> <a href="{{ path("logout") }}"> Deconnexion</a> </li>      
-     </div> 
-
+         <li> <a href="{{ path("logout") }}"> Deconnexion</a> </li>     
+ </div> 
 
 <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
 <script>
